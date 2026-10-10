@@ -22,7 +22,7 @@ Fab Life is inspired by the coaching-journey model popularised by apps like Fabu
 
 ### 1.2 Non-goals (MVP)
 
-- Calorie counting, diet plans, or medical advice
+- Calorie counting, prescribed diet plans, or medical/therapeutic diets (the app gives general healthy meal ideas and a gentle low-fibre option only)
 - Social feed or community features
 - Wearable / Health Connect integration (Phase 2)
 - iOS or web
@@ -38,7 +38,7 @@ Wakes up groggy, relies on coffee, skips breakfast, wants more energy but has fa
 Mornings are chaotic. Wants better sleep and a little exercise but has no time for 1-hour workouts. Needs: 2–5 minute habits, flexible reminder times, no guilt when life gets in the way.
 
 ### Persona C — "Restarting Meera", 55
-Wants to rebuild healthy routines after a stressful period. Prefers calm design, large text, clear instructions. Needs: accessibility, gentle pacing, reading-friendly letters.
+Wants to rebuild healthy routines after a stressful period. Prefers calm design, large text, clear instructions. Has a sensitive stomach and finds salads and beans uncomfortable; has stiff knees. Needs: accessibility, gentle pacing, reading-friendly letters, **gentle (low-fibre) meal ideas** and **low-impact exercises**.
 
 ---
 
@@ -73,6 +73,9 @@ All metrics are computed from **on-device, anonymous, opt-in** analytics events 
 | **Check-in** | Marking a habit as done (or skipped) for a given day. |
 | **Streak** | Consecutive days on which the user completed *all* habits in a ritual. |
 | **Ritual player** | A focused full-screen mode that walks the user through each habit in a ritual, one at a time. |
+| **Routine** | A guided exercise session (e.g. *Gentle Wake-Up, 5 min*) made of timed moves, from the exercise library. |
+| **Meal idea** | A healthy meal suggestion tagged by meal, diet type, fibre level (regular / gentle) and allergens. |
+| **Gentle mode** | The *Gentle on the stomach (low-fibre)* setting: shows easy-to-digest meal ideas and adjusts food tips in letters. |
 
 ---
 
@@ -80,19 +83,22 @@ All metrics are computed from **on-device, anonymous, opt-in** analytics events 
 
 ```
 Onboarding (first launch only)
-  └─ Welcome → Goal quiz → Wake/sleep time → Commitment → Journey intro letter
+  └─ Welcome → Goal quiz → Obstacles → Wake/sleep time → Food preferences → Movement preferences → Name → Commitment → Journey intro letter
 
 Main (bottom navigation)
   ├─ Today        — rituals for today, check-ins, current step card
   ├─ Journey      — step map, letters, progress
+  ├─ Explore      — Move (exercise routines) and Eat (healthy meal ideas)
   ├─ Progress     — calendar heatmap, streaks, stats
-  └─ Settings     — reminders, ritual times, theme, data export/reset
+  └─ Settings     — reminders, ritual times, food & movement preferences, theme, data export/reset
 
 Overlays / full-screen
   ├─ Letter reader
   ├─ Ritual player
   ├─ Celebration
   ├─ Habit editor
+  ├─ Routine player (exercise timer)
+  ├─ Meal idea detail
   └─ Step complete / Journey complete
 ```
 
@@ -120,13 +126,21 @@ Each feature lists user stories and acceptance criteria (AC).
    In MVP only *Feel More Energetic* is fully written. Other goals show "Coming soon — we'll start with energy, the foundation for everything else" and still start Journey 1, with the chosen goal saved for later personalisation.
 3. **Obstacles** (multi-choice, optional): "I'm too busy", "I lose motivation", "I forget", "I start too big". Used to pick tips shown in letters.
 4. **Wake-up time** and **bed time** pickers (defaults 07:00 / 23:00). Used to schedule ritual reminder defaults: Morning = wake + 10 min, Afternoon = 14:00, Evening = bed − 60 min.
-5. **Name** (optional, used in letters: "Dear Priya"). Fallback: "Dear friend".
-6. **Commitment screen** — "I commit to taking care of myself, one small step at a time." User **presses and holds** a button for 1.5 s to sign (haptic feedback + animation).
-7. **Notification permission** (Android 13+), explained first: "We'll send one gentle reminder for your morning ritual. You can change this any time."
-8. Opens **Journey intro letter** → then Step 1 letter → lands on **Today**.
+5. **Food preferences**:
+   - Diet type (single choice, required): Vegetarian · Vegan · Eggetarian · Non-vegetarian.
+   - *Do high-fibre foods (salads, beans, whole grains) upset your stomach?* Yes / Sometimes / No. **Yes** turns on **Gentle mode** (low-fibre); **Sometimes** shows a hint that it can be turned on any time in Settings.
+   - Foods to avoid (multi-choice, optional): Dairy/lactose · Gluten · Nuts · Eggs · Soy · Seafood.
+6. **Movement preferences**:
+   - Fitness level (single choice): Beginner · Intermediate · Active.
+   - Movement needs (single choice): Standard · Low-impact / joint-friendly · Seated / limited mobility.
+   - Shows the exercise safety note (see [Exercise library](content/EXERCISE_LIBRARY.md)).
+7. **Name** (optional, used in letters: "Dear Priya"). Fallback: "Dear friend".
+8. **Commitment screen** — "I commit to taking care of myself, one small step at a time." User **presses and holds** a button for 1.5 s to sign (haptic feedback + animation).
+9. **Notification permission** (Android 13+), explained first: "We'll send one gentle reminder for your morning ritual. You can change this any time."
+10. Opens **Journey intro letter** → then Step 1 letter → lands on **Today**.
 
 **AC**
-- Onboarding can be completed in under 2 minutes.
+- Onboarding can be completed in under 3 minutes; food and movement questions can be skipped (defaults: Vegetarian, Gentle mode off, Beginner, Standard).
 - Back navigation works on every onboarding screen; state is preserved.
 - If the app is killed mid-onboarding, it resumes at the same screen.
 - Denying notification permission does not block onboarding.
@@ -258,12 +272,72 @@ This is the core logic. It must be deterministic and fully unit-tested.
 
 - Profile: name, goal.
 - Ritual times and reminder toggles.
+- **Food preferences:** diet type, Gentle on the stomach (low-fibre) toggle, foods to avoid, cuisine preference.
+- **Movement preferences:** fitness level, movement needs, preferred routine length.
 - My habits (create, edit, reorder, remove).
 - Theme: System / Light / Dark.
 - Day start time (default 03:00).
 - Data: *Export my data* (JSON file via Storage Access Framework), *Reset all progress* (typed confirmation "RESET").
 - About, privacy policy, open-source licences.
 - Health disclaimer: "Fab Life provides general wellness information, not medical advice."
+
+### 6.11 Food Recommendations
+
+Content: [Food guide](content/FOOD_GUIDE.md).
+
+**User stories**
+- As a user, I want healthy meal ideas that match my diet so I know what to eat.
+- As a user with a sensitive stomach, I want gentle, easy-to-digest meal ideas.
+- As a user, I want to avoid foods I'm allergic to or don't eat.
+
+**Eat tab (inside Explore)**
+1. **Healthy eating principles**: a horizontally scrolling row of 8 short cards (balanced plate, protein every meal, less sugar, etc.).
+2. **Meal filter chips**: Breakfast · Lunch · Dinner · Snacks.
+3. **Meal idea list**: cards with title, diet badge, prep time, and a 🌿 *Gentle* badge for low-fibre meals. Tap opens **Meal idea detail** (ingredients, simple steps, tip).
+4. **Gentle on the stomach** toggle at the top of the tab (mirrors the Settings value). When turned on for the first time, show the gentle-mode guidance sheet (when to use it, reintroducing fibre gradually, warning signs that need a doctor).
+
+**Rules**
+- Results are filtered by diet type (hierarchical, see §7.1) and *foods to avoid*.
+- Gentle mode **on** → show only `fibre = GENTLE` meals. Gentle mode **off** → show `REGULAR` meals first, then gentle ones.
+- *Save to favourites* (heart icon); favourites appear first.
+- Journey letters with food content (Journey 1, Step 2) show the gentle variant of their food table when Gentle mode is on.
+- Gentle mode reminder: after 14 days on, show a one-time card: "Feeling better? Try adding one higher-fibre food this week, like oats or a peeled cooked apple." with *Try it* / *Not yet*.
+
+**AC**
+- Every meal idea matches the user's diet type and contains none of their avoided allergens.
+- Changing a preference updates the list immediately.
+- The disclaimer is visible at the bottom of the Eat tab.
+
+### 6.12 Exercise Recommendations
+
+Content: [Exercise library](content/EXERCISE_LIBRARY.md).
+
+**User stories**
+- As a beginner, I want short, simple routines I can do at home without equipment.
+- As someone with stiff joints or limited mobility, I want low-impact or seated exercises.
+- As a user, I want to know how much exercise is recommended each week.
+
+**Move tab (inside Explore)**
+1. **Recommended for you**: 3 routines matching fitness level, movement needs and preferred length.
+2. **Filter chips**: time (5/10/20/30 min), goal (Wake up, Strength, Cardio, Flexibility, Wind down), place (Home, Outdoors).
+3. **Routine list**: title, minutes, level, impact badge.
+4. **Weekly movement card**: minutes moved this week (from completed routines and the Journey 1 movement habit) against the WHO guidance of 150 min moderate activity, shown as a progress ring with encouraging copy, never as a failure.
+5. **Weekly plan** (v0.3) for the user's level.
+
+**Routine player**
+- One move per screen: animation/illustration, name, up to 3 cues, timer or rep count, *Easier version* link.
+- Auto-advances after timed moves; rep-based moves wait for *Done*.
+- Rest screen between moves showing the next move.
+- Pause, skip, previous; long-press shows the pain prompt ("Stop this move. Try the easier version or skip it.").
+- Completing a routine logs minutes moved and, if the Journey 1 movement habit is active, offers to check it in.
+
+**Journey integration**
+- Journey 1, Step 4 (*Move Your Body*): the habit's *Start* button opens the recommended 5-minute wake-up routine for the user's needs (R1 Beginner, R2 Intermediate, R3 Low-impact, R4 Seated). The user can pick another routine or do their own movement.
+
+**AC**
+- Low-impact users never see routines containing jumping moves; seated users see only seated routines.
+- The safety note is shown before the first routine and is available from every routine screen.
+- Timer continues with the screen locked and plays a sound/vibration between moves.
 
 ---
 
@@ -324,6 +398,32 @@ Journeys are shipped as JSON assets in `app/src/main/assets/journeys/` so new jo
 
 ---
 
+### 7.1 Exercise and food content
+
+Shipped as JSON assets alongside journeys. Source text: [Exercise library](content/EXERCISE_LIBRARY.md) and [Food guide](content/FOOD_GUIDE.md).
+
+```json
+// assets/exercise/moves.en.json
+{ "id": "wall_pushup", "name": "Wall push-up", "muscles": ["chest", "arms"],
+  "cues": ["Hands on wall at shoulder height", "Body straight", "Bend elbows to bring chest to wall"],
+  "easier": "Stand closer to the wall", "harder": "Incline push-up on a table",
+  "impact": "LOW", "seated": false, "animation": "wall_pushup.json" }
+
+// assets/exercise/routines.en.json
+{ "id": "R1", "title": "Gentle Wake-Up", "minutes": 5, "level": "BEGINNER",
+  "needs": ["STANDARD"], "place": "HOME", "goal": "WAKE_UP", "restSeconds": 10,
+  "items": [ { "move": "march_in_place", "seconds": 60 }, { "move": "squat", "reps": 10 } ] }
+
+// assets/food/meals.en.json
+{ "id": "curd_rice", "title": "Curd rice with soft-cooked carrot", "meal": "LUNCH",
+  "diet": "VEGETARIAN", "fibre": "GENTLE", "allergens": ["DAIRY"], "prepMinutes": 15,
+  "cuisine": "INDIAN", "ingredients": ["..."], "steps": ["..."] }
+```
+
+Diet filtering is hierarchical: a Vegan meal is shown to all diet types; Vegetarian to Vegetarian, Eggetarian and Non-veg; Eggetarian to Eggetarian and Non-veg; Non-veg only to Non-veg.
+
+---
+
 ## 8. Data Model (on-device)
 
 Persisted with **Room** (SQLite). User preferences in **DataStore**.
@@ -374,6 +474,13 @@ data class UserPrefs(
     val name: String?,
     val goal: String,
     val obstacles: Set<String>,
+    val dietType: DietType,               // VEGETARIAN, VEGAN, EGGETARIAN, NON_VEG
+    val gentleStomach: Boolean,           // low-fibre meal ideas
+    val avoidFoods: Set<Allergen>,
+    val cuisine: Cuisine = Cuisine.BOTH,
+    val fitnessLevel: FitnessLevel,       // BEGINNER, INTERMEDIATE, ACTIVE
+    val movementNeeds: MovementNeeds,     // STANDARD, LOW_IMPACT, SEATED
+    val preferredRoutineMinutes: Int = 5,
     val wakeTime: LocalTime,
     val bedTime: LocalTime,
     val dayStartOffsetHours: Int = 3,
@@ -420,6 +527,8 @@ data class UserPrefs(
 - Optional anonymous analytics (off by default in MVP; Phase 2 decision).
 - Data export (JSON) and full reset available to the user.
 - Wellness disclaimer shown in onboarding footer and Settings. Letters avoid medical claims and recommend consulting a doctor for medical conditions (e.g. exercise step).
+- Food content is general healthy-eating guidance. Gentle mode is labelled as short-term or doctor-guided and lists warning signs that need a doctor. Exercise content shows a safety note before the first routine and an easier version for every move.
+- Food and movement preferences are stored only on the device.
 
 ---
 
@@ -435,9 +544,9 @@ data class UserPrefs(
 
 | Phase | Scope |
 |---|---|
-| **MVP (v0.1)** | Onboarding, Today, Ritual player, Journey engine, Journey 1 *Feel More Energetic*, reminders, Progress, Settings |
+| **MVP (v0.1)** | Onboarding, Today, Ritual player, Journey engine, Journey 1 *Feel More Energetic*, Explore (exercise routines + healthy meal ideas incl. Gentle mode), reminders, Progress, Settings |
 | **v0.2** | Journeys *Sleep Better* and *Focus & Achieve*; custom habit schedules (weekdays only, etc.) |
-| **v0.3** | Guided audio and timers library; home-screen widget; journaling/mood check-in |
+| **v0.3** | Guided audio; weekly exercise plans; food & symptom notes for Gentle mode; home-screen widget; journaling/mood check-in |
 | **v1.0** | Health Connect (steps, sleep), Fab Life Plus, Play Store release |
 | **Later** | AI-personalised letters, cloud backup, Wear OS tile, community challenges |
 
@@ -455,3 +564,5 @@ data class UserPrefs(
 ## 15. Related Documents
 
 - [Journey 1 — Feel More Energetic (full content)](journeys/01-feel-more-energetic.md)
+- [Exercise recommendations](content/EXERCISE_LIBRARY.md)
+- [Healthy food recommendations (incl. gentle low-fibre)](content/FOOD_GUIDE.md)

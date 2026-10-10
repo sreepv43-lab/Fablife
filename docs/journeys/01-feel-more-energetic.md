@@ -154,6 +154,19 @@ Supporting letters: *Missed a Few Days?* (struggle card) and *Welcome Back* (7+ 
 > - Whole-grain toast with peanut butter and banana
 > - A vegetable omelette, or besan chilla with curd
 >
+> **Does fibre upset your stomach?** Some people find salads, beans, whole grains or seeds cause bloating or discomfort. If that's you, choose a **gentle breakfast: one protein + one easy-to-digest carb.**
+>
+> | Protein | Gentle carb |
+> |---|---|
+> | Eggs (boiled or scrambled) | Idli or plain dosa |
+> | Curd/yoghurt or buttermilk | Ripe banana or papaya |
+> | Paneer or silken tofu | White toast or rava upma |
+> | Smooth peanut butter | Soft poha or semolina porridge |
+>
+> Try: idli with curd, scrambled eggs on white toast, curd with ripe banana, or white toast with smooth peanut butter. Cook vegetables until soft, peel fruit and eat slowly. When your stomach feels settled, you can add fibre back slowly, starting with small amounts of oats or a peeled cooked apple. *If stomach problems continue, please see a doctor.*
+>
+> You'll find many more meal ideas, both regular and gentle, in the **Eat** section of the app.
+>
 > **Not hungry in the morning?** That's okay. Start with something small, like a handful of nuts or a banana with peanut butter. Your appetite will often adjust within a week or two. If you genuinely do better eating later, choose a protein + fibre meal whenever your first meal is.
 >
 > **Stack it:** *"After I drink my water, I eat my breakfast."* Your ritual now has two links in the chain.
@@ -169,16 +182,18 @@ Supporting letters: *Missed a Few Days?* (struggle card) and *Welcome Back* (7+ 
 | Type | `habit` |
 | Habit id | `great_breakfast` |
 | Title | Eat a great breakfast |
-| Description | One protein + one fibre |
+| Description | One protein + one fibre (gentle mode: one protein + one easy-to-digest carb) |
 | Icon | `egg_alt` |
 | Ritual | MORNING (order 2) |
-| Smaller version | Eat a handful of nuts or a piece of fruit |
+| Smaller version | Eat a handful of nuts or a piece of fruit (gentle mode: a ripe banana or a small bowl of curd) |
 | Target / window | 3 days / 5 days |
 
 **Letter button:** *Add "Great breakfast" to my morning*
 
+**Gentle mode:** when *Gentle on the stomach (low-fibre)* is on, the app shows the protein + gentle carb table first and replaces the "five minutes" examples with: idli with curd, scrambled eggs on white toast, curd with ripe banana, white toast with smooth peanut butter.
+
 ### Tips
-- Prepare overnight oats or boil eggs the evening before.
+- Prepare overnight oats or boil eggs the evening before. (Gentle: keep idli batter or boiled eggs ready.)
 - Keep breakfast simple: the same two or three options all week is fine.
 - Eat sitting down, away from your phone, even for five minutes.
 
@@ -259,7 +274,19 @@ Supporting letters: *Missed a Few Days?* (struggle card) and *Welcome Back* (7+ 
 > - A simple circuit: 10 squats, 10 wall push-ups, 20 marching steps, repeat
 > - Sun salutations (Surya Namaskar), at your own pace
 >
-> Tap **Start** on the habit to use the five-minute timer. It counts down so you don't have to watch the clock.
+> **Not sure what to do? Try one of these five-minute routines.** The app picks one for you based on your settings:
+>
+> | If you are… | Try | What's in it |
+> |---|---|---|
+> | New to exercise | **Gentle Wake-Up** | March in place, arm circles, side bends, 10 squats (or sit-to-stands), 10 wall push-ups, calf raises, deep breaths |
+> | Already a bit active | **Energy Boost** | High-knee march, squats, incline push-ups, lunges, a 30-second plank, step jacks, stretch |
+> | Easy on the joints | **Joint-Friendly Wake-Up** | Supported marching, shoulder rolls, sit-to-stands, wall push-ups, supported calf raises, standing cat–cow |
+> | Moving from a chair | **Seated Wake-Up** | Seated march, arm circles, leg extensions, torso twists, punches, gentle neck turns |
+> | Feeling outdoorsy | **Morning Walk** | A brisk 5-minute walk, which also counts as daylight for Step 5! |
+>
+> Tap **Start** on the habit to follow a routine with the built-in timer, one move at a time. Every move has an easier version. More routines for strength, cardio and stretching are waiting in the **Move** section of the app.
+>
+> **How much is enough over time?** Health guidelines suggest adults aim for about **150 minutes of moderate activity a week** (like brisk walking) plus **strength exercises on 2 days**. That sounds like a lot, but it's only about 20 minutes a day. Today we start with five. You'll build up from there.
 >
 > **Stack it:** *"After my water and breakfast, I move for five minutes."* (Some people prefer moving *before* breakfast. Rearrange your ritual any way you like.)
 >
@@ -282,6 +309,7 @@ Supporting letters: *Missed a Few Days?* (struggle card) and *Welcome Back* (7+ 
 | Icon | `directions_run` |
 | Ritual | MORNING (order 3) |
 | Duration | 300 seconds (timer) |
+| Recommended routine | By movement needs and level: R1 Gentle Wake-Up (Beginner), R2 Energy Boost (Intermediate/Active), R3 Joint-Friendly (Low-impact), R4 Seated (Seated). See [Exercise library §4.1](../content/EXERCISE_LIBRARY.md#41-wake-up-routines-used-by-journey-1-step-4) |
 | Smaller version | Move for 1 minute |
 | Target / window | 4 days / 6 days |
 
