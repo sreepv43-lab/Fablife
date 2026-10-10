@@ -12,4 +12,10 @@
         <item quantity="one">Your %1$s ritual is ready: %2$d small step.</item>
         <item quantity="other">Your %1$s ritual is ready: %2$d small steps.</item>
     </plurals>
+    <string name="channel_playback">Playback</string>
+    <string name="audio_pause">Pause</string>
+    <string name="audio_resume">Resume</string>
+    <string name="audio_stop">Stop</string>
+    <string name="audio_playing">Playing</string>
+    <string name="audio_paused">Paused</string>
 </resources>
