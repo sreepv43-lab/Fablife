@@ -1,0 +1,233 @@
+{
+ "id": "energy",
+ "title": "Feel More Energetic",
+ "subtitle": "Build a morning ritual that powers your whole day",
+ "introLetter": {
+  "title": "Your Energy Is a Skill",
+  "body": "Dear {name},\n\nThink about the last time you felt truly energetic. Not wired on coffee, not forcing yourself through the afternoon, but properly *awake*: clear-headed, light, ready for whatever the day brought.\n\nMost of us treat energy like the weather. Some days we have it, some days we don't, and there's nothing to be done. But energy is much less random than it feels. A big part of it comes from what you do in the first hour after you wake up. It depends on whether you drink, eat, move and see daylight, and on whether you start the day reacting or with some intention.\n\nThat's good news, because habits can be learned.\n\nOver the next few weeks we're going to build a **morning ritual** together. Not a two-hour routine copied from a productivity guru. A short, realistic sequence of small habits that fits *your* mornings. We'll add one habit at a time. You'll practise each one for a few days, and only when it starts to feel natural will we add the next.\n\nThis may feel slow, and it's meant to. Big changes often fail because they ask too much at once and run on willpower alone. Small habits, repeated and stacked on top of each other, keep going without it. After a while they stop being something you try to do and become part of who you are.\n\nHere's what I ask of you:\n\n- **Start small.** Smaller than you think you need to.\n- **Show up, not perfectly, but often.** Missing a day is normal. Coming back is what counts.\n- **Be kind to yourself.** You're not fixing something broken. You're investing in someone who matters.\n\nYour first step is the simplest habit in this whole journey. It takes about ten seconds. Let's begin.\n\nWith you on the journey,\n**Your Fab Life coach**"
+ },
+ "outroLetter": {
+  "title": "You Did This",
+  "body": "Dear {name},\n\nStop for a moment and take this in: **you completed your first journey.**\n\nA few weeks ago you started with one glass of water. Since then you've built a morning ritual that hydrates you, fuels you, moves you, sets your body clock and celebrates you. Most people who decide to \"get healthier\" never get this far. You did, and not through some dramatic transformation, but one small step at a time.\n\nThat's the most important lesson of this journey. It's not about water or breakfast or five minutes of stretching. It's this: **you can change your life through small actions repeated with kindness.** You've proven it to yourself.\n\n**What happens now?**\n\nYour morning ritual stays with you. Keep doing it. It's yours now, and the app will keep tracking your streaks. Over time it will stop feeling like something you *do* and become simply how your mornings *are*.\n\nSome days you'll miss it. That's fine. A missed day never erases the progress you've made. Just begin again the next morning.\n\nWhen you feel ready, there are more journeys ahead: better sleep, deeper focus, calmer days. Each one builds on the foundation you've created.\n\nBut for today, celebrate. Really celebrate. You've earned it.\n\nSo proud of you,\n**Your Fab Life coach**"
+ },
+ "missedDaysLetter": {
+  "title": "Missed a Few Days?",
+  "body": "Dear {name},\n\nI noticed it's been a few days since you checked in. First, the most important thing: **that's completely normal, and it's okay.**\n\nLife gets busy. People get sick, travel, have rough nights and sometimes simply forget. In a well-known study on habit formation, researchers found that missing a day here and there did *not* undo people's progress. What mattered was getting back on track.\n\nSo let's get back on track, gently. Which of these would help most?\n\n- **Keep going.** Nothing needs to change. Tomorrow is a fresh start.\n- **Make it smaller.** If the habit feels like too much right now, shrink it. A smaller habit you actually do beats a bigger one you skip.\n- **Change the reminder time.** Maybe your reminder arrives at the wrong moment. Let's move it.\n\nRemember: the goal isn't perfection. It's showing up more often than not.\n\nHere whenever you're ready,\n**Your Fab Life coach**"
+ },
+ "welcomeBackLetter": {
+  "title": "Welcome Back",
+  "body": "Dear {name},\n\nWelcome back! I'm really glad you're here.\n\nWhatever kept you away, whether it was a busy stretch, a hard time or just life, there's no need to explain and no reason to feel guilty. The fact that you opened this app again says something important: you still care about feeling your best.\n\nHere's what hasn't changed: **everything you've already built is still here.** Every step you completed and every habit you learned is waiting for you. Your body remembers more than you think.\n\nWe'll restart your current step from the beginning, so there's no pressure to catch up. Just do the first habit tomorrow morning. Only that. Let the rest follow.\n\nStarting again isn't failing. Starting again *is* the habit.\n\nGlad to have you back,\n**Your Fab Life coach**"
+ },
+ "steps": [
+  {
+   "id": "energy.water",
+   "title": "Drink Water",
+   "goal": {
+    "type": "habit",
+    "habit": {
+     "id": "drink_water",
+     "title": "Drink a glass of water",
+     "description": "Right after you wake up",
+     "icon": "water",
+     "ritual": "MORNING",
+     "order": 1,
+     "durationSeconds": null,
+     "smallerVersion": "Take three sips of water"
+    },
+    "targetDays": 3,
+    "windowDays": 5
+   },
+   "buttonLabel": "Add \"Drink water\" to my morning",
+   "tips": [
+    "Fill a glass tonight and leave it where you'll see it in the morning.",
+    "Drink it before you check your phone.",
+    "Missed it on waking? Drink it now. It still counts."
+   ],
+   "completionTitle": "3 days of water — done! 💧",
+   "completionMessage": "Your morning ritual has officially begun. Next up: fuel that lasts.",
+   "letter": {
+    "title": "The Ten-Second Habit",
+    "body": "Dear {name},\n\nTonight, while you sleep, your body will keep working for seven or eight hours. It repairs tissue, consolidates memories, regulates hormones and breathes out moisture with every breath. What it won't get during all that time is a single drop to drink.\n\nSo most of us start the day mildly dehydrated. Then we reach for coffee and wonder why we still feel foggy.\n\nWater makes up around 60% of your body, and your brain is especially sensitive to it. Studies have found that even mild dehydration, losing just one or two percent of body weight in fluid, is linked to lower mood, more tiredness, headaches and weaker concentration. That's a level most people don't even notice as thirst.\n\nThe fix couldn't be simpler: **drink a glass of water as soon as you get up.**\n\nThat's it. That's the whole habit. It's deliberately tiny, for two reasons:\n\n1. **It works.** Rehydrating first thing is one of the easiest ways to feel more awake.\n2. **It's a foundation.** This glass of water is the first brick in your morning ritual. Every habit we add later will be stacked on top of it. Small and easy is exactly what a first brick should be.\n\n**How to make it stick**\n\n- Link it to something you already do: *\"After my feet touch the floor, I drink my water.\"* or *\"After I switch off my alarm…\"*\n- Make it visible. A glass or bottle you can see is a reminder you can't ignore.\n- Room temperature is easier to drink quickly than ice-cold water.\n- Add a slice of lemon if you like, but don't let \"perfect\" get in the way of \"done.\"\n\nYour challenge: **drink a glass of water after waking on 3 of the next 5 days.**\n\nTen seconds. You've got this.\n\nCheers to you,\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.breakfast",
+   "title": "A Great Breakfast",
+   "goal": {
+    "type": "habit",
+    "habit": {
+     "id": "great_breakfast",
+     "title": "Eat a great breakfast",
+     "description": "One protein + one fibre",
+     "icon": "breakfast",
+     "ritual": "MORNING",
+     "order": 2,
+     "durationSeconds": null,
+     "smallerVersion": "Eat a handful of nuts or a piece of fruit"
+    },
+    "targetDays": 3,
+    "windowDays": 5
+   },
+   "buttonLabel": "Add \"Great breakfast\" to my morning",
+   "tips": [
+    "Prepare overnight oats or boil eggs the evening before.",
+    "Keep breakfast simple: the same two or three options all week is fine.",
+    "Eat sitting down, away from your phone, even for five minutes."
+   ],
+   "completionTitle": "Breakfast champion! 🍳",
+   "completionMessage": "Water, then fuel. Your mornings are starting to have a shape.",
+   "gentleNote": "Gentle mode is on: choose one protein + one easy-to-digest carb, like idli with curd, scrambled eggs on white toast, curd with ripe banana, or white toast with smooth peanut butter. Smaller version: a ripe banana or a small bowl of curd.",
+   "letter": {
+    "title": "Fuel, Not Just Food",
+    "body": "Dear {name},\n\nThree mornings with water. Your ritual has a foundation. Now let's give your body something to run on.\n\nYou've probably heard that breakfast is \"the most important meal of the day.\" The truth is more nuanced. Research hasn't settled whether *everyone* needs breakfast, and some people feel great eating later. But for many of us, the problem isn't *whether* we eat in the morning. It's *what* we eat.\n\nA pastry, sugary cereal or white toast with jam is quick energy. It's also quick to disappear. Your blood sugar rises fast and drops fast, and by mid-morning you're tired, hungry and reaching for a snack or another coffee.\n\nA breakfast built on **protein and fibre** works differently. It digests slowly and releases energy steadily, so you stay full and focused until lunch.\n\n**The simple formula: one protein + one fibre-rich food.**\n\n| Protein | Fibre |\n|---|---|\n| Eggs | Oats |\n| Greek yoghurt or curd | Fruit (berries, apple, banana) |\n| Paneer or tofu | Whole-grain bread or roti |\n| Nuts, seeds or nut butter | Vegetables |\n| Milk or soy milk | Chia or flax seeds |\n\nA few combinations that take under five minutes:\n- Greek yoghurt with berries and a handful of nuts\n- Overnight oats with milk and chia seeds, made the night before\n- Two boiled eggs and a piece of fruit\n- Whole-grain toast with peanut butter and banana\n- A vegetable omelette, or besan chilla with curd\n\n**Does fibre upset your stomach?** Some people find salads, beans, whole grains or seeds cause bloating or discomfort. If that's you, choose a **gentle breakfast: one protein + one easy-to-digest carb.**\n\n| Protein | Gentle carb |\n|---|---|\n| Eggs (boiled or scrambled) | Idli or plain dosa |\n| Curd/yoghurt or buttermilk | Ripe banana or papaya |\n| Paneer or silken tofu | White toast or rava upma |\n| Smooth peanut butter | Soft poha or semolina porridge |\n\nTry: idli with curd, scrambled eggs on white toast, curd with ripe banana, or white toast with smooth peanut butter. Cook vegetables until soft, peel fruit and eat slowly. When your stomach feels settled, you can add fibre back slowly, starting with small amounts of oats or a peeled cooked apple. *If stomach problems continue, please see a doctor.*\n\nYou'll find many more meal ideas, both regular and gentle, in the **Eat** section of the app.\n\n**Not hungry in the morning?** That's okay. Start with something small, like a handful of nuts or a banana with peanut butter. Your appetite will often adjust within a week or two. If you genuinely do better eating later, choose a protein + fibre meal whenever your first meal is.\n\n**Stack it:** *\"After I drink my water, I eat my breakfast.\"* Your ritual now has two links in the chain.\n\nYour challenge: **eat a protein + fibre breakfast on 3 of the next 5 days.**\n\nEnjoy every bite,\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.prepare",
+   "title": "Set Yourself Up",
+   "goal": {
+    "type": "action",
+    "title": "Prepare tonight for tomorrow morning",
+    "description": "Water by the bed, breakfast ready, movement clothes laid out"
+   },
+   "buttonLabel": "I'll do it tonight",
+   "completionTitle": "Tomorrow-you says thank you. 🌙",
+   "completionMessage": "Try making this five-minute evening prep a regular thing. It makes every morning easier.",
+   "letter": {
+    "title": "Win the Morning the Night Before",
+    "body": "Dear {name},\n\nHere's a secret most people with \"perfect\" mornings won't tell you: they don't have more willpower than you. They just have fewer decisions to make.\n\nIn the first minutes after waking, your brain is still booting up. Scientists even have a name for that groggy state: *sleep inertia*. It isn't a great time to decide what to eat, where your water bottle is or whether you can be bothered. Every small obstacle in the morning is a chance for an old habit to win.\n\nSo today we're doing something different. There's no habit to repeat. There's **one small action, done tonight**, to make tomorrow morning effortless.\n\n**Tonight, take five minutes to:**\n\n1. **Fill your water glass or bottle** and put it next to your bed, or right beside the kettle.\n2. **Prepare your breakfast**, or at least decide on it. Soak the oats, boil the eggs or put the fruit on the counter.\n3. **Lay out comfortable clothes** you can move in. You'll need them soon. Our next habit is about moving your body.\n\nBehaviour scientists call this *designing your environment*. Instead of relying on motivation, you change your surroundings so the healthy choice becomes the easy, obvious choice. It's one of the most reliable ways to change behaviour, because it works even on days when you don't feel motivated at all.\n\nThink of it as a gift from tonight-you to tomorrow-you.\n\nOnce you've done it, come back and tap **Mark as done**.\n\nSweet dreams,\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.move",
+   "title": "Move Your Body",
+   "goal": {
+    "type": "habit",
+    "habit": {
+     "id": "morning_movement",
+     "title": "Move for 5 minutes",
+     "description": "Stretch, walk, dance: anything that gets you moving",
+     "icon": "movement",
+     "ritual": "MORNING",
+     "order": 3,
+     "durationSeconds": 300,
+     "smallerVersion": "Move for 1 minute"
+    },
+    "targetDays": 4,
+    "windowDays": 6
+   },
+   "buttonLabel": "Add \"5-minute movement\" to my morning",
+   "tips": [
+    "Put on your movement clothes right after breakfast so you're ready.",
+    "Play the same upbeat song every time. It becomes your cue to move.",
+    "Done is better than perfect: one minute still counts."
+   ],
+   "completionTitle": "You're on fire! 🔥",
+   "completionMessage": "Four days of moving your body. Notice how you feel afterwards. That's the energy we're building.",
+   "letter": {
+    "title": "Five Minutes That Wake You Up",
+    "body": "Dear {name},\n\nWhen you feel tired, exercise is probably the last thing you want to do. It seems obvious that moving would use up energy you don't have.\n\nBut your body doesn't work like a battery. It works more like a fire: the more you stoke it, the more it gives back.\n\nMovement raises your heart rate and sends more oxygen-rich blood to your brain and muscles. It also releases chemicals that lift mood and alertness. Researchers studying people who felt constantly tired found that regular, *gentle* exercise, not intense workouts, was enough to make them feel noticeably more energetic within a few weeks.\n\nSo we're not talking about the gym. We're talking about **five minutes of movement in the morning**. That's enough to shake off sleepiness and tell your body the day has started.\n\n**Choose whatever feels good:**\n- A gentle stretching or yoga flow\n- A brisk five-minute walk, even around your home\n- Dancing to two of your favourite songs\n- A simple circuit: 10 squats, 10 wall push-ups, 20 marching steps, repeat\n- Sun salutations (Surya Namaskar), at your own pace\n\n**Not sure what to do? Try one of these five-minute routines.** The app picks one for you based on your settings:\n\n| If you are… | Try | What's in it |\n|---|---|---|\n| New to exercise | **Gentle Wake-Up** | March in place, arm circles, side bends, 10 squats (or sit-to-stands), 10 wall push-ups, calf raises, deep breaths |\n| Already a bit active | **Energy Boost** | High-knee march, squats, incline push-ups, lunges, a 30-second plank, step jacks, stretch |\n| Easy on the joints | **Joint-Friendly Wake-Up** | Supported marching, shoulder rolls, sit-to-stands, wall push-ups, supported calf raises, standing cat–cow |\n| Moving from a chair | **Seated Wake-Up** | Seated march, arm circles, leg extensions, torso twists, punches, gentle neck turns |\n| Feeling outdoorsy | **Morning Walk** | A brisk 5-minute walk, which also counts as daylight for Step 5! |\n\nTap **Start** on the habit to follow a routine with the built-in timer, one move at a time. Every move has an easier version. More routines for strength, cardio and stretching are waiting in the **Move** section of the app.\n\n**How much is enough over time?** Health guidelines suggest adults aim for about **150 minutes of moderate activity a week** (like brisk walking) plus **strength exercises on 2 days**. That sounds like a lot, but it's only about 20 minutes a day. Today we start with five. You'll build up from there.\n\n**Stack it:** *\"After my water and breakfast, I move for five minutes.\"* (Some people prefer moving *before* breakfast. Rearrange your ritual any way you like.)\n\n**Make it easy:** you laid out your movement clothes in the last step. Keep doing that. If even five minutes feels like too much today, do one minute. One minute is infinitely more than zero, and it keeps the habit alive.\n\n*If you have a medical condition, an injury or haven't exercised in a long time, check with your doctor about what kind of movement is right for you.*\n\nYour challenge: **move for five minutes on 4 of the next 6 days.**\n\nLet's get moving,\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.light",
+   "title": "Step Into the Light",
+   "goal": {
+    "type": "habit",
+    "habit": {
+     "id": "morning_light",
+     "title": "Get 5 minutes of daylight",
+     "description": "Step outside or sit by an open window",
+     "icon": "light",
+     "ritual": "MORNING",
+     "order": 4,
+     "durationSeconds": 300,
+     "smallerVersion": "Open the curtains and stand by the window for one minute"
+    },
+    "targetDays": 3,
+    "windowDays": 5
+   },
+   "buttonLabel": "Add \"Morning light\" to my morning",
+   "tips": [
+    "Walk outside for your five-minute movement and complete two habits at once.",
+    "Open all the curtains as soon as you wake up.",
+    "Have your coffee or tea outside."
+   ],
+   "completionTitle": "Sunshine unlocked! ☀️",
+   "completionMessage": "Your body clock thanks you. You may find you're getting sleepy at a more regular time at night.",
+   "letter": {
+    "title": "Set Your Body Clock",
+    "body": "Dear {name},\n\nInside your brain there's a tiny cluster of cells that acts as your body's master clock. It decides when you feel sleepy, when you feel alert, when your body temperature rises and falls, and when hormones are released. Scientists call this your *circadian rhythm*.\n\nYour inner clock doesn't keep perfect time on its own. Every day it needs resetting, and its most powerful signal is **light, especially morning daylight**.\n\nWhen bright light reaches your eyes in the morning, it tells your brain: *the day has started.* That helps you feel alert now. It also starts a countdown that makes you naturally sleepy about 14 to 16 hours later. Morning light gives you energy in the morning *and* helps you sleep at night.\n\nThe trouble is that most of us spend our mornings indoors, where the light is far dimmer than outside. Even on a cloudy day, outdoor light is many times brighter than a typical room.\n\n**Your new habit: spend five minutes in daylight each morning.**\n\n- Step onto a balcony, into the garden or just outside your door.\n- Combine it with your movement: a five-minute walk outside covers both habits!\n- Drink your water or eat breakfast by an open window or outside.\n- No sunglasses for these few minutes if you can comfortably manage it. *(Never look directly at the sun.)*\n- Cloudy or rainy? Still go. It still works.\n\n**Stack it:** *\"After my morning movement, I step outside for five minutes of light.\"*\n\nYour challenge: **get five minutes of morning daylight on 3 of the next 5 days.**\n\nHere comes the sun,\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.celebrate",
+   "title": "Celebrate Yourself",
+   "goal": {
+    "type": "habit",
+    "habit": {
+     "id": "celebrate",
+     "title": "Celebrate!",
+     "description": "A fist pump, a smile, a \"Yes!\": feel proud for a moment",
+     "icon": "celebrate",
+     "ritual": "MORNING",
+     "order": 5,
+     "durationSeconds": null,
+     "smallerVersion": "Smile and say \"I did it\""
+    },
+    "targetDays": 3,
+    "windowDays": 5
+   },
+   "buttonLabel": "Add \"Celebrate\" to my morning",
+   "tips": [
+    "Celebrate after any habit, not just at the end. More celebration, faster habits.",
+    "Pick one celebration and use it every time so it becomes automatic.",
+    "Notice the feeling. That's the point."
+   ],
+   "completionTitle": "Look at you celebrating! 🎉",
+   "completionMessage": "Your ritual is almost complete. One more step to make it truly yours.",
+   "letter": {
+    "title": "The Secret Ingredient",
+    "body": "Dear {name},\n\nYou've now built a morning ritual with four habits. Take a moment to really notice that. A few weeks ago, this was just an idea.\n\nToday's habit might seem strange at first, but research suggests it may be one of the most important of all: **celebrate**.\n\nBehaviour scientist BJ Fogg, who has studied habit formation at Stanford for many years, puts it simply: *emotions create habits.* Repetition matters, but it's the positive feeling *right after* a behaviour that tells your brain \"this is good, let's do it again.\" Many of us skip this completely. We finish something and immediately move on to the next task, or worse, criticise ourselves for not doing it better.\n\nSo we're going to add a tiny moment of celebration at the **end of your morning ritual**.\n\n**Find a celebration that feels natural to you:**\n- A fist pump and a quiet \"Yes!\"\n- Smiling and saying \"I did it\" or \"That's like me\"\n- A little victory dance\n- Placing a hand on your heart and taking one deep breath\n- Imagining a crowd cheering for you (it sounds silly until you try it)\n\nThe key is to *feel* something positive, even for two seconds. It may feel awkward at first. That's okay. Do it anyway, and notice the small spark of pride. That spark is what wires the habit into your brain.\n\nWhen you complete your full morning ritual in the app, you'll see a celebration screen too. But the celebration that matters most is the one *you* feel.\n\nYour challenge: **celebrate after your morning ritual on 3 of the next 5 days.**\n\nYou deserve it. 🎉\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.design",
+   "title": "Design Your Morning",
+   "goal": {
+    "type": "action",
+    "title": "Arrange your morning ritual and set a consistent wake-up time",
+    "description": "Reorder your habits, then confirm your wake-up time in Settings"
+   },
+   "buttonLabel": "Let's design it",
+   "completionTitle": "Your ritual, your way. ✍️",
+   "completionMessage": "One final challenge stands between you and a morning ritual that runs on autopilot.",
+   "letter": {
+    "title": "Make It Yours",
+    "body": "Dear {name},\n\nWater, breakfast, movement, light, celebration. You now have all the ingredients of an energising morning. Before the final challenge, let's turn these separate habits into **one ritual that's truly yours**.\n\nToday's step is a one-time action with two parts.\n\n**Part 1: Write your ritual.**\n\nLook at your morning habits in the app and arrange them in the order that fits your real mornings. You can drag them to reorder. There's no \"right\" order. Some people move before breakfast, some combine light and movement into a walk, and some drink their water while the kettle boils.\n\nThen say your ritual out loud, or write it on a sticky note for your mirror:\n\n> *\"When I wake up, I drink my water. Then I ______. Then I ______. Then I ______. And then I celebrate.\"*\n\nTurning it into a chain like this helps each habit trigger the next, until the whole ritual flows without thinking.\n\n**Part 2: Choose a consistent wake-up time.**\n\nYour body clock loves regularity. Waking at the same time each day, *including weekends*, within about an hour, is one of the most powerful things you can do for steady energy. Sleeping in on Saturday and Sunday and then dragging yourself up on Monday can feel a lot like jet lag.\n\nYour current wake-up time is set to **{wakeTime}**. Is that realistic seven days a week? If not, adjust it in Settings. A time you can keep beats an ambitious time you can't.\n\nWhen you've arranged your ritual and confirmed your wake-up time, tap **Mark as done**.\n\nDesigning your life, one morning at a time,\n**Your Fab Life coach**"
+   }
+  },
+  {
+   "id": "energy.full_ritual",
+   "title": "The Morning You",
+   "goal": {
+    "type": "ritual",
+    "ritual": "MORNING",
+    "targetDays": 5,
+    "windowDays": 7
+   },
+   "buttonLabel": "Start the final challenge",
+   "tips": [
+    "Tap Start ritual every morning. Let the app guide you.",
+    "Prepare the night before (water, breakfast, clothes).",
+    "On hard days, do the smaller version of every habit."
+   ],
+   "completionTitle": "You did it! 🏆",
+   "completionMessage": "Your morning ritual is complete. Read your final letter.",
+   "letter": {
+    "title": "Putting It All Together",
+    "body": "Dear {name},\n\nThis is it: the final step of your first journey.\n\nThink back to where you started. You were drinking a single glass of water. Now you have a full morning ritual: hydration, real fuel, movement, daylight and a moment of pride. You've designed it to fit your life, and you've already practised every single part of it.\n\nYour final challenge is to **complete your whole morning ritual on 5 of the next 7 days.**\n\nThis is where habits start to become automatic. Research from University College London found that it takes people anywhere from about three weeks to several months for a new behaviour to feel automatic, around two months on average. You've been building this for weeks already. You're further along than you think.\n\n**A few things to remember:**\n\n- **Use the ritual player.** Tap *Start ritual* and the app will walk you through each habit, one at a time. No thinking required.\n- **Bad days happen.** If a morning goes wrong, do the smallest version of each habit: a few sips of water, a piece of fruit, one minute of movement, one look out the window, one smile. A tiny ritual still keeps the chain alive.\n- **Notice the difference.** At the end of the week, ask yourself: *How do my mornings feel now compared with a month ago? How is my energy in the afternoon?*\n\nFive mornings out of seven. You've already done the hard part. Now it's time to become the person who simply starts every day this way.\n\nCheering for you every morning,\n**Your Fab Life coach**"
+   }
+  }
+ ]
+}

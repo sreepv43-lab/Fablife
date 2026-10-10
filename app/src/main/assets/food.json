@@ -1,0 +1,750 @@
+{
+ "principles": [
+  {
+   "title": "Build a balanced plate",
+   "body": "About half vegetables and fruit, a quarter protein, and a quarter grains or starchy foods (whole grains when your stomach is comfortable with them), plus a little healthy fat."
+  },
+  {
+   "title": "Include protein at every meal",
+   "body": "It keeps you full and supports muscles: dal, beans, paneer, tofu, curd/yoghurt, eggs, fish, chicken, nuts and seeds."
+  },
+  {
+   "title": "Choose mostly whole, minimally processed foods",
+   "body": "Cook at home when you can."
+  },
+  {
+   "title": "Go easy on added sugar",
+   "body": "Fewer sweets, sugary drinks and packaged snacks. Fruit is the better sweet."
+  },
+  {
+   "title": "Go easy on salt and deep-fried food",
+   "body": "Flavour with herbs, spices, lemon, garlic and ginger instead."
+  },
+  {
+   "title": "Use healthy fats in moderation",
+   "body": "Nuts, seeds, avocado, and oils like mustard, groundnut or olive oil, rather than lots of butter, ghee or vanaspati."
+  },
+  {
+   "title": "Drink water through the day",
+   "body": "Let thirst and pale-yellow urine guide you. Plain water, buttermilk (chaas), unsweetened tea or infused water rather than sugary drinks."
+  },
+  {
+   "title": "Eat regularly and mindfully",
+   "body": "Sit down, slow down and stop when comfortably full."
+  }
+ ],
+ "gentleGuidance": {
+  "title": "Gentle on the stomach",
+  "body": "Gentle meals use foods that are easier to digest: well-cooked, peeled and soft vegetables, refined grains like white rice, and lean proteins.\n\nA low-fibre diet is usually meant to be **short-term or guided by your doctor**. Fibre is important for long-term gut and heart health. When you feel better, try adding fibre back slowly, one food at a time, in small amounts.\n\n**See a doctor if** you have stomach pain that doesn't go away, blood in your stool, black stools, unexplained weight loss, vomiting, diarrhoea lasting more than a few days, difficulty swallowing, or symptoms that wake you at night."
+ },
+ "meals": [
+  {
+   "id": "regular_vegetable_oats_upma_with_peanuts",
+   "title": "Vegetable oats upma with peanuts",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "NUTS",
+    "GLUTEN"
+   ],
+   "prepMinutes": 15
+  },
+  {
+   "id": "regular_moong_dal_chilla_with_mint_chutney_and_curd",
+   "title": "Moong dal chilla with mint chutney and curd",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": 15
+  },
+  {
+   "id": "regular_besan_chilla_with_grated_vegetables",
+   "title": "Besan chilla with grated vegetables",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": 15
+  },
+  {
+   "id": "regular_overnight_oats_with_milk_chia_seeds_and_berries",
+   "title": "Overnight oats with milk, chia seeds and berries",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY",
+    "GLUTEN"
+   ],
+   "prepMinutes": 5
+  },
+  {
+   "id": "regular_ragi_porridge_with_nuts_and_banana",
+   "title": "Ragi porridge with nuts and banana",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "NUTS"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "regular_poha_with_peas_peanuts_and_lemon_plus_a_glass_of",
+   "title": "Poha with peas, peanuts and lemon, plus a glass of milk or curd",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY",
+    "NUTS"
+   ],
+   "prepMinutes": 15
+  },
+  {
+   "id": "regular_whole_grain_toast_with_peanut_butter_and_banana",
+   "title": "Whole-grain toast with peanut butter and banana",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "NUTS",
+    "GLUTEN"
+   ],
+   "prepMinutes": 5
+  },
+  {
+   "id": "regular_greek_yoghurt_or_hung_curd_with_fruit_nuts_and_s",
+   "title": "Greek yoghurt or hung curd with fruit, nuts and seeds",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY",
+    "NUTS"
+   ],
+   "prepMinutes": 5
+  },
+  {
+   "id": "regular_sprouts_salad_with_tomato_onion_and_lemon",
+   "title": "Sprouts salad with tomato, onion and lemon",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": 10
+  },
+  {
+   "id": "regular_vegetable_omelette_with_whole_grain_toast",
+   "title": "Vegetable omelette with whole-grain toast",
+   "meal": "BREAKFAST",
+   "diet": "EGGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "EGGS",
+    "GLUTEN"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "regular_two_boiled_eggs_a_fruit_and_a_handful_of_nuts",
+   "title": "Two boiled eggs, a fruit and a handful of nuts",
+   "meal": "BREAKFAST",
+   "diet": "EGGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "EGGS",
+    "NUTS"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "regular_tofu_scramble_with_spinach_and_whole_grain_toast",
+   "title": "Tofu scramble with spinach and whole-grain toast",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "SOY",
+    "GLUTEN"
+   ],
+   "prepMinutes": 15
+  },
+  {
+   "id": "regular_smoked_fish_or_chicken_with_whole_grain_toast_an",
+   "title": "Smoked fish or chicken with whole-grain toast and tomato",
+   "meal": "BREAKFAST",
+   "diet": "NON_VEG",
+   "fibre": "REGULAR",
+   "allergens": [
+    "SEAFOOD",
+    "GLUTEN"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "regular_2_whole_wheat_rotis_dal_seasonal_sabzi_salad_cur",
+   "title": "2 whole-wheat rotis + dal + seasonal sabzi + salad + curd",
+   "meal": "LUNCH",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_brown_rice_or_millet_rajma_or_chole_cucumber_rai",
+   "title": "Brown rice or millet + rajma or chole + cucumber raita",
+   "meal": "LUNCH",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_quinoa_or_millet_pulao_with_vegetables_dal",
+   "title": "Quinoa or millet pulao with vegetables + dal",
+   "meal": "LUNCH",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_paneer_bhurji_wrap_in_a_whole_wheat_roti_with_sa",
+   "title": "Paneer bhurji wrap in a whole-wheat roti with salad",
+   "meal": "LUNCH",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_tofu_and_vegetable_stir_fry_with_brown_rice",
+   "title": "Tofu and vegetable stir-fry with brown rice",
+   "meal": "LUNCH",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "SOY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_egg_curry_roti_saut_ed_greens",
+   "title": "Egg curry + roti + sautéed greens",
+   "meal": "LUNCH",
+   "diet": "EGGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "EGGS",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_grilled_chicken_or_fish_brown_rice_vegetables",
+   "title": "Grilled chicken or fish + brown rice + vegetables",
+   "meal": "LUNCH",
+   "diet": "NON_VEG",
+   "fibre": "REGULAR",
+   "allergens": [
+    "SEAFOOD"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_lentil_soup_whole_grain_bread_big_salad",
+   "title": "Lentil soup + whole-grain bread + big salad",
+   "meal": "LUNCH",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_vegetable_khichdi_brown_rice_or_millet_moong_dal",
+   "title": "Vegetable khichdi (brown rice or millet + moong dal) with curd",
+   "meal": "DINNER",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_mixed_vegetable_soup_paneer_tikka",
+   "title": "Mixed-vegetable soup + paneer tikka",
+   "meal": "DINNER",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_dal_1_2_rotis_stir_fried_vegetables",
+   "title": "Dal + 1–2 rotis + stir-fried vegetables",
+   "meal": "DINNER",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_chickpea_and_vegetable_curry_with_a_small_portio",
+   "title": "Chickpea and vegetable curry with a small portion of rice",
+   "meal": "DINNER",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_egg_bhurji_roti_salad",
+   "title": "Egg bhurji + roti + salad",
+   "meal": "DINNER",
+   "diet": "EGGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "EGGS",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_fish_curry_or_grilled_fish_vegetables_small_rice",
+   "title": "Fish curry or grilled fish + vegetables + small rice portion",
+   "meal": "DINNER",
+   "diet": "NON_VEG",
+   "fibre": "REGULAR",
+   "allergens": [
+    "SEAFOOD"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_chicken_and_vegetable_soup_with_whole_grain_brea",
+   "title": "Chicken and vegetable soup with whole-grain bread",
+   "meal": "DINNER",
+   "diet": "NON_VEG",
+   "fibre": "REGULAR",
+   "allergens": [
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_fruit_a_handful_of_nuts",
+   "title": "Fruit + a handful of nuts",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "NUTS"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_roasted_chana_or_makhana",
+   "title": "Roasted chana or makhana",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_sprouts_chaat",
+   "title": "Sprouts chaat",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_buttermilk_chaas_or_a_small_bowl_of_curd",
+   "title": "Buttermilk (chaas) or a small bowl of curd",
+   "meal": "SNACK",
+   "diet": "VEGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_hummus_with_carrot_and_cucumber_sticks",
+   "title": "Hummus with carrot and cucumber sticks",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_boiled_egg",
+   "title": "Boiled egg",
+   "meal": "SNACK",
+   "diet": "EGGETARIAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "EGGS"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "regular_peanut_butter_on_apple_slices",
+   "title": "Peanut butter on apple slices",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "REGULAR",
+   "allergens": [
+    "NUTS"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_idli_with_a_little_strained_moong_dal_or_curd",
+   "title": "Idli with a little strained moong dal or curd",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "gentle_plain_dosa_with_curd",
+   "title": "Plain dosa with curd",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "gentle_rava_sooji_upma_with_soft_cooked_carrot_no_peanu",
+   "title": "Rava/sooji upma with soft-cooked carrot (no peanuts)",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "GLUTEN"
+   ],
+   "prepMinutes": 15
+  },
+  {
+   "id": "gentle_soft_poha_with_potato_and_turmeric_with_a_glass_",
+   "title": "Soft poha with potato and turmeric, with a glass of milk or buttermilk",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": 15
+  },
+  {
+   "id": "gentle_white_toast_with_smooth_peanut_butter_and_ripe_b",
+   "title": "White toast with smooth peanut butter and ripe banana",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "NUTS",
+    "GLUTEN"
+   ],
+   "prepMinutes": 5
+  },
+  {
+   "id": "gentle_curd_yoghurt_with_ripe_banana_or_papaya",
+   "title": "Curd/yoghurt with ripe banana or papaya",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": 5
+  },
+  {
+   "id": "gentle_scrambled_or_boiled_eggs_with_white_toast",
+   "title": "Scrambled or boiled eggs with white toast",
+   "meal": "BREAKFAST",
+   "diet": "EGGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "EGGS",
+    "GLUTEN"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "gentle_silken_tofu_scramble_with_white_toast",
+   "title": "Silken tofu scramble with white toast",
+   "meal": "BREAKFAST",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "SOY",
+    "GLUTEN"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "gentle_rice_kanji_or_semolina_porridge_with_milk",
+   "title": "Rice kanji or semolina porridge with milk",
+   "meal": "BREAKFAST",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY",
+    "GLUTEN"
+   ],
+   "prepMinutes": 10
+  },
+  {
+   "id": "gentle_curd_rice_thayir_sadam_with_soft_cooked_carrot",
+   "title": "Curd rice (thayir sadam) with soft-cooked carrot",
+   "meal": "LUNCH",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_white_rice_strained_moong_dal_cooked_lauki_sabzi",
+   "title": "White rice + strained moong dal + cooked lauki sabzi",
+   "meal": "LUNCH",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_soft_phulka_paneer_in_mild_gravy_cooked_pumpkin",
+   "title": "Soft phulka + paneer in mild gravy + cooked pumpkin",
+   "meal": "LUNCH",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_plain_pasta_with_tofu_and_peeled_cooked_zucchini",
+   "title": "Plain pasta with tofu and peeled cooked zucchini in a mild sauce (peeled, seedless tomato)",
+   "meal": "LUNCH",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "SOY",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_egg_curry_mild_white_rice",
+   "title": "Egg curry (mild) + white rice",
+   "meal": "LUNCH",
+   "diet": "EGGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "EGGS"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_steamed_fish_white_rice_mashed_potato",
+   "title": "Steamed fish + white rice + mashed potato",
+   "meal": "LUNCH",
+   "diet": "NON_VEG",
+   "fibre": "GENTLE",
+   "allergens": [
+    "SEAFOOD"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_chicken_and_rice_soup",
+   "title": "Chicken and rice soup",
+   "meal": "LUNCH",
+   "diet": "NON_VEG",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_soft_moong_dal_khichdi_white_rice_with_curd",
+   "title": "Soft moong dal khichdi (white rice) with curd",
+   "meal": "DINNER",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_lauki_or_pumpkin_soup_paneer_cubes_white_bread",
+   "title": "Lauki or pumpkin soup + paneer cubes + white bread",
+   "meal": "DINNER",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_idli_or_plain_dosa_with_strained_dal",
+   "title": "Idli or plain dosa with strained dal",
+   "meal": "DINNER",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_mashed_potato_steamed_tofu_cooked_carrot",
+   "title": "Mashed potato + steamed tofu + cooked carrot",
+   "meal": "DINNER",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "SOY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_egg_drop_soup_soft_rice",
+   "title": "Egg drop soup + soft rice",
+   "meal": "DINNER",
+   "diet": "EGGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "EGGS"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_steamed_or_poached_fish_rice_cooked_carrot",
+   "title": "Steamed or poached fish + rice + cooked carrot",
+   "meal": "DINNER",
+   "diet": "NON_VEG",
+   "fibre": "GENTLE",
+   "allergens": [
+    "SEAFOOD"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_shredded_chicken_with_soft_rice_and_clear_broth",
+   "title": "Shredded chicken with soft rice and clear broth",
+   "meal": "DINNER",
+   "diet": "NON_VEG",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_ripe_banana",
+   "title": "Ripe banana",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_plain_curd_or_buttermilk",
+   "title": "Plain curd or buttermilk",
+   "meal": "SNACK",
+   "diet": "VEGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "DAIRY"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_rice_crackers_or_plain_crackers",
+   "title": "Rice crackers or plain crackers",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_stewed_apple_peeled",
+   "title": "Stewed apple (peeled)",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_boiled_egg",
+   "title": "Boiled egg",
+   "meal": "SNACK",
+   "diet": "EGGETARIAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "EGGS"
+   ],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_coconut_water",
+   "title": "Coconut water",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [],
+   "prepMinutes": null
+  },
+  {
+   "id": "gentle_smooth_peanut_butter_on_white_toast",
+   "title": "Smooth peanut butter on white toast",
+   "meal": "SNACK",
+   "diet": "VEGAN",
+   "fibre": "GENTLE",
+   "allergens": [
+    "NUTS",
+    "GLUTEN"
+   ],
+   "prepMinutes": null
+  }
+ ]
+}

@@ -1,0 +1,1201 @@
+{
+ "moves": [
+  {
+   "id": "march",
+   "name": "March in place",
+   "howTo": "Lift knees to hip height, swing your arms, stand tall.",
+   "easier": "Lower knees, hold a chair",
+   "harder": "High knees, faster pace",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "high_knee_march",
+   "name": "High-knee march",
+   "howTo": "March briskly, bringing knees up high and pumping your arms.",
+   "easier": "Regular march",
+   "harder": "Jog in place",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "squat",
+   "name": "Squat",
+   "howTo": "Feet hip-width, sit hips back as if onto a chair, knees follow toes, chest up.",
+   "easier": "Sit-to-stand from a chair",
+   "harder": "Slow 3-second lowering",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "sit_to_stand",
+   "name": "Sit-to-stand",
+   "howTo": "Sit at the edge of a chair, stand up tall without using your hands, sit back down slowly.",
+   "easier": "Use your hands on your thighs",
+   "harder": "Hold a water bottle at your chest",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "wall_pushup",
+   "name": "Wall push-up",
+   "howTo": "Hands on the wall at shoulder height, body straight, bend elbows to bring your chest to the wall.",
+   "easier": "Stand closer to the wall",
+   "harder": "Incline push-up on a table",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "incline_pushup",
+   "name": "Incline push-up",
+   "howTo": "Hands on a sturdy table or counter, body straight, lower your chest and push back up.",
+   "easier": "Wall push-up",
+   "harder": "Floor push-up",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "pushup",
+   "name": "Push-up",
+   "howTo": "Hands under shoulders, body straight from head to heels (or knees), lower and push up.",
+   "easier": "Knees down",
+   "harder": "Slower lowering",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "glute_bridge",
+   "name": "Glute bridge",
+   "howTo": "Lie on your back, knees bent, feet flat; squeeze glutes and lift hips; lower slowly.",
+   "easier": "Smaller lift",
+   "harder": "Single-leg bridge",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "bird_dog",
+   "name": "Bird-dog",
+   "howTo": "On hands and knees, extend opposite arm and leg, keep your back flat, switch sides.",
+   "easier": "Extend only an arm or a leg",
+   "harder": "Hold 5 seconds each side",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "dead_bug",
+   "name": "Dead bug",
+   "howTo": "On your back, arms up, knees bent at 90°; lower opposite arm and leg, keep lower back on the floor.",
+   "easier": "Move only your legs",
+   "harder": "Slower, fully extend",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "plank",
+   "name": "Plank",
+   "howTo": "Forearms on the floor, body in a straight line from head to heels, breathe steadily.",
+   "easier": "Knees down, or hands on a table",
+   "harder": "Lift one foot",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "reverse_lunge",
+   "name": "Reverse lunge",
+   "howTo": "Step one foot back, lower both knees toward 90°, push back up. Alternate legs.",
+   "easier": "Hold a chair, smaller step",
+   "harder": "Alternate without pausing",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "calf_raise",
+   "name": "Calf raise",
+   "howTo": "Rise onto the balls of your feet, then lower slowly.",
+   "easier": "Hold a wall",
+   "harder": "Single leg",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "arm_circles",
+   "name": "Arm circles",
+   "howTo": "Arms out to the side, small circles forward, then backward.",
+   "easier": "Smaller circles",
+   "harder": "Bigger, faster circles",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "shoulder_rolls",
+   "name": "Shoulder rolls",
+   "howTo": "Roll your shoulders up, back and down in slow circles.",
+   "easier": "Smaller circles",
+   "harder": "Add arm circles",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "side_bend",
+   "name": "Standing side bend",
+   "howTo": "Reach one arm overhead and lean gently to the opposite side. Switch halfway.",
+   "easier": "Hand on hip",
+   "harder": "Hold each side longer",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "cat_cow",
+   "name": "Cat–cow",
+   "howTo": "Hands on knees (standing) or on all fours: round your back, then gently arch, moving with your breath.",
+   "easier": "Seated version",
+   "harder": "Slower, deeper breaths",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "step_jacks",
+   "name": "Step jacks",
+   "howTo": "Step one foot out to the side while raising your arms, step back in, alternate sides.",
+   "easier": "Arms only to shoulder height",
+   "harder": "Jumping jacks",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "jumping_jacks",
+   "name": "Jumping jacks",
+   "howTo": "Jump feet out while raising arms overhead, jump back in.",
+   "easier": "Step jacks",
+   "harder": "Faster pace",
+   "seated": false,
+   "jumping": true
+  },
+  {
+   "id": "mountain_climbers",
+   "name": "Mountain climbers",
+   "howTo": "From a high plank, drive knees toward your chest one at a time.",
+   "easier": "Slow, step the feet",
+   "harder": "Faster pace",
+   "seated": false,
+   "jumping": true
+  },
+  {
+   "id": "jump_squat",
+   "name": "Jump squat",
+   "howTo": "Squat down, then jump up softly and land with bent knees.",
+   "easier": "Regular squat",
+   "harder": "Pause at the bottom",
+   "seated": false,
+   "jumping": true
+  },
+  {
+   "id": "reach_fold",
+   "name": "Reach and fold",
+   "howTo": "Reach both arms up tall, then fold forward with soft knees and let your head hang.",
+   "easier": "Fold only halfway",
+   "harder": "Hold the fold longer",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "deep_breaths",
+   "name": "Deep breaths",
+   "howTo": "Breathe in slowly through your nose as you raise your arms, breathe out as you lower them.",
+   "easier": "Arms by your sides",
+   "harder": "Longer exhale",
+   "seated": false,
+   "jumping": false
+  },
+  {
+   "id": "seated_march",
+   "name": "Seated march",
+   "howTo": "Sit tall at the edge of a chair, lift knees alternately and swing your arms.",
+   "easier": "Arms only",
+   "harder": "Faster pace",
+   "seated": true,
+   "jumping": false
+  },
+  {
+   "id": "seated_leg_extension",
+   "name": "Seated leg extension",
+   "howTo": "Sit tall, straighten one knee, hold 2 seconds, lower. Alternate legs.",
+   "easier": "Smaller range",
+   "harder": "Hold longer",
+   "seated": true,
+   "jumping": false
+  },
+  {
+   "id": "seated_twist",
+   "name": "Seated torso twist",
+   "howTo": "Sit tall, hand on the opposite knee, rotate gently. Switch sides.",
+   "easier": "Smaller rotation",
+   "harder": "Hold 15 seconds",
+   "seated": true,
+   "jumping": false
+  },
+  {
+   "id": "seated_punches",
+   "name": "Seated punches",
+   "howTo": "Sit tall and punch forward, alternating arms, keeping your core engaged.",
+   "easier": "Slower punches",
+   "harder": "Faster punches",
+   "seated": true,
+   "jumping": false
+  },
+  {
+   "id": "neck_turns",
+   "name": "Gentle neck turns",
+   "howTo": "Slowly turn your head to look left, then right. Never force it.",
+   "easier": "Smaller turns",
+   "harder": "Add a slow nod",
+   "seated": true,
+   "jumping": false
+  },
+  {
+   "id": "overhead_press",
+   "name": "Overhead press",
+   "howTo": "Hold a water bottle in each hand at shoulders and press up overhead, then lower.",
+   "easier": "No bottles",
+   "harder": "Heavier bottles",
+   "seated": true,
+   "jumping": false
+  }
+ ],
+ "routines": [
+  {
+   "restSeconds": 10,
+   "id": "R1",
+   "title": "Gentle Wake-Up",
+   "minutes": 5,
+   "levels": [
+    "BEGINNER"
+   ],
+   "needs": [
+    "STANDARD"
+   ],
+   "place": "HOME",
+   "goal": "WAKE_UP",
+   "description": "Easy moves to shake off sleepiness. No equipment.",
+   "items": [
+    {
+     "move": "march",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "arm_circles",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "side_bend",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "squat",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "wall_pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "calf_raise",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "deep_breaths",
+     "seconds": null,
+     "reps": 5
+    }
+   ]
+  },
+  {
+   "restSeconds": 10,
+   "id": "R2",
+   "title": "Energy Boost",
+   "minutes": 5,
+   "levels": [
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD"
+   ],
+   "place": "HOME",
+   "goal": "WAKE_UP",
+   "description": "A brisk full-body wake-up for people who are already a bit active.",
+   "items": [
+    {
+     "move": "high_knee_march",
+     "seconds": 45,
+     "reps": null
+    },
+    {
+     "move": "squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "incline_pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "plank",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "step_jacks",
+     "seconds": 45,
+     "reps": null
+    },
+    {
+     "move": "reach_fold",
+     "seconds": 30,
+     "reps": null
+    }
+   ]
+  },
+  {
+   "restSeconds": 10,
+   "id": "R3",
+   "title": "Joint-Friendly Wake-Up",
+   "minutes": 5,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "HOME",
+   "goal": "WAKE_UP",
+   "description": "Low-impact, no jumping. Keep a chair nearby for support.",
+   "items": [
+    {
+     "move": "march",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "shoulder_rolls",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "sit_to_stand",
+     "seconds": null,
+     "reps": 8
+    },
+    {
+     "move": "wall_pushup",
+     "seconds": null,
+     "reps": 8
+    },
+    {
+     "move": "calf_raise",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "cat_cow",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "deep_breaths",
+     "seconds": null,
+     "reps": 5
+    }
+   ]
+  },
+  {
+   "restSeconds": 10,
+   "id": "R4",
+   "title": "Seated Wake-Up",
+   "minutes": 5,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "SEATED",
+    "LOW_IMPACT"
+   ],
+   "place": "HOME",
+   "goal": "WAKE_UP",
+   "description": "Everything is done sitting in a sturdy chair.",
+   "items": [
+    {
+     "move": "seated_march",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "arm_circles",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "seated_leg_extension",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "seated_twist",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "seated_punches",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "neck_turns",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "deep_breaths",
+     "seconds": null,
+     "reps": 5
+    }
+   ]
+  },
+  {
+   "restSeconds": 0,
+   "id": "R6",
+   "title": "Morning Walk",
+   "minutes": 5,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "OUTDOORS",
+   "goal": "WAKE_UP",
+   "description": "A brisk walk where you can talk but not sing. Counts as morning daylight too.",
+   "items": [
+    {
+     "label": "Brisk walk outside",
+     "seconds": 300
+    }
+   ]
+  },
+  {
+   "restSeconds": 15,
+   "id": "S1",
+   "title": "Beginner Full Body",
+   "minutes": 10,
+   "levels": [
+    "BEGINNER"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "HOME",
+   "goal": "STRENGTH",
+   "description": "Two rounds of simple strength moves. No equipment.",
+   "items": [
+    {
+     "move": "sit_to_stand",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "wall_pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 12
+    },
+    {
+     "move": "bird_dog",
+     "seconds": null,
+     "reps": 12
+    },
+    {
+     "move": "calf_raise",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "label": "Rest",
+     "seconds": 60
+    },
+    {
+     "move": "sit_to_stand",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "wall_pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 12
+    },
+    {
+     "move": "bird_dog",
+     "seconds": null,
+     "reps": 12
+    },
+    {
+     "move": "calf_raise",
+     "seconds": null,
+     "reps": 15
+    }
+   ]
+  },
+  {
+   "restSeconds": 15,
+   "id": "S2",
+   "title": "Intermediate Full Body",
+   "minutes": 20,
+   "levels": [
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD"
+   ],
+   "place": "HOME",
+   "goal": "STRENGTH",
+   "description": "Three rounds for all major muscle groups.",
+   "items": [
+    {
+     "move": "squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "plank",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "dead_bug",
+     "seconds": null,
+     "reps": 16
+    },
+    {
+     "label": "Rest",
+     "seconds": 75
+    },
+    {
+     "move": "squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "plank",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "dead_bug",
+     "seconds": null,
+     "reps": 16
+    },
+    {
+     "label": "Rest",
+     "seconds": 75
+    },
+    {
+     "move": "squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "plank",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "dead_bug",
+     "seconds": null,
+     "reps": 16
+    }
+   ]
+  },
+  {
+   "restSeconds": 15,
+   "id": "S3",
+   "title": "Active Full Body",
+   "minutes": 30,
+   "levels": [
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD"
+   ],
+   "place": "HOME",
+   "goal": "STRENGTH",
+   "description": "Four tough rounds with some jumping.",
+   "items": [
+    {
+     "move": "jump_squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "plank",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "mountain_climbers",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "label": "Rest",
+     "seconds": 60
+    },
+    {
+     "move": "jump_squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "plank",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "mountain_climbers",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "label": "Rest",
+     "seconds": 60
+    },
+    {
+     "move": "jump_squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "plank",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "mountain_climbers",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "label": "Rest",
+     "seconds": 60
+    },
+    {
+     "move": "jump_squat",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "pushup",
+     "seconds": null,
+     "reps": 15
+    },
+    {
+     "move": "reverse_lunge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "glute_bridge",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "plank",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "move": "mountain_climbers",
+     "seconds": 30,
+     "reps": null
+    }
+   ]
+  },
+  {
+   "restSeconds": 15,
+   "id": "S4",
+   "title": "Seated Strength",
+   "minutes": 10,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "SEATED"
+   ],
+   "place": "HOME",
+   "goal": "STRENGTH",
+   "description": "Two rounds of chair-based strength. Water bottles optional.",
+   "items": [
+    {
+     "move": "seated_leg_extension",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "seated_march",
+     "seconds": 45,
+     "reps": null
+    },
+    {
+     "move": "seated_punches",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "overhead_press",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "seated_twist",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "label": "Rest",
+     "seconds": 60
+    },
+    {
+     "move": "seated_leg_extension",
+     "seconds": null,
+     "reps": 20
+    },
+    {
+     "move": "seated_march",
+     "seconds": 45,
+     "reps": null
+    },
+    {
+     "move": "seated_punches",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "overhead_press",
+     "seconds": null,
+     "reps": 10
+    },
+    {
+     "move": "seated_twist",
+     "seconds": 30,
+     "reps": null
+    }
+   ]
+  },
+  {
+   "restSeconds": 20,
+   "id": "C3",
+   "title": "Indoor Low-Impact Cardio",
+   "minutes": 10,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "HOME",
+   "goal": "CARDIO",
+   "description": "Get your heart rate up without jumping.",
+   "items": [
+    {
+     "move": "march",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "step_jacks",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "high_knee_march",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "seated_punches",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "march",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "step_jacks",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "high_knee_march",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "seated_punches",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "march",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "step_jacks",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "high_knee_march",
+     "seconds": 40,
+     "reps": null
+    },
+    {
+     "move": "seated_punches",
+     "seconds": 40,
+     "reps": null
+    }
+   ]
+  },
+  {
+   "restSeconds": 0,
+   "id": "C4",
+   "title": "Interval Walk",
+   "minutes": 18,
+   "levels": [
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "OUTDOORS",
+   "goal": "CARDIO",
+   "description": "Alternate easy and fast walking.",
+   "items": [
+    {
+     "label": "Easy walk",
+     "seconds": 120
+    },
+    {
+     "label": "Fast walk",
+     "seconds": 60
+    },
+    {
+     "label": "Easy walk",
+     "seconds": 120
+    },
+    {
+     "label": "Fast walk",
+     "seconds": 60
+    },
+    {
+     "label": "Easy walk",
+     "seconds": 120
+    },
+    {
+     "label": "Fast walk",
+     "seconds": 60
+    },
+    {
+     "label": "Easy walk",
+     "seconds": 120
+    },
+    {
+     "label": "Fast walk",
+     "seconds": 60
+    },
+    {
+     "label": "Easy walk",
+     "seconds": 120
+    },
+    {
+     "label": "Fast walk",
+     "seconds": 60
+    },
+    {
+     "label": "Easy walk",
+     "seconds": 120
+    },
+    {
+     "label": "Fast walk",
+     "seconds": 60
+    }
+   ]
+  },
+  {
+   "restSeconds": 0,
+   "id": "C2",
+   "title": "Dance Break",
+   "minutes": 10,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "HOME",
+   "goal": "CARDIO",
+   "description": "Put on 3 songs you love and move however feels good.",
+   "items": [
+    {
+     "label": "Dance to your favourite songs",
+     "seconds": 600
+    }
+   ]
+  },
+  {
+   "restSeconds": 5,
+   "id": "F1",
+   "title": "Desk Reset",
+   "minutes": 5,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT",
+    "SEATED"
+   ],
+   "place": "HOME",
+   "goal": "FLEXIBILITY",
+   "description": "Undo stiffness from sitting.",
+   "items": [
+    {
+     "move": "neck_turns",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "shoulder_rolls",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "seated_twist",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "side_bend",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "neck_turns",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "shoulder_rolls",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "seated_twist",
+     "seconds": 30,
+     "reps": null
+    },
+    {
+     "move": "deep_breaths",
+     "seconds": null,
+     "reps": 5
+    }
+   ]
+  },
+  {
+   "restSeconds": 5,
+   "id": "F2",
+   "title": "Evening Stretch",
+   "minutes": 10,
+   "levels": [
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ACTIVE"
+   ],
+   "needs": [
+    "STANDARD",
+    "LOW_IMPACT"
+   ],
+   "place": "HOME",
+   "goal": "WIND_DOWN",
+   "description": "Slow stretches to relax before bed.",
+   "items": [
+    {
+     "move": "cat_cow",
+     "seconds": 60,
+     "reps": null
+    },
+    {
+     "label": "Child's pose",
+     "seconds": 60
+    },
+    {
+     "label": "Hamstring stretch, left",
+     "seconds": 30
+    },
+    {
+     "label": "Hamstring stretch, right",
+     "seconds": 30
+    },
+    {
+     "label": "Lying twist, left",
+     "seconds": 30
+    },
+    {
+     "label": "Lying twist, right",
+     "seconds": 30
+    },
+    {
+     "label": "Legs up the wall",
+     "seconds": 120
+    },
+    {
+     "move": "deep_breaths",
+     "seconds": 60,
+     "reps": null
+    }
+   ]
+  }
+ ]
+}
