@@ -61,7 +61,7 @@ internal class BrownNoise(sampleRate: Int, seed: Long) : Sound(sampleRate) {
 
     private companion object {
         const val LEAK_HZ = 10.0
-        const val GAIN = 0.03
+        const val GAIN = 0.025
     }
 }
 
@@ -188,7 +188,7 @@ internal class Ocean(sampleRate: Int, seed: Long) : Sound(sampleRate) {
     }
 }
 
-/** Low band-limited noise with a quiet 100 Hz hum and a fainter one an octave above. */
+/** Low band-limited noise with a steady 100 Hz hum and a fainter one an octave above. */
 internal class Fan(sampleRate: Int, seed: Long) : Sound(sampleRate) {
     private val seeds = Rng(seed)
     private val noise = Rng(seeds.nextLong())
@@ -205,10 +205,10 @@ internal class Fan(sampleRate: Int, seed: Long) : Sound(sampleRate) {
 
     private companion object {
         const val NOISE_HZ = 600.0
-        const val NOISE_GAIN = 1.07
+        const val NOISE_GAIN = 0.93
         const val HUM_HZ = 100.0
-        const val HUM_AMPLITUDE = 0.03
-        const val HARMONIC_AMPLITUDE = 0.012
+        const val HUM_AMPLITUDE = 0.08
+        const val HARMONIC_AMPLITUDE = 0.03
     }
 }
 
