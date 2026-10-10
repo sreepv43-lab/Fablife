@@ -4,13 +4,18 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.sreepv43.fablife.AppContainer
 import io.github.sreepv43.fablife.content.Goal
+import io.github.sreepv43.fablife.content.Journey
 import io.github.sreepv43.fablife.content.Letter
 import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.content.Step
+import io.github.sreepv43.fablife.content.ToolType
 import io.github.sreepv43.fablife.data.CheckInEntity
 import io.github.sreepv43.fablife.data.CheckInStatus
 import io.github.sreepv43.fablife.data.FabRepository
 import io.github.sreepv43.fablife.data.HabitEntity
+import io.github.sreepv43.fablife.data.JournalEntryEntity
+import io.github.sreepv43.fablife.data.SessionLogEntity
+import io.github.sreepv43.fablife.data.TopTaskEntity
 import io.github.sreepv43.fablife.data.RitualSettingsEntity
 import io.github.sreepv43.fablife.data.RoutineLogEntity
 import io.github.sreepv43.fablife.data.StepProgressEntity
@@ -34,14 +39,25 @@ import java.time.format.DateTimeFormatter
 /** A journey step with its stored progress and challenge progress ("2 of 3 days"). */
 data class StepView(val step: Step, val progress: StepProgressEntity, val doneCount: Int, val target: Int)
 
+/** A journey with how far the user got in it, for the journey picker. */
+data class JourneyStatus(val journey: Journey, val completedSteps: Int, val started: Boolean) {
+    val complete: Boolean get() = started && completedSteps == journey.steps.size
+}
+
 data class AppState(
     val prefs: UserPrefs,
     val today: LocalDate,
+    val activeJourney: Journey,
+    val journeys: List<JourneyStatus>,
     val habits: List<HabitEntity>,
     val checkIns: List<CheckInEntity>,
+    /** The steps of the **active** journey that have been started. */
     val steps: List<StepView>,
     val ritualSettings: Map<Ritual, RitualSettingsEntity>,
     val routineLogs: List<RoutineLogEntity>,
+    val journal: List<JournalEntryEntity> = emptyList(),
+    val topTasks: List<TopTaskEntity> = emptyList(),
+    val sessionLogs: List<SessionLogEntity> = emptyList(),
 ) {
     val doneByDay: Map<LocalDate, Set<String>> = checkIns.filter { it.status == CheckInStatus.DONE }
         .groupBy({ it.day }, { it.habitId }).mapValues { it.value.toSet() }
@@ -75,12 +91,20 @@ data class AppState(
             val monday = today.with(DayOfWeek.MONDAY)
             val logs = routineLogs.filter { !it.day.isBefore(monday) }
             val routineDays = logs.map { it.day }.toSet()
-            val habitDays = doneByDay.filter { (day, ids) -> !day.isBefore(monday) && "morning_movement" in ids && day !in routineDays }.size
+            val movementHabits = habits.filter { it.toolType == ToolType.ROUTINE.name }.map { it.id }.toSet()
+            val habitDays = doneByDay.filter { (day, ids) -> !day.isBefore(monday) && ids.any { it in movementHabits } && day !in routineDays }.size
             return logs.sumOf { it.minutes } + habitDays * 5
         }
 
     val placeholders: Map<String, String>
-        get() = mapOf("name" to prefs.displayName, "wakeTime" to prefs.wakeTime.format(DateTimeFormatter.ofPattern("h:mm a")))
+        get() {
+            val format = DateTimeFormatter.ofPattern("h:mm a")
+            return mapOf(
+                "name" to prefs.displayName,
+                "wakeTime" to prefs.wakeTime.format(format),
+                "bedTime" to prefs.bedTime.format(format),
+            )
+        }
 }
 
 sealed interface UiEvent {
@@ -99,15 +123,21 @@ class AppViewModel(private val container: AppContainer) : ViewModel() {
     val prefs: StateFlow<UserPrefs?> = repo.prefs.stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
     val state: StateFlow<AppState?> = combine(
-        listOf(repo.prefs, repo.habits, repo.checkIns, repo.steps, repo.ritualSettings, repo.routineLogs, dayTick),
+        listOf(repo.prefs, repo.habits, repo.checkIns, repo.steps, repo.ritualSettings, repo.routineLogs, repo.journal, repo.topTasks, repo.sessionLogs, dayTick),
     ) { values ->
         @Suppress("UNCHECKED_CAST")
         val p = values[0] as UserPrefs
         val habits = values[1] as List<HabitEntity>
         val checkIns = values[2] as List<CheckInEntity>
-        val progress = (values[3] as List<StepProgressEntity>).associateBy { it.stepId }
+        val allProgress = values[3] as List<StepProgressEntity>
+        val progress = allProgress.associateBy { it.stepId }
         val today = logicalDay(LocalDateTime.now(), p.dayStartOffsetHours)
-        val steps = content.journey.steps.mapNotNull { step ->
+        val activeJourney = content.journey(p.activeJourneyId) ?: content.journeys.first()
+        val journeys = content.journeys.map { j ->
+            val rows = j.steps.mapNotNull { progress[it.id] }
+            JourneyStatus(j, rows.count { it.state == StepState.COMPLETED }, started = rows.isNotEmpty())
+        }
+        val steps = activeJourney.steps.mapNotNull { step ->
             val pr = progress[step.id] ?: return@mapNotNull null
             val (target, window) = when (val g = step.goal) {
                 is Goal.Habit -> g.targetDays to g.windowDays
@@ -121,9 +151,13 @@ class AppViewModel(private val container: AppContainer) : ViewModel() {
         }
         @Suppress("UNCHECKED_CAST")
         AppState(
-            prefs = p, today = today, habits = habits, checkIns = checkIns, steps = steps,
+            prefs = p, today = today, activeJourney = activeJourney, journeys = journeys,
+            habits = habits, checkIns = checkIns, steps = steps,
             ritualSettings = (values[4] as List<RitualSettingsEntity>).associateBy { it.ritual },
             routineLogs = values[5] as List<RoutineLogEntity>,
+            journal = values[6] as List<JournalEntryEntity>,
+            topTasks = values[7] as List<TopTaskEntity>,
+            sessionLogs = values[8] as List<SessionLogEntity>,
         )
     }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
@@ -132,14 +166,25 @@ class AppViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch { repo.onAppOpen() }
     }
 
-    fun letter(id: String): Letter? = when (id) {
-        "intro" -> content.journey.introLetter
-        "outro" -> content.journey.outroLetter
-        "missed" -> content.journey.missedDaysLetter
-        "welcome" -> content.journey.welcomeBackLetter
-        "gentle" -> content.food.gentleGuidance
-        else -> content.journey.steps.firstOrNull { it.id == id }?.letter
+    /**
+     * Letter ids: `intro`, `outro`, `missed`, `welcome` for the active journey; `intro:<journeyId>` and
+     * `outro:<journeyId>` for a specific one; `gentle`; or a step id.
+     */
+    fun letter(id: String): Letter? {
+        val active = content.journey(prefs.value?.activeJourneyId.orEmpty()) ?: content.journeys.first()
+        return when {
+            id == "intro" -> active.introLetter
+            id == "outro" -> active.outroLetter
+            id == "missed" -> active.missedDaysLetter
+            id == "welcome" -> active.welcomeBackLetter
+            id == "gentle" -> content.food.gentleGuidance
+            id.startsWith("intro:") -> content.journey(id.removePrefix("intro:"))?.introLetter
+            id.startsWith("outro:") -> content.journey(id.removePrefix("outro:"))?.outroLetter
+            else -> content.journeyOfStep(id)?.steps?.firstOrNull { it.id == id }?.letter
+        }
     }
+
+    fun startJourney(id: String) = viewModelScope.launch { repo.startJourney(id) }
 
     fun completeOnboarding(transform: (UserPrefs) -> UserPrefs) = viewModelScope.launch { repo.completeOnboarding(transform) }
 
@@ -156,7 +201,8 @@ class AppViewModel(private val container: AppContainer) : ViewModel() {
     fun skipStep(stepId: String) = viewModelScope.launch { repo.skipStep(stepId)?.let(::emitStepCompleted) }
 
     private fun emitStepCompleted(step: Step) {
-        _events.tryEmit(UiEvent.StepCompleted(step, content.journey.steps.last().id == step.id))
+        val journey = content.journeyOfStep(step.id)
+        _events.tryEmit(UiEvent.StepCompleted(step, journey?.steps?.last()?.id == step.id))
     }
 
     /** Toggles a habit done/undone for [day] and emits celebrations. */
@@ -184,6 +230,11 @@ class AppViewModel(private val container: AppContainer) : ViewModel() {
     fun setUseSmaller(id: String, value: Boolean) = viewModelScope.launch { repo.setUseSmaller(id, value) }
     fun updateRitualSettings(settings: RitualSettingsEntity) = viewModelScope.launch { repo.updateRitualSettings(settings) }
     fun logRoutine(routineId: String, minutes: Int) = viewModelScope.launch { repo.logRoutine(routineId, minutes) }
+    fun logSession(kind: io.github.sreepv43.fablife.data.SessionKind, ref: String, minutes: Int) = viewModelScope.launch { repo.logSession(kind, ref, minutes) }
+    fun addJournalEntry(kind: io.github.sreepv43.fablife.data.JournalKind, text: String, mood: Int? = null) = viewModelScope.launch { repo.addJournalEntry(kind, text, mood) }
+    fun deleteJournalEntry(id: Long) = viewModelScope.launch { repo.deleteJournalEntry(id) }
+    fun setTopTask(day: LocalDate, slot: Int, text: String) = viewModelScope.launch { repo.setTopTask(day, slot, text) }
+    fun setTopTaskDone(day: LocalDate, slot: Int, done: Boolean) = viewModelScope.launch { repo.setTopTaskDone(day, slot, done) }
     suspend fun exportJson(): String = repo.exportJson()
     fun resetAll() = viewModelScope.launch { repo.resetAll() }
 }

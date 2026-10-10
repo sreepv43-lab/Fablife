@@ -46,12 +46,15 @@ import io.github.sreepv43.fablife.content.Goal
 import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.data.HabitEntity
 import io.github.sreepv43.fablife.data.StepState
-import io.github.sreepv43.fablife.engine.Recommendations
 import io.github.sreepv43.fablife.ui.AppState
 import io.github.sreepv43.fablife.ui.AppViewModel
 import io.github.sreepv43.fablife.ui.Routes
 import io.github.sreepv43.fablife.ui.emoji
+import io.github.sreepv43.fablife.ui.buttonLabel
 import io.github.sreepv43.fablife.ui.habitIcon
+import io.github.sreepv43.fablife.ui.openShortcut
+import io.github.sreepv43.fablife.ui.tool
+import io.github.sreepv43.fablife.ui.toolRoute
 import io.github.sreepv43.fablife.ui.label
 import io.github.sreepv43.fablife.ui.timeFormat
 import java.time.LocalTime
@@ -120,7 +123,7 @@ private fun InfoCard(title: String, body: String, action: String, onAction: () -
 private fun JourneyCard(vm: AppViewModel, state: AppState, nav: NavHostController) {
     val modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp)
     if (state.journeyComplete) {
-        InfoCard("Journey complete 🏆", "You built a full morning ritual. Keep it going!", "Read your final letter") { nav.navigate(Routes.letter("outro")) }
+        InfoCard("${state.activeJourney.title}: complete 🏆", "You finished this journey. Your habits stay in your rituals, so keep them going.", "Choose my next journey") { nav.navigate(Routes.JOURNEYS) }
         return
     }
     val current = state.currentStep ?: return
@@ -128,7 +131,7 @@ private fun JourneyCard(vm: AppViewModel, state: AppState, nav: NavHostControlle
     val index = state.steps.indexOf(current) + 1
     Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer), modifier = modifier) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Step $index of ${state.steps.size} · ${vm.content.journey.title}", style = MaterialTheme.typography.labelLarge)
+            Text("Step $index of ${state.activeJourney.steps.size} · ${state.activeJourney.title}", style = MaterialTheme.typography.labelLarge)
             Text(step.title, style = MaterialTheme.typography.titleLarge)
             if (current.progress.state == StepState.UNLOCKED) {
                 Text("A new letter from your coach is waiting.")
@@ -137,7 +140,7 @@ private fun JourneyCard(vm: AppViewModel, state: AppState, nav: NavHostControlle
             }
             when (val goal = step.goal) {
                 is Goal.Habit, is Goal.RitualChallenge -> {
-                    val label = if (goal is Goal.Habit) goal.habit.title else "Complete your full morning ritual"
+                    val label = if (goal is Goal.Habit) goal.habit.title else "Complete your ${state.activeJourney.ritualFocus.label.lowercase()} ritual"
                     Text("$label: ${current.doneCount} of ${current.target} days")
                     LinearProgressIndicator(progress = { current.doneCount / current.target.toFloat() }, modifier = Modifier.fillMaxWidth())
                     if (step.tips.isNotEmpty()) {
@@ -152,10 +155,7 @@ private fun JourneyCard(vm: AppViewModel, state: AppState, nav: NavHostControlle
                     Text(goal.description, style = MaterialTheme.typography.bodyMedium)
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         Button(onClick = { vm.completeAction(step.id) }) { Text("Mark as done") }
-                        if (step.id == "energy.design") {
-                            OutlinedButton(onClick = { nav.navigate(Routes.HABITS) }) { Text("Arrange my ritual") }
-                            OutlinedButton(onClick = { nav.navigate("settings") }) { Text("Check wake-up time") }
-                        }
+                        goal.shortcuts.forEach { sc -> OutlinedButton(onClick = { nav.openShortcut(sc.target) }) { Text(sc.label) } }
                     }
                 }
             }
@@ -243,12 +243,9 @@ fun HabitRow(vm: AppViewModel, state: AppState, habit: HabitEntity, nav: NavHost
             val sub = if (skipped) "Skipped today" else habit.description
             if (sub != null) Text(sub, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        if (habit.id == "morning_movement" && !done) {
-            TextButton(onClick = {
-                val c = vm.content
-                Recommendations.wakeUpRoutine(c.exercise.routines, state.prefs.fitnessLevel, state.prefs.movementNeeds, c.jumpingRoutineIds)
-                    ?.let { nav.navigate(Routes.routine(it.id)) }
-            }) { Text("Start") }
+        val tool = habit.tool()
+        if (tool != null && !done) {
+            TextButton(onClick = { toolRoute(habit, vm, state)?.let(nav::navigate) }) { Text(tool.type.buttonLabel) }
         }
         Box {
             IconButton(onClick = { menu = true }) { Icon(Icons.Outlined.MoreVert, contentDescription = "More options for ${habit.title}") }

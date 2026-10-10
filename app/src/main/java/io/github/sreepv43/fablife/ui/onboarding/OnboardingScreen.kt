@@ -128,9 +128,7 @@ fun OnboardingScreen(vm: AppViewModel) {
                 1 -> {
                     Question("What would you like to improve most?")
                     GOALS.forEach { (id, label) -> Choice(label, goal == id) { goal = id } }
-                    if (goal != "energy") {
-                        Hint("Coming soon. We'll start with energy, the foundation for everything else, and remember your goal for later.")
-                    }
+                    Hint("You can start a different journey any time from the Journey tab.")
                 }
                 2 -> {
                     Question("What usually gets in the way?")

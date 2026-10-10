@@ -96,6 +96,20 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
             }
         }
         item {
+            Section("Journey") {
+                Row(
+                    Modifier.fillMaxWidth().clickable(role = Role.Button) { nav.navigate(Routes.JOURNEYS) }.padding(vertical = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text("${state.activeJourney.emoji} ${state.activeJourney.title}")
+                        Text("Switch or start another journey", style = MaterialTheme.typography.bodySmall)
+                    }
+                    Icon(Icons.AutoMirrored.Outlined.KeyboardArrowRight, contentDescription = null)
+                }
+            }
+        }
+        item {
             Section("Rituals & reminders") {
                 Text("At most one gentle reminder per ritual per day, only if the ritual isn't done yet.", style = MaterialTheme.typography.bodySmall)
                 Ritual.entries.forEach { ritual ->

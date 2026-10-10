@@ -92,15 +92,17 @@ fun ProgressScreen(vm: AppViewModel, state: AppState) {
         }
         item {
             Column(Modifier.fillMaxWidth().widthIn(max = 640.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                // Streaks for the ritual with the most habits; falls back to the morning ritual.
+                val focus = Ritual.entries.maxByOrNull { state.habitsFor(it).size }?.takeIf { state.habitsFor(it).isNotEmpty() } ?: Ritual.MORNING
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Stat("🔥 ${state.streak(Ritual.MORNING)}", "Morning streak", Modifier.weight(1f))
-                    Stat("🏆 ${state.longestStreak(Ritual.MORNING)}", "Longest streak", Modifier.weight(1f))
+                    Stat("🔥 ${state.streak(focus)}", "${focus.label} streak", Modifier.weight(1f))
+                    Stat("🏆 ${state.longestStreak(focus)}", "Longest ${focus.label.lowercase()} streak", Modifier.weight(1f))
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Stat("${doneCheckIns.size}", "Total check-ins", Modifier.weight(1f))
                     Stat("${doneCheckIns.map { it.day }.toSet().size}", "Days active", Modifier.weight(1f))
                 }
-                Stat("${state.completedSteps} / ${state.steps.size}", "Journey steps completed", Modifier.fillMaxWidth())
+                Stat("${state.completedSteps} / ${state.activeJourney.steps.size}", "${state.activeJourney.title}: steps completed", Modifier.fillMaxWidth())
             }
         }
         if (state.habits.isNotEmpty()) item {

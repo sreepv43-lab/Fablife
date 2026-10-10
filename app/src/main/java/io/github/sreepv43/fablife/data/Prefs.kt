@@ -26,6 +26,7 @@ data class UserPrefs(
     val onboardingCompleted: Boolean = false,
     val name: String = "",
     val goal: String = "energy",
+    val activeJourneyId: String = "energy",
     val obstacles: Set<String> = emptySet(),
     val wakeTime: LocalTime = LocalTime.of(7, 0),
     val bedTime: LocalTime = LocalTime.of(23, 0),
@@ -55,6 +56,7 @@ class PrefsRepository(private val context: Context) {
         val onboarding = booleanPreferencesKey("onboarding_completed")
         val name = stringPreferencesKey("name")
         val goal = stringPreferencesKey("goal")
+        val activeJourney = stringPreferencesKey("active_journey")
         val obstacles = stringSetPreferencesKey("obstacles")
         val wake = intPreferencesKey("wake_time")
         val bed = intPreferencesKey("bed_time")
@@ -96,6 +98,7 @@ class PrefsRepository(private val context: Context) {
             onboardingCompleted = this[K.onboarding] ?: false,
             name = this[K.name] ?: "",
             goal = this[K.goal] ?: d.goal,
+            activeJourneyId = this[K.activeJourney] ?: d.activeJourneyId,
             obstacles = this[K.obstacles] ?: emptySet(),
             wakeTime = this[K.wake]?.let { LocalTime.ofSecondOfDay(it.toLong()) } ?: d.wakeTime,
             bedTime = this[K.bed]?.let { LocalTime.ofSecondOfDay(it.toLong()) } ?: d.bedTime,
@@ -121,6 +124,7 @@ class PrefsRepository(private val context: Context) {
         this[K.onboarding] = u.onboardingCompleted
         this[K.name] = u.name
         this[K.goal] = u.goal
+        this[K.activeJourney] = u.activeJourneyId
         this[K.obstacles] = u.obstacles
         this[K.wake] = u.wakeTime.toSecondOfDay()
         this[K.bed] = u.bedTime.toSecondOfDay()

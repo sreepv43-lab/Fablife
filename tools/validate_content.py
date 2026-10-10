@@ -46,7 +46,7 @@ def check_letter(r: Report, where, letter, lo, hi, challenge=None, action=False)
         r.err(where, f"{n} words, expected {lo}-{hi}")
     if not body.startswith("Dear {name},"):
         r.err(where, "must start with 'Dear {name},'")
-    if not body.rstrip().endswith(SIGN_OFF):
+    if not body.rstrip().rstrip("*").endswith(SIGN_OFF):
         r.err(where, f"must end with the sign-off '{SIGN_OFF}'")
     for p in PLACEHOLDER.findall(body):
         if p not in C.PLACEHOLDERS:

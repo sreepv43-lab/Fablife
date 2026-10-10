@@ -71,6 +71,15 @@ class RecommendationsTest {
     }
 
     @Test
+    fun routineForGoalPicksTheRequestedGoal() {
+        val windDown = routine("W1", listOf(MovementNeeds.STANDARD, MovementNeeds.LOW_IMPACT), FitnessLevel.entries, "march").copy(goal = RoutineGoal.WIND_DOWN)
+        val all = routines + windDown
+        assertEquals("W1", Recommendations.routineForGoal(all, RoutineGoal.WIND_DOWN, FitnessLevel.BEGINNER, MovementNeeds.LOW_IMPACT, jumping)?.id)
+        assertEquals(null, Recommendations.routineForGoal(all, RoutineGoal.WIND_DOWN, FitnessLevel.BEGINNER, MovementNeeds.SEATED, jumping))
+        assertEquals(null, Recommendations.routineForGoal(all, RoutineGoal.STRENGTH, FitnessLevel.BEGINNER, MovementNeeds.STANDARD, jumping))
+    }
+
+    @Test
     fun wakeUpRoutineMatchesLevelAndNeeds() {
         assertEquals("R1", Recommendations.wakeUpRoutine(routines, FitnessLevel.BEGINNER, MovementNeeds.STANDARD, jumping)?.id)
         assertEquals("R2", Recommendations.wakeUpRoutine(routines, FitnessLevel.ACTIVE, MovementNeeds.STANDARD, jumping)?.id)
