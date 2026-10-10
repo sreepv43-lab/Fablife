@@ -30,6 +30,10 @@
             android:exported="false" />
 
         <receiver
+            android:name=".notifications.NotificationActionReceiver"
+            android:exported="false" />
+
+        <receiver
             android:name=".notifications.RescheduleReceiver"
             android:exported="false">
             <intent-filter>

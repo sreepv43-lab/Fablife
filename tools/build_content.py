@@ -10,6 +10,8 @@ import json
 import re
 from pathlib import Path
 
+from recipes import RECIPES
+
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 ASSETS = ROOT / "app" / "src" / "main" / "assets"
@@ -318,8 +320,13 @@ def build_food() -> dict:
         if id_ in seen:
             continue
         seen.add(id_)
+        ingredients, steps, tip = RECIPES[title]
         meals.append({"id": id_, "title": title, "meal": meal_type, "diet": diet, "fibre": fibre,
-                      "allergens": allergens_for(title), "prepMinutes": prep})
+                      "allergens": allergens_for(title), "prepMinutes": prep,
+                      "ingredients": ingredients, "steps": steps, "tip": tip})
+
+    unused = set(RECIPES) - {m["title"] for m in meals}
+    assert not unused, f"recipes without a meal: {unused}"
 
     principles = []
     in_principles = False

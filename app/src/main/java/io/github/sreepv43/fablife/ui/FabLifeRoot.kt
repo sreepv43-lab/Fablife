@@ -36,6 +36,7 @@ import androidx.navigation.compose.rememberNavController
 import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.data.StepState
 import io.github.sreepv43.fablife.ui.explore.ExploreScreen
+import io.github.sreepv43.fablife.ui.explore.MealDetailScreen
 import io.github.sreepv43.fablife.ui.explore.RoutinePlayerScreen
 import io.github.sreepv43.fablife.ui.journey.JourneyScreen
 import io.github.sreepv43.fablife.ui.journey.LetterScreen
@@ -58,6 +59,7 @@ object Routes {
     fun letter(id: String) = "letter/$id"
     fun ritual(ritual: Ritual) = "ritual/${ritual.name}"
     fun routine(id: String) = "routine/$id"
+    fun meal(id: String) = "meal/$id"
     const val HABITS = "habits"
 }
 
@@ -130,6 +132,9 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
             }
             composable("routine/{id}") { entry ->
                 RoutinePlayerScreen(vm, state, entry.arguments?.getString("id").orEmpty(), nav)
+            }
+            composable("meal/{id}") { entry ->
+                MealDetailScreen(vm, state, entry.arguments?.getString("id").orEmpty(), nav)
             }
             composable(Routes.HABITS) { HabitsScreen(vm, state, nav) }
         }

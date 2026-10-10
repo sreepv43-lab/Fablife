@@ -164,6 +164,23 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
             }
         }
         item {
+            Section("Your day") {
+                Text(
+                    "When does your day start? Check-ins before this time count for the day before, so a late night doesn't break your streak.",
+                    style = MaterialTheme.typography.bodySmall,
+                )
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    (0..5).forEach { hour ->
+                        FilterChip(
+                            selected = p.dayStartOffsetHours == hour,
+                            onClick = { vm.updatePrefs { it.copy(dayStartOffsetHours = hour) } },
+                            label = { Text(if (hour == 0) "Midnight" else "$hour AM") },
+                        )
+                    }
+                }
+            }
+        }
+        item {
             Section("Appearance") {
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     ThemeMode.entries.forEach { t ->

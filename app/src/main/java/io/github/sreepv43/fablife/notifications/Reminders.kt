@@ -13,6 +13,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import io.github.sreepv43.fablife.AppContainer
 import io.github.sreepv43.fablife.MainActivity
 import io.github.sreepv43.fablife.R
 import io.github.sreepv43.fablife.content.Ritual
@@ -31,9 +32,16 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 
 const val EXTRA_RITUAL = "ritual"
+const val ACTION_DONE = "io.github.sreepv43.fablife.action.DONE"
+const val ACTION_SNOOZE = "io.github.sreepv43.fablife.action.SNOOZE"
+const val SNOOZE_MINUTES = 30L
 private const val CHANNEL_ID = "rituals"
 
 /** Schedules one daily reminder per enabled ritual (at most one notification per ritual per day). */
+private const val SNOOZE_REQUEST_BASE = 10
+private const val TAP_REQUEST_BASE = 100
+private const val ACTION_REQUEST_BASE = 200
+
 class ReminderScheduler(private val context: Context) {
     private val alarms = context.getSystemService(AlarmManager::class.java)
 
@@ -54,6 +62,17 @@ class ReminderScheduler(private val context: Context) {
             // Inexact but Doze-friendly; avoids the special exact-alarm permission.
             alarms.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, millis, pending)
         }
+    }
+
+    /** Fires the reminder again after [SNOOZE_MINUTES]; separate from the daily alarm so it is not cancelled by it. */
+    fun snooze(ritual: Ritual) {
+        val pending = PendingIntent.getBroadcast(
+            context, SNOOZE_REQUEST_BASE + ritual.ordinal,
+            Intent(context, ReminderReceiver::class.java).putExtra(EXTRA_RITUAL, ritual.name),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+        )
+        val at = System.currentTimeMillis() + SNOOZE_MINUTES * 60_000
+        alarms.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pending)
     }
 
     private fun pendingIntent(ritual: Ritual): PendingIntent = PendingIntent.getBroadcast(
@@ -90,19 +109,22 @@ class ReminderReceiver : BroadcastReceiver() {
 
         val text = reminderText(context, ritual, habits.size, db, today)
         val tap = PendingIntent.getActivity(
-            context, 100 + ritual.ordinal,
+            context, TAP_REQUEST_BASE + ritual.ordinal,
             Intent(context, MainActivity::class.java).putExtra(EXTRA_RITUAL, ritual.name)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
         )
-        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(context.getString(R.string.app_name))
             .setContentText(text)
             .setStyle(NotificationCompat.BigTextStyle().bigText(text))
             .setContentIntent(tap)
             .setAutoCancel(true)
-            .build()
+        // "Done" is only offered for a ritual with a single habit, where it is unambiguous.
+        if (habits.size == 1) builder.addAction(0, context.getString(R.string.action_done), actionIntent(context, ritual, ACTION_DONE))
+        builder.addAction(0, context.getString(R.string.action_snooze), actionIntent(context, ritual, ACTION_SNOOZE))
+        val notification = builder.build()
         NotificationManagerCompat.from(context).notify(ritual.ordinal, notification)
     }
 
@@ -124,6 +146,41 @@ class ReminderReceiver : BroadcastReceiver() {
         ).lowercase()
         return context.resources.getQuantityString(R.plurals.reminder_ritual, count, name, count)
     }
+}
+
+private fun actionIntent(context: Context, ritual: Ritual, action: String): PendingIntent = PendingIntent.getBroadcast(
+    context, ACTION_REQUEST_BASE + ritual.ordinal * 2 + if (action == ACTION_DONE) 0 else 1,
+    Intent(context, NotificationActionReceiver::class.java).setAction(action).putExtra(EXTRA_RITUAL, ritual.name),
+    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+)
+
+/** Handles the Done and Snooze buttons on a ritual reminder. */
+class NotificationActionReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        val ritual = intent.getStringExtra(EXTRA_RITUAL)?.let { Ritual.valueOf(it) } ?: return
+        val action = intent.action ?: return
+        val container = context.fabApp.container
+        val result = goAsync()
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                handleReminderAction(context, container, action, ritual)
+            } finally {
+                result.finish()
+            }
+        }
+    }
+}
+
+suspend fun handleReminderAction(context: Context, container: AppContainer, action: String, ritual: Ritual) {
+    when (action) {
+        ACTION_DONE -> {
+            val habits = container.database.habits().all().filter { it.ritual == ritual }
+            if (habits.size == 1) container.repository.setCheckIn(habits.single().id, container.repository.today(), CheckInStatus.DONE)
+        }
+        ACTION_SNOOZE -> container.reminders.snooze(ritual)
+        else -> return
+    }
+    NotificationManagerCompat.from(context).cancel(ritual.ordinal)
 }
 
 /** Alarms are cleared on reboot and drift on time/zone changes, so reschedule them. */

@@ -76,5 +76,18 @@ class AppFlowTest {
         waitFor("Gentle on the stomach (low-fibre)")
         // The outer page list is the first scrollable node (the tips row inside it is the second).
         rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText("🌿 Gentle", substring = true))
+
+        // A meal card opens its recipe.
+        val meal = "Idli with a little strained moong dal or curd"
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText(meal))
+        click(meal)
+        waitFor("How to make it")
+        waitFor("Ingredients (for one)")
+
+        // Settings has the day-start control.
+        rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+        click("Settings")
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText("Your day"))
+        waitFor("Midnight")
     }
 }

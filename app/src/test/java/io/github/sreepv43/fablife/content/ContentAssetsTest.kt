@@ -37,6 +37,16 @@ class ContentAssetsTest {
     }
 
     @Test
+    fun everyMealHasARecipe() {
+        val food = ContentParser.food(asset("food.json"))
+        food.meals.forEach { meal ->
+            assertTrue("${meal.title} needs ingredients", meal.ingredients.isNotEmpty())
+            assertTrue("${meal.title} needs steps", meal.steps.isNotEmpty())
+            assertTrue("${meal.title} needs a tip", !meal.tip.isNullOrBlank())
+        }
+    }
+
+    @Test
     fun foodHasGentleMealsForEveryDietAndMeal() {
         val food = ContentParser.food(asset("food.json"))
         assertEquals(8, food.principles.size)

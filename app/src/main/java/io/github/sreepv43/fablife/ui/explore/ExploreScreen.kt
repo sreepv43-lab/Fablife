@@ -246,9 +246,13 @@ private fun EatTab(vm: AppViewModel, state: AppState, nav: NavHostController) {
         }
         if (meals.isEmpty()) item { Text("No meals match all your filters yet. Try removing one filter in Settings.") }
         items(meals, key = { it.id }) { meal ->
-            MealCard(meal, favourite = meal.id in p.favouriteMeals) {
-                vm.updatePrefs { it.copy(favouriteMeals = if (meal.id in it.favouriteMeals) it.favouriteMeals - meal.id else it.favouriteMeals + meal.id) }
-            }
+            MealCard(
+                meal, favourite = meal.id in p.favouriteMeals,
+                onOpen = { nav.navigate(Routes.meal(meal.id)) },
+                onToggleFavourite = {
+                    vm.updatePrefs { it.copy(favouriteMeals = if (meal.id in it.favouriteMeals) it.favouriteMeals - meal.id else it.favouriteMeals + meal.id) }
+                },
+            )
         }
         item {
             Text(
@@ -262,10 +266,10 @@ private fun EatTab(vm: AppViewModel, state: AppState, nav: NavHostController) {
 }
 
 @Composable
-private fun MealCard(meal: Meal, favourite: Boolean, onToggleFavourite: () -> Unit) {
+private fun MealCard(meal: Meal, favourite: Boolean, onOpen: () -> Unit, onToggleFavourite: () -> Unit) {
     Card(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
-        modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp),
+        modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp).clickable(role = Role.Button, onClickLabel = "Show recipe", onClick = onOpen),
     ) {
         Row(Modifier.padding(start = 16.dp, top = 8.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {

@@ -48,7 +48,22 @@
     "NUTS",
     "GLUTEN"
    ],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "1/2 cup rolled oats",
+    "1 tbsp roasted peanuts",
+    "1/2 cup chopped carrot, peas and beans",
+    "1 tsp oil",
+    "Mustard seeds, curry leaves",
+    "Salt and lemon juice"
+   ],
+   "steps": [
+    "Dry-roast the oats for 2 minutes and set aside.",
+    "Heat the oil, splutter the mustard seeds and curry leaves, then cook the vegetables with a splash of water until tender.",
+    "Add the oats and 3/4 cup water. Stir for 2–3 minutes until soft.",
+    "Finish with peanuts, salt and a squeeze of lemon."
+   ],
+   "tip": "Make a double batch of the vegetable base and add oats fresh each morning."
   },
   {
    "id": "regular_moong_dal_chilla_with_mint_chutney_and_curd",
@@ -59,7 +74,21 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "1/2 cup split moong dal, soaked 3 hours",
+    "Green chilli and ginger (optional)",
+    "1 tsp oil",
+    "Mint chutney",
+    "1/2 cup curd"
+   ],
+   "steps": [
+    "Grind the soaked dal with a little water, ginger and chilli into a smooth batter.",
+    "Spread a ladle of batter thinly on a hot non-stick pan.",
+    "Cook with a few drops of oil until golden on both sides.",
+    "Serve with mint chutney and curd."
+   ],
+   "tip": "Soak the dal the night before so the batter takes two minutes."
   },
   {
    "id": "regular_besan_chilla_with_grated_vegetables",
@@ -68,7 +97,21 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "1/2 cup besan (gram flour)",
+    "1/4 cup grated carrot or zucchini",
+    "Chopped onion and coriander",
+    "Turmeric, salt, ajwain",
+    "1 tsp oil"
+   ],
+   "steps": [
+    "Whisk the besan with water into a pourable batter and stir in the spices.",
+    "Fold in the grated vegetables and coriander.",
+    "Pour onto a hot greased pan and spread out.",
+    "Cook both sides until golden and serve hot."
+   ],
+   "tip": "Let the batter rest 10 minutes for softer chillas."
   },
   {
    "id": "regular_overnight_oats_with_milk_chia_seeds_and_berries",
@@ -80,7 +123,21 @@
     "DAIRY",
     "GLUTEN"
    ],
-   "prepMinutes": 5
+   "prepMinutes": 5,
+   "ingredients": [
+    "1/2 cup rolled oats",
+    "1/2 cup milk or soy milk",
+    "1 tbsp chia seeds",
+    "Handful of berries or chopped fruit",
+    "Honey or dates (optional)"
+   ],
+   "steps": [
+    "Mix oats, milk and chia seeds in a jar and stir well.",
+    "Refrigerate overnight (or at least 4 hours).",
+    "In the morning, stir and top with the fruit.",
+    "Add a little honey only if you like it sweeter."
+   ],
+   "tip": "Add a spoon of curd or nut butter for extra protein."
   },
   {
    "id": "regular_ragi_porridge_with_nuts_and_banana",
@@ -91,7 +148,21 @@
    "allergens": [
     "NUTS"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "2 tbsp ragi flour",
+    "1 cup milk or water",
+    "1/2 banana, sliced",
+    "1 tbsp chopped nuts",
+    "Pinch of cardamom"
+   ],
+   "steps": [
+    "Mix the ragi flour with a little cold water to a smooth paste.",
+    "Heat the milk, stir in the paste and cook for 4–5 minutes, stirring constantly, until thick.",
+    "Add cardamom and pour into a bowl.",
+    "Top with banana and nuts."
+   ],
+   "tip": "Stir without stopping at first to avoid lumps."
   },
   {
    "id": "regular_poha_with_peas_peanuts_and_lemon_plus_a_glass_of",
@@ -103,7 +174,22 @@
     "DAIRY",
     "NUTS"
    ],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "1 cup thick poha",
+    "1/4 cup green peas",
+    "1 tbsp peanuts",
+    "1 tsp oil, mustard seeds, curry leaves",
+    "Turmeric, salt, lemon",
+    "1 glass milk or 1/2 cup curd"
+   ],
+   "steps": [
+    "Rinse the poha in a sieve until just soft, and drain well.",
+    "Heat the oil, add mustard seeds, curry leaves, peanuts and peas, and cook until the peas are tender.",
+    "Add turmeric, salt and the poha. Toss gently for 2 minutes.",
+    "Finish with lemon juice and serve with milk or curd."
+   ],
+   "tip": "Don't soak the poha. Rinsing is enough, or it turns mushy."
   },
   {
    "id": "regular_whole_grain_toast_with_peanut_butter_and_banana",
@@ -115,7 +201,19 @@
     "NUTS",
     "GLUTEN"
    ],
-   "prepMinutes": 5
+   "prepMinutes": 5,
+   "ingredients": [
+    "2 slices whole-grain bread",
+    "1–2 tbsp peanut butter",
+    "1 banana, sliced",
+    "Pinch of cinnamon (optional)"
+   ],
+   "steps": [
+    "Toast the bread.",
+    "Spread with peanut butter.",
+    "Top with banana slices and a pinch of cinnamon."
+   ],
+   "tip": "Choose peanut butter with just peanuts and salt on the label."
   },
   {
    "id": "regular_greek_yoghurt_or_hung_curd_with_fruit_nuts_and_s",
@@ -127,7 +225,19 @@
     "DAIRY",
     "NUTS"
    ],
-   "prepMinutes": 5
+   "prepMinutes": 5,
+   "ingredients": [
+    "3/4 cup Greek yoghurt or hung curd",
+    "1 cup chopped fruit",
+    "1 tbsp nuts",
+    "1 tsp pumpkin or flax seeds"
+   ],
+   "steps": [
+    "Spoon the yoghurt into a bowl.",
+    "Add the fruit.",
+    "Sprinkle over nuts and seeds."
+   ],
+   "tip": "To make hung curd, tie curd in a clean cloth and hang for 2 hours."
   },
   {
    "id": "regular_sprouts_salad_with_tomato_onion_and_lemon",
@@ -136,7 +246,19 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "1 cup moong sprouts",
+    "1/2 tomato and 1/4 onion, chopped",
+    "Coriander and green chilli",
+    "Lemon juice, chaat masala, salt"
+   ],
+   "steps": [
+    "Steam the sprouts for 5 minutes, or use them raw if you're used to them.",
+    "Mix with the tomato, onion, coriander and chilli.",
+    "Season with lemon juice, chaat masala and salt."
+   ],
+   "tip": "Steaming makes sprouts easier to digest."
   },
   {
    "id": "regular_vegetable_omelette_with_whole_grain_toast",
@@ -148,7 +270,21 @@
     "EGGS",
     "GLUTEN"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "2 eggs",
+    "1/4 cup chopped onion, tomato and capsicum",
+    "Coriander, salt, pepper",
+    "1 tsp oil",
+    "2 slices whole-grain toast"
+   ],
+   "steps": [
+    "Whisk the eggs with salt and pepper and stir in the vegetables.",
+    "Pour into a hot greased pan.",
+    "Cook on medium heat until set, then fold and flip once.",
+    "Serve with the toast."
+   ],
+   "tip": "A splash of milk makes the omelette fluffier."
   },
   {
    "id": "regular_two_boiled_eggs_a_fruit_and_a_handful_of_nuts",
@@ -160,7 +296,18 @@
     "EGGS",
     "NUTS"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "2 eggs",
+    "1 fruit (apple, orange or banana)",
+    "A small handful of nuts"
+   ],
+   "steps": [
+    "Place the eggs in boiling water and cook for 9–10 minutes.",
+    "Cool in cold water, then peel.",
+    "Serve with the fruit and nuts."
+   ],
+   "tip": "Boil a batch on Sunday and keep them in the fridge for up to 5 days."
   },
   {
    "id": "regular_tofu_scramble_with_spinach_and_whole_grain_toast",
@@ -172,7 +319,21 @@
     "SOY",
     "GLUTEN"
    ],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "100 g firm tofu",
+    "1 handful spinach",
+    "1 tsp oil",
+    "Turmeric, cumin, salt, pepper",
+    "2 slices whole-grain toast"
+   ],
+   "steps": [
+    "Crumble the tofu with your hands.",
+    "Heat the oil, add cumin and the tofu with turmeric and salt, and cook for 4 minutes.",
+    "Add the spinach and stir until wilted.",
+    "Serve with the toast."
+   ],
+   "tip": "Press the tofu in a clean cloth first so the scramble isn't watery."
   },
   {
    "id": "regular_smoked_fish_or_chicken_with_whole_grain_toast_an",
@@ -184,7 +345,19 @@
     "SEAFOOD",
     "GLUTEN"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "60–80 g smoked fish or cooked chicken",
+    "2 slices whole-grain toast",
+    "Sliced tomato",
+    "Black pepper, lemon"
+   ],
+   "steps": [
+    "Toast the bread.",
+    "Top with tomato slices and the fish or chicken.",
+    "Finish with pepper and a squeeze of lemon."
+   ],
+   "tip": "Pick smoked fish with less salt where you can."
   },
   {
    "id": "regular_2_whole_wheat_rotis_dal_seasonal_sabzi_salad_cur",
@@ -196,7 +369,21 @@
     "DAIRY",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "2 whole-wheat rotis",
+    "1 cup cooked dal",
+    "1 cup seasonal vegetable sabzi",
+    "Cucumber and tomato salad",
+    "1/2 cup curd"
+   ],
+   "steps": [
+    "Cook the dal with turmeric and salt, then add a tempering of cumin and garlic.",
+    "Cook the sabzi with minimal oil and spices.",
+    "Make fresh rotis.",
+    "Plate with salad and curd."
+   ],
+   "tip": "Make the dal in a pressure cooker and the sabzi at the same time to save time."
   },
   {
    "id": "regular_brown_rice_or_millet_rajma_or_chole_cucumber_rai",
@@ -207,7 +394,20 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 cup cooked brown rice or millet",
+    "1 cup cooked rajma or chole",
+    "Onion, tomato, ginger-garlic, spices",
+    "Curd, grated cucumber, roasted cumin"
+   ],
+   "steps": [
+    "Cook the rajma or chole with an onion-tomato masala until thick.",
+    "Cook the rice or millet.",
+    "Mix curd, cucumber and roasted cumin for the raita.",
+    "Serve together."
+   ],
+   "tip": "Soak beans overnight and cook them until completely soft."
   },
   {
    "id": "regular_quinoa_or_millet_pulao_with_vegetables_dal",
@@ -216,7 +416,20 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/2 cup quinoa or millet, rinsed",
+    "1 cup mixed vegetables",
+    "Whole spices, 1 tsp oil",
+    "1 cup cooked dal"
+   ],
+   "steps": [
+    "Heat the oil and add whole spices and the vegetables.",
+    "Add the grain and 1 cup of water, then cook covered until fluffy.",
+    "Warm the dal.",
+    "Serve the pulao with the dal."
+   ],
+   "tip": "Rinse quinoa well to remove its bitter coating."
   },
   {
    "id": "regular_paneer_bhurji_wrap_in_a_whole_wheat_roti_with_sa",
@@ -228,7 +441,20 @@
     "DAIRY",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "80 g paneer, crumbled",
+    "1/4 cup chopped onion, tomato and capsicum",
+    "Turmeric, chilli, salt",
+    "1 whole-wheat roti",
+    "Cucumber and lettuce"
+   ],
+   "steps": [
+    "Cook the onion, tomato and capsicum with the spices for 3 minutes.",
+    "Add the paneer and cook for 2 more minutes.",
+    "Spoon the bhurji onto the roti, add salad and roll up."
+   ],
+   "tip": "Wrap in foil or paper to take it to work."
   },
   {
    "id": "regular_tofu_and_vegetable_stir_fry_with_brown_rice",
@@ -239,7 +465,21 @@
    "allergens": [
     "SOY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "120 g firm tofu, cubed",
+    "1.5 cups mixed vegetables",
+    "1 tsp oil, garlic, ginger",
+    "Soy sauce, pepper",
+    "1 cup cooked brown rice"
+   ],
+   "steps": [
+    "Pan-fry the tofu until lightly golden and set aside.",
+    "Stir-fry the garlic, ginger and vegetables on high heat for 4–5 minutes.",
+    "Add the tofu, a splash of soy sauce and pepper.",
+    "Serve over the rice."
+   ],
+   "tip": "Keep the vegetables a little crunchy so they hold their nutrients."
   },
   {
    "id": "regular_egg_curry_roti_saut_ed_greens",
@@ -251,7 +491,21 @@
     "EGGS",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "2 boiled eggs",
+    "1 onion, 1 tomato, ginger-garlic",
+    "Turmeric, chilli, coriander powder, 1 tsp oil",
+    "1–2 rotis",
+    "1 cup spinach or other greens"
+   ],
+   "steps": [
+    "Cook the onion, ginger-garlic and tomato with the spices into a thick masala.",
+    "Add 1/2 cup water and the halved eggs, and simmer for 5 minutes.",
+    "Sauté the greens with garlic.",
+    "Serve with rotis."
+   ],
+   "tip": "Score the eggs lightly so the masala soaks in."
   },
   {
    "id": "regular_grilled_chicken_or_fish_brown_rice_vegetables",
@@ -262,7 +516,20 @@
    "allergens": [
     "SEAFOOD"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "120 g chicken breast or fish fillet",
+    "Lemon, garlic, pepper, a little oil",
+    "1 cup cooked brown rice",
+    "1 cup steamed vegetables"
+   ],
+   "steps": [
+    "Marinate the chicken or fish in lemon, garlic, pepper and salt for 15 minutes.",
+    "Grill or pan-cook until done (chicken to 75°C inside).",
+    "Steam the vegetables.",
+    "Plate with the rice."
+   ],
+   "tip": "Don't overcook fish. It's done when it flakes easily."
   },
   {
    "id": "regular_lentil_soup_whole_grain_bread_big_salad",
@@ -273,7 +540,21 @@
    "allergens": [
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/2 cup red or yellow lentils",
+    "Onion, carrot, garlic, tomato",
+    "Turmeric, cumin, salt, lemon",
+    "1–2 slices whole-grain bread",
+    "Big salad of your choice"
+   ],
+   "steps": [
+    "Cook the lentils with the chopped vegetables and spices until very soft.",
+    "Mash lightly or blend if you like it smooth.",
+    "Add lemon juice.",
+    "Serve with bread and the salad."
+   ],
+   "tip": "Freeze portions of the soup for busy days."
   },
   {
    "id": "regular_vegetable_khichdi_brown_rice_or_millet_moong_dal",
@@ -284,7 +565,21 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/4 cup brown rice or millet",
+    "1/4 cup moong dal",
+    "1 cup chopped vegetables",
+    "Turmeric, cumin, ginger, salt, 1 tsp ghee or oil",
+    "1/2 cup curd"
+   ],
+   "steps": [
+    "Rinse the rice and dal together.",
+    "Pressure-cook with the vegetables, spices and about 2.5 cups of water until very soft.",
+    "Finish with a little ghee or oil.",
+    "Serve warm with curd."
+   ],
+   "tip": "Add extra water for a softer, soupier khichdi."
   },
   {
    "id": "regular_mixed_vegetable_soup_paneer_tikka",
@@ -295,7 +590,20 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1.5 cups mixed vegetables",
+    "Onion, garlic, pepper, salt",
+    "80 g paneer cubes",
+    "Curd, spices, lemon, 1 tsp oil"
+   ],
+   "steps": [
+    "Simmer the vegetables with onion, garlic and water until soft, then blend if you like.",
+    "Marinate the paneer in curd, spices and lemon for 15 minutes.",
+    "Pan-grill the paneer until golden.",
+    "Serve the soup with the paneer."
+   ],
+   "tip": "Thread paneer and capsicum on skewers for a nicer tikka."
   },
   {
    "id": "regular_dal_1_2_rotis_stir_fried_vegetables",
@@ -306,7 +614,20 @@
    "allergens": [
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 cup cooked dal",
+    "1–2 whole-wheat rotis",
+    "1.5 cups mixed vegetables",
+    "1 tsp oil, cumin, garlic, salt"
+   ],
+   "steps": [
+    "Cook the dal with turmeric and add a garlic-cumin tempering.",
+    "Stir-fry the vegetables in a little oil for 5–6 minutes.",
+    "Make the rotis.",
+    "Serve together."
+   ],
+   "tip": "Keep dinner light and finish 2–3 hours before bed."
   },
   {
    "id": "regular_chickpea_and_vegetable_curry_with_a_small_portio",
@@ -315,7 +636,21 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "3/4 cup cooked chickpeas",
+    "1 cup chopped vegetables",
+    "Onion, tomato, ginger-garlic",
+    "Curry spices, 1 tsp oil",
+    "1/2 cup cooked rice"
+   ],
+   "steps": [
+    "Make a masala from the onion, tomato, ginger-garlic and spices.",
+    "Add the chickpeas, vegetables and a cup of water.",
+    "Simmer for 15 minutes until thick.",
+    "Serve with the rice."
+   ],
+   "tip": "Mash a few chickpeas into the gravy to thicken it naturally."
   },
   {
    "id": "regular_egg_bhurji_roti_salad",
@@ -327,7 +662,21 @@
     "EGGS",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "2 eggs",
+    "Onion, tomato, green chilli",
+    "Turmeric, salt, 1 tsp oil",
+    "1–2 rotis",
+    "Cucumber and carrot salad"
+   ],
+   "steps": [
+    "Sauté the onion, chilli and tomato.",
+    "Pour in the beaten eggs with turmeric and salt.",
+    "Stir until just set.",
+    "Serve with rotis and salad."
+   ],
+   "tip": "Take it off the heat while still slightly moist. It keeps cooking."
   },
   {
    "id": "regular_fish_curry_or_grilled_fish_vegetables_small_rice",
@@ -338,7 +687,21 @@
    "allergens": [
     "SEAFOOD"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "120 g fish",
+    "Onion, tomato, ginger-garlic, spices, 1 tsp oil (for curry)",
+    "Or lemon, pepper and a little oil (for grilled)",
+    "1 cup vegetables",
+    "1/2 cup cooked rice"
+   ],
+   "steps": [
+    "For curry: make a light masala, add water and the fish pieces, and simmer 8–10 minutes.",
+    "For grilled: marinate in lemon and pepper, then grill 4–5 minutes per side.",
+    "Steam or stir-fry the vegetables.",
+    "Serve with a small portion of rice."
+   ],
+   "tip": "Avoid stirring the curry too much so the fish doesn't break."
   },
   {
    "id": "regular_chicken_and_vegetable_soup_with_whole_grain_brea",
@@ -349,7 +712,20 @@
    "allergens": [
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "100 g chicken",
+    "1.5 cups chopped vegetables",
+    "Garlic, ginger, pepper, salt",
+    "1–2 slices whole-grain bread"
+   ],
+   "steps": [
+    "Simmer the chicken with garlic, ginger and water for 15 minutes.",
+    "Add the vegetables and cook until tender.",
+    "Shred the chicken and return it to the pot.",
+    "Season and serve with bread."
+   ],
+   "tip": "Make the broth ahead and freeze it in portions."
   },
   {
    "id": "regular_fruit_a_handful_of_nuts",
@@ -360,7 +736,16 @@
    "allergens": [
     "NUTS"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 fruit (apple, pear, orange or banana)",
+    "A small handful of nuts (about 10 almonds)"
+   ],
+   "steps": [
+    "Wash and slice the fruit.",
+    "Eat with the nuts."
+   ],
+   "tip": "Keep the portion small. Nuts are filling and calorie-dense."
   },
   {
    "id": "regular_roasted_chana_or_makhana",
@@ -369,7 +754,16 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/4 cup roasted chana or makhana (fox nuts)",
+    "Pinch of salt, pepper or chaat masala"
+   ],
+   "steps": [
+    "If using makhana, dry-roast for 5–6 minutes until crisp.",
+    "Toss with a pinch of salt and your spice."
+   ],
+   "tip": "Makhana is lighter and easier on the stomach than roasted chana."
   },
   {
    "id": "regular_sprouts_chaat",
@@ -378,7 +772,18 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 cup steamed sprouts",
+    "Onion, tomato, cucumber",
+    "Lemon, chaat masala, coriander"
+   ],
+   "steps": [
+    "Mix the sprouts with the chopped vegetables.",
+    "Add lemon, chaat masala and coriander.",
+    "Serve right away."
+   ],
+   "tip": "Steam the sprouts for 5 minutes if raw ones upset you."
   },
   {
    "id": "regular_buttermilk_chaas_or_a_small_bowl_of_curd",
@@ -389,7 +794,18 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/2 cup curd",
+    "1 cup cold water",
+    "Roasted cumin, salt, mint or coriander"
+   ],
+   "steps": [
+    "Whisk the curd with the water until smooth.",
+    "Add roasted cumin, salt and mint.",
+    "Serve cold."
+   ],
+   "tip": "A great afternoon drink in place of a sugary one."
   },
   {
    "id": "regular_hummus_with_carrot_and_cucumber_sticks",
@@ -398,7 +814,19 @@
    "diet": "VEGAN",
    "fibre": "REGULAR",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/2 cup cooked chickpeas",
+    "1 tbsp tahini or peanut butter",
+    "Lemon juice, garlic, salt, a little water",
+    "Carrot and cucumber sticks"
+   ],
+   "steps": [
+    "Blend the chickpeas, tahini, lemon, garlic and salt with a splash of water until smooth.",
+    "Cut the vegetables into sticks.",
+    "Dip and enjoy."
+   ],
+   "tip": "Add more water or olive oil to loosen the hummus."
   },
   {
    "id": "regular_boiled_egg",
@@ -409,7 +837,16 @@
    "allergens": [
     "EGGS"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1–2 eggs",
+    "Pinch of salt"
+   ],
+   "steps": [
+    "Boil the eggs for 9–10 minutes until fully set.",
+    "Cool, peel and eat with a pinch of salt."
+   ],
+   "tip": "Keep the seasoning light, and skip pepper or chilli if your stomach is sensitive."
   },
   {
    "id": "regular_peanut_butter_on_apple_slices",
@@ -420,7 +857,18 @@
    "allergens": [
     "NUTS"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 apple",
+    "1 tbsp peanut butter",
+    "Pinch of cinnamon (optional)"
+   ],
+   "steps": [
+    "Core and slice the apple.",
+    "Spread or dip the slices in peanut butter.",
+    "Add a pinch of cinnamon."
+   ],
+   "tip": "Squeeze a little lemon on the apple to stop it browning."
   },
   {
    "id": "gentle_idli_with_a_little_strained_moong_dal_or_curd",
@@ -431,7 +879,18 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "2–3 soft idlis",
+    "1/4 cup moong dal, cooked and strained",
+    "or 1/2 cup curd"
+   ],
+   "steps": [
+    "Steam or warm the idlis until soft.",
+    "Cook the moong dal until very soft, mash and strain it into a thin soup.",
+    "Serve the idlis with the dal or curd."
+   ],
+   "tip": "Skip the spicy chutney and sambar while your stomach is sensitive."
   },
   {
    "id": "gentle_plain_dosa_with_curd",
@@ -442,7 +901,16 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "1–2 plain dosas",
+    "1/2 cup curd"
+   ],
+   "steps": [
+    "Cook the dosas thin and soft with very little oil.",
+    "Serve warm with a bowl of curd."
+   ],
+   "tip": "Avoid heavy fillings, and keep the dosa pale rather than crispy."
   },
   {
    "id": "gentle_rava_sooji_upma_with_soft_cooked_carrot_no_peanu",
@@ -453,7 +921,20 @@
    "allergens": [
     "GLUTEN"
    ],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "1/2 cup rava (sooji)",
+    "1/4 cup finely chopped carrot",
+    "1 tsp oil or ghee, mustard seeds, curry leaves",
+    "Salt"
+   ],
+   "steps": [
+    "Roast the rava lightly and set aside.",
+    "Cook the carrot in a little water until completely soft.",
+    "Add the tempering, 1 cup of hot water and salt, then stir in the rava slowly.",
+    "Cook for 2 minutes until soft and fluffy."
+   ],
+   "tip": "Skip the peanuts and chilli for a gentler upma."
   },
   {
    "id": "gentle_soft_poha_with_potato_and_turmeric_with_a_glass_",
@@ -464,7 +945,20 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": 15
+   "prepMinutes": 15,
+   "ingredients": [
+    "1 cup thick poha",
+    "1 small potato, peeled and diced",
+    "Turmeric, salt, 1 tsp oil",
+    "1 glass milk or buttermilk"
+   ],
+   "steps": [
+    "Cook the diced potato in a little water until soft.",
+    "Rinse the poha, drain and add it with turmeric and salt.",
+    "Steam gently for 2 minutes until soft.",
+    "Serve with milk or buttermilk."
+   ],
+   "tip": "Leave out peanuts, chilli and onion if they trouble you."
   },
   {
    "id": "gentle_white_toast_with_smooth_peanut_butter_and_ripe_b",
@@ -476,7 +970,18 @@
     "NUTS",
     "GLUTEN"
    ],
-   "prepMinutes": 5
+   "prepMinutes": 5,
+   "ingredients": [
+    "2 slices white bread",
+    "1–2 tbsp smooth peanut butter",
+    "1 ripe banana, mashed or sliced"
+   ],
+   "steps": [
+    "Toast the bread lightly.",
+    "Spread with smooth peanut butter.",
+    "Top with the ripe banana."
+   ],
+   "tip": "Choose smooth, not crunchy, peanut butter."
   },
   {
    "id": "gentle_curd_yoghurt_with_ripe_banana_or_papaya",
@@ -487,7 +992,16 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": 5
+   "prepMinutes": 5,
+   "ingredients": [
+    "3/4 cup plain curd or yoghurt",
+    "1/2 ripe banana or a few pieces of ripe papaya"
+   ],
+   "steps": [
+    "Spoon the curd into a bowl.",
+    "Add the mashed or sliced fruit."
+   ],
+   "tip": "Both banana and papaya are gentle on the stomach."
   },
   {
    "id": "gentle_scrambled_or_boiled_eggs_with_white_toast",
@@ -499,7 +1013,19 @@
     "EGGS",
     "GLUTEN"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "2 eggs",
+    "1 tsp butter or oil",
+    "Salt",
+    "2 slices white toast"
+   ],
+   "steps": [
+    "Scramble the eggs gently in a little butter on low heat, or boil them for 9–10 minutes.",
+    "Season lightly.",
+    "Serve with the toast."
+   ],
+   "tip": "Keep the heat low for soft, creamy scrambled eggs."
   },
   {
    "id": "gentle_silken_tofu_scramble_with_white_toast",
@@ -511,7 +1037,19 @@
     "SOY",
     "GLUTEN"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "120 g silken tofu",
+    "1 tsp oil",
+    "Turmeric and salt",
+    "2 slices white toast"
+   ],
+   "steps": [
+    "Mash the tofu gently with a fork.",
+    "Warm it in the oil with turmeric and salt for 3–4 minutes.",
+    "Serve on or beside the toast."
+   ],
+   "tip": "Silken tofu is softer and easier to digest than firm tofu."
   },
   {
    "id": "gentle_rice_kanji_or_semolina_porridge_with_milk",
@@ -523,7 +1061,18 @@
     "DAIRY",
     "GLUTEN"
    ],
-   "prepMinutes": 10
+   "prepMinutes": 10,
+   "ingredients": [
+    "1/4 cup white rice or semolina",
+    "1.5 cups water or milk",
+    "Pinch of salt or sugar to taste"
+   ],
+   "steps": [
+    "Simmer the rice in plenty of water until very soft, or stir the semolina into hot milk.",
+    "Cook for 5–10 minutes, stirring.",
+    "Add a pinch of salt or a little sugar."
+   ],
+   "tip": "Kanji is very soothing when your stomach is upset."
   },
   {
    "id": "gentle_curd_rice_thayir_sadam_with_soft_cooked_carrot",
@@ -534,7 +1083,20 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 cup soft-cooked white rice",
+    "3/4 cup curd",
+    "1/4 cup grated carrot, cooked until soft",
+    "Salt, a few curry leaves"
+   ],
+   "steps": [
+    "Mash the warm rice lightly.",
+    "Mix in the curd and salt.",
+    "Stir in the soft carrot and curry leaves.",
+    "Rest for 10 minutes before eating."
+   ],
+   "tip": "Use room-temperature curd and cook the rice a little extra for a softer texture."
   },
   {
    "id": "gentle_white_rice_strained_moong_dal_cooked_lauki_sabzi",
@@ -543,7 +1105,20 @@
    "diet": "VEGAN",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 cup cooked white rice",
+    "1/2 cup moong dal",
+    "1 cup peeled, diced lauki (bottle gourd)",
+    "Turmeric, salt, a little ghee or oil, cumin"
+   ],
+   "steps": [
+    "Cook the dal until completely soft, then strain it into a smooth dal.",
+    "Cook the lauki with turmeric and a little water until very soft.",
+    "Season the dal with cumin in a little ghee.",
+    "Serve with the rice."
+   ],
+   "tip": "Lauki is one of the gentlest vegetables, and it's mostly water."
   },
   {
    "id": "gentle_soft_phulka_paneer_in_mild_gravy_cooked_pumpkin",
@@ -555,7 +1130,20 @@
     "DAIRY",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1–2 soft phulkas (refined wheat flour if needed)",
+    "80 g paneer",
+    "1 small tomato (peeled), turmeric, a little cream or milk",
+    "1 cup peeled pumpkin"
+   ],
+   "steps": [
+    "Simmer the paneer in a mild turmeric-tomato gravy with a splash of milk for 5 minutes.",
+    "Steam or boil the pumpkin until soft and lightly mash it.",
+    "Make soft phulkas.",
+    "Serve together."
+   ],
+   "tip": "Keep the spices mild. Skip chilli and heavy garam masala."
   },
   {
    "id": "gentle_plain_pasta_with_tofu_and_peeled_cooked_zucchini",
@@ -567,7 +1155,21 @@
     "SOY",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 cup cooked plain (refined) pasta",
+    "80 g silken or soft tofu",
+    "1/2 peeled, deseeded zucchini",
+    "1 peeled, seedless tomato",
+    "1 tsp olive oil, salt, basil"
+   ],
+   "steps": [
+    "Cook the pasta until very soft.",
+    "Simmer the zucchini and tomato in a little water until soft, then mash into a mild sauce with the olive oil.",
+    "Warm the tofu in the sauce.",
+    "Toss with the pasta and basil."
+   ],
+   "tip": "Peel the tomato by soaking it in hot water for a minute."
   },
   {
    "id": "gentle_egg_curry_mild_white_rice",
@@ -578,7 +1180,20 @@
    "allergens": [
     "EGGS"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "2 boiled eggs",
+    "1/2 peeled tomato, 1/2 small onion (well cooked)",
+    "Turmeric, a pinch of coriander powder, 1 tsp oil",
+    "1 cup soft white rice"
+   ],
+   "steps": [
+    "Cook the onion and tomato in the oil with turmeric until soft, then mash.",
+    "Add a cup of water and the halved eggs.",
+    "Simmer gently for 5 minutes.",
+    "Serve over soft rice."
+   ],
+   "tip": "Leave out chilli and whole spices for a gentler curry."
   },
   {
    "id": "gentle_steamed_fish_white_rice_mashed_potato",
@@ -589,7 +1204,20 @@
    "allergens": [
     "SEAFOOD"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "120 g white fish fillet (e.g. cod, pomfret)",
+    "Lemon, salt, a pinch of turmeric",
+    "1 cup soft white rice",
+    "1 potato, peeled, boiled and mashed with a little butter"
+   ],
+   "steps": [
+    "Season the fish with lemon, salt and turmeric.",
+    "Steam for 8–10 minutes until it flakes easily.",
+    "Boil the potato until soft and mash with a little butter.",
+    "Serve with the rice."
+   ],
+   "tip": "Check carefully for small bones before eating."
   },
   {
    "id": "gentle_chicken_and_rice_soup",
@@ -598,7 +1226,20 @@
    "diet": "NON_VEG",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "80 g skinless chicken",
+    "1/3 cup white rice",
+    "1/4 cup peeled carrot, finely chopped",
+    "Ginger, salt, pepper"
+   ],
+   "steps": [
+    "Simmer the chicken with ginger in 3 cups of water for 15 minutes.",
+    "Add the rice and carrot and cook until very soft.",
+    "Shred the chicken back into the soup.",
+    "Season lightly and serve warm."
+   ],
+   "tip": "A comforting meal when your stomach is recovering."
   },
   {
    "id": "gentle_soft_moong_dal_khichdi_white_rice_with_curd",
@@ -609,7 +1250,20 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/4 cup white rice",
+    "1/4 cup split yellow moong dal",
+    "Turmeric, salt, a little ghee",
+    "1/2 cup curd"
+   ],
+   "steps": [
+    "Rinse the rice and dal together.",
+    "Pressure-cook with 3 cups of water, turmeric and salt until mushy.",
+    "Stir in a little ghee.",
+    "Serve warm with curd."
+   ],
+   "tip": "Make it soupier with extra water if you need it very soft."
   },
   {
    "id": "gentle_lauki_or_pumpkin_soup_paneer_cubes_white_bread",
@@ -621,7 +1275,20 @@
     "DAIRY",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1.5 cups peeled lauki or pumpkin",
+    "Salt, pepper, a little cumin",
+    "60 g paneer cubes",
+    "1–2 slices white bread"
+   ],
+   "steps": [
+    "Boil the vegetable in water until very soft.",
+    "Blend until completely smooth and season lightly.",
+    "Add the paneer cubes to warm through.",
+    "Serve with the bread."
+   ],
+   "tip": "Strain the soup if there are any fibres left."
   },
   {
    "id": "gentle_idli_or_plain_dosa_with_strained_dal",
@@ -630,7 +1297,17 @@
    "diet": "VEGAN",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "2–3 idlis or 1–2 plain dosas",
+    "1/2 cup moong dal, cooked and strained"
+   ],
+   "steps": [
+    "Cook the dal until very soft and strain to a thin soup.",
+    "Warm the idlis or cook the dosas.",
+    "Serve together."
+   ],
+   "tip": "Skip coconut chutney and spicy sambar for now."
   },
   {
    "id": "gentle_mashed_potato_steamed_tofu_cooked_carrot",
@@ -641,7 +1318,20 @@
    "allergens": [
     "SOY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 potato, peeled",
+    "100 g silken tofu",
+    "1 carrot, peeled",
+    "Salt, a little butter or oil"
+   ],
+   "steps": [
+    "Boil the potato and carrot until very soft.",
+    "Steam the tofu for 5 minutes.",
+    "Mash the potato with butter and salt.",
+    "Serve with the tofu and mashed carrot."
+   ],
+   "tip": "Mash the carrot too for an extra-soft texture."
   },
   {
    "id": "gentle_egg_drop_soup_soft_rice",
@@ -652,7 +1342,20 @@
    "allergens": [
     "EGGS"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1–2 eggs",
+    "1.5 cups clear chicken or vegetable broth",
+    "1/2 tsp ginger, salt, pepper",
+    "1 cup soft white rice"
+   ],
+   "steps": [
+    "Bring the broth to a gentle simmer with the ginger.",
+    "Whisk the eggs and stream them in slowly while stirring.",
+    "Season lightly.",
+    "Serve with the soft rice."
+   ],
+   "tip": "Use homemade or low-salt broth."
   },
   {
    "id": "gentle_steamed_or_poached_fish_rice_cooked_carrot",
@@ -663,7 +1366,19 @@
    "allergens": [
     "SEAFOOD"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "120 g white fish",
+    "Lemon, salt",
+    "1 cup white rice",
+    "1 carrot, peeled and cooked until very soft"
+   ],
+   "steps": [
+    "Steam or poach the fish in simmering water for 8–10 minutes.",
+    "Boil the carrot until soft.",
+    "Serve with the rice and a squeeze of lemon."
+   ],
+   "tip": "Poaching in a little milk makes the fish extra tender."
   },
   {
    "id": "gentle_shredded_chicken_with_soft_rice_and_clear_broth",
@@ -672,7 +1387,18 @@
    "diet": "NON_VEG",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "100 g skinless chicken",
+    "1 cup soft white rice",
+    "2 cups water, ginger, salt"
+   ],
+   "steps": [
+    "Simmer the chicken with ginger in water for 15–20 minutes until cooked through.",
+    "Shred it finely.",
+    "Serve over the soft rice with some of the clear broth."
+   ],
+   "tip": "Strain the broth so it stays clear and light."
   },
   {
    "id": "gentle_ripe_banana",
@@ -681,7 +1407,14 @@
    "diet": "VEGAN",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 ripe banana"
+   ],
+   "steps": [
+    "Peel and eat. Choose a banana with brown spots for the easiest digestion."
+   ],
+   "tip": "Bananas are gentle and may help replace lost potassium."
   },
   {
    "id": "gentle_plain_curd_or_buttermilk",
@@ -692,7 +1425,16 @@
    "allergens": [
     "DAIRY"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1/2 cup plain curd, or 1 cup buttermilk",
+    "Pinch of salt"
+   ],
+   "steps": [
+    "Stir the curd or whisk the buttermilk with a pinch of salt.",
+    "Serve cool, not ice-cold."
+   ],
+   "tip": "Skip the roasted cumin and chilli if they irritate you."
   },
   {
    "id": "gentle_rice_crackers_or_plain_crackers",
@@ -703,7 +1445,14 @@
    "allergens": [
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "4–6 rice crackers or plain crackers"
+   ],
+   "steps": [
+    "Eat slowly with a few sips of water."
+   ],
+   "tip": "Pick plain, low-fat, low-salt crackers without seeds."
   },
   {
    "id": "gentle_stewed_apple_peeled",
@@ -712,7 +1461,18 @@
    "diet": "VEGAN",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 apple",
+    "2 tbsp water",
+    "Pinch of cinnamon (optional)"
+   ],
+   "steps": [
+    "Peel, core and chop the apple.",
+    "Simmer with the water for 8–10 minutes until very soft.",
+    "Mash lightly and add cinnamon if you like."
+   ],
+   "tip": "Cooking breaks down the fibre, so it's easier to digest than raw apple."
   },
   {
    "id": "gentle_boiled_egg",
@@ -723,7 +1483,16 @@
    "allergens": [
     "EGGS"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1–2 eggs",
+    "Pinch of salt"
+   ],
+   "steps": [
+    "Boil the eggs for 9–10 minutes until fully set.",
+    "Cool, peel and eat with a pinch of salt."
+   ],
+   "tip": "Keep the seasoning light, and skip pepper or chilli if your stomach is sensitive."
   },
   {
    "id": "gentle_coconut_water",
@@ -732,7 +1501,14 @@
    "diet": "VEGAN",
    "fibre": "GENTLE",
    "allergens": [],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1 glass fresh, unsweetened coconut water"
+   ],
+   "steps": [
+    "Serve cool and sip slowly."
+   ],
+   "tip": "Good for hydration when you're recovering from an upset stomach."
   },
   {
    "id": "gentle_smooth_peanut_butter_on_white_toast",
@@ -744,7 +1520,16 @@
     "NUTS",
     "GLUTEN"
    ],
-   "prepMinutes": null
+   "prepMinutes": null,
+   "ingredients": [
+    "1–2 slices white bread",
+    "1 tbsp smooth peanut butter"
+   ],
+   "steps": [
+    "Toast the bread lightly.",
+    "Spread with smooth peanut butter."
+   ],
+   "tip": "Use a thin layer if rich food bothers you."
   }
  ]
 }

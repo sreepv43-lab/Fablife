@@ -116,6 +116,9 @@ data class Meal(
     val fibre: Fibre,
     val allergens: List<Allergen> = emptyList(),
     val prepMinutes: Int? = null,
+    val ingredients: List<String> = emptyList(),
+    val steps: List<String> = emptyList(),
+    val tip: String? = null,
 )
 
 @Serializable

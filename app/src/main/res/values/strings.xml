@@ -5,6 +5,8 @@
     <string name="ritual_morning">Morning</string>
     <string name="ritual_afternoon">Afternoon</string>
     <string name="ritual_evening">Evening</string>
+    <string name="action_done">Done</string>
+    <string name="action_snooze">Snooze 30 min</string>
     <string name="reminder_nudge">No pressure. Even one small step counts today.</string>
     <plurals name="reminder_ritual">
         <item quantity="one">Your %1$s ritual is ready: %2$d small step.</item>
