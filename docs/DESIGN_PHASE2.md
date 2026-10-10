@@ -297,6 +297,8 @@ Two layers, both optional to the user's attention and neither blocking anything:
 
 ## 12. Testing expectations
 
+- `AppContainer` is `open`, and each module's entry point (`audio`, `health`, `coach`) is an `open val`, so Robolectric tests can supply a `FabLifeApp` subclass (`@Config(application = ...)`) that overrides `createContainer()` with fakes. Nothing in the UI constructs a platform service (audio, Health Connect, the network client) directly.
+
 - Pure logic gets JVM unit tests: DSP properties, fades, pacer, session timeline, sleep math, adaptive notes, cipher, prompt builder, journal/top-3 repositories, multi-journey rules.
 - The Claude client is tested against `MockWebServer`: request shape and headers, no sensitive fields in the body, refusal and error handling, the daily cap.
 - Robolectric UI flow tests: onboarding to each journey's first step, switching journeys, a tool route opening and offering to mark its habit done, the Mind tab, the Health states with a fake repository, the Settings AI section with consent.

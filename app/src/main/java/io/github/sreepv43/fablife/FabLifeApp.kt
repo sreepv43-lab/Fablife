@@ -11,7 +11,11 @@ import io.github.sreepv43.fablife.data.FabRepository
 import io.github.sreepv43.fablife.data.PrefsRepository
 import io.github.sreepv43.fablife.notifications.ReminderScheduler
 
-class AppContainer(context: Context) {
+/**
+ * Hand-wired dependencies. `open` so tests can subclass it and supply fakes (see `FabLifeApp.createContainer`);
+ * feature modules expose their entry points as `open val`s for the same reason.
+ */
+open class AppContainer(context: Context) {
     val database = FabDatabase.create(context)
     val prefs = PrefsRepository(context)
     val content = ContentRepository(context)
@@ -24,13 +28,16 @@ class AppContainer(context: Context) {
     }
 }
 
-class FabLifeApp : Application() {
+open class FabLifeApp : Application() {
     lateinit var container: AppContainer
         private set
 
+    /** Tests override this (via `@Config(application = ...)`) to inject fakes. */
+    protected open fun createContainer(): AppContainer = AppContainer(this)
+
     override fun onCreate() {
         super.onCreate()
-        container = AppContainer(this)
+        container = createContainer()
         container.reminders.createChannel()
     }
 }
