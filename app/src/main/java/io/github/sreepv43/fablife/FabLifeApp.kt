@@ -43,6 +43,9 @@ open class AppContainer(private val context: Context) {
     val reminders = ReminderScheduler(context)
     val repository = FabRepository(database, prefs, content) { rescheduleReminders() }
 
+    /** Monotonic milliseconds that keep counting in the background (timers use it). Tests replace it with a clock they control. */
+    open val clock: () -> Long = { android.os.SystemClock.elapsedRealtime() }
+
     /** Generated sounds and guided sessions. Open so tests can supply a fake. */
     open val audio: AudioController by lazy {
         AudioControllerImpl(

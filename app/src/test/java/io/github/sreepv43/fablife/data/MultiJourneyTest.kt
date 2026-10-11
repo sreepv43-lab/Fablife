@@ -7,6 +7,7 @@ import io.github.sreepv43.fablife.content.Letter
 import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.content.Step
 import kotlinx.coroutines.runBlocking
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -20,6 +21,9 @@ class MultiJourneyTest {
     private val container get() = app.container
     private val repo get() = container.repository
     private val journeys get() = container.content.journeys
+
+    @After
+    fun reset() = runBlocking { repo.resetAll() }
 
     private suspend fun stepRows(journeyId: String) = container.database.steps().all().filter { it.journeyId == journeyId }
     private suspend fun activeId() = container.prefs.current().activeJourneyId

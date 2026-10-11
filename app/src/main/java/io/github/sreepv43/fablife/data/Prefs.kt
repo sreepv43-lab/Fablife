@@ -45,6 +45,9 @@ data class UserPrefs(
     val nudgeDismissedDay: LocalDate? = null,
     val welcomeBackPending: Boolean = false,
     val outroSeen: Boolean = false,
+    val focusMinutes: Int = 25,
+    val breakMinutes: Int = 5,
+    val longBreakMinutes: Int = 15,
 ) {
     val displayName: String get() = name.ifBlank { "friend" }
 }
@@ -75,6 +78,9 @@ class PrefsRepository(private val context: Context) {
         val nudgeDismissed = longPreferencesKey("nudge_dismissed")
         val welcomeBack = booleanPreferencesKey("welcome_back_pending")
         val outroSeen = booleanPreferencesKey("outro_seen")
+        val focusMinutes = intPreferencesKey("focus_minutes")
+        val breakMinutes = intPreferencesKey("break_minutes")
+        val longBreakMinutes = intPreferencesKey("long_break_minutes")
     }
 
     val prefs: Flow<UserPrefs> = context.dataStore.data.map { it.toUserPrefs() }
@@ -117,6 +123,9 @@ class PrefsRepository(private val context: Context) {
             nudgeDismissedDay = this[K.nudgeDismissed]?.let(LocalDate::ofEpochDay),
             welcomeBackPending = this[K.welcomeBack] ?: false,
             outroSeen = this[K.outroSeen] ?: false,
+            focusMinutes = this[K.focusMinutes] ?: d.focusMinutes,
+            breakMinutes = this[K.breakMinutes] ?: d.breakMinutes,
+            longBreakMinutes = this[K.longBreakMinutes] ?: d.longBreakMinutes,
         )
     }
 
@@ -143,5 +152,8 @@ class PrefsRepository(private val context: Context) {
         if (u.nudgeDismissedDay != null) this[K.nudgeDismissed] = u.nudgeDismissedDay.toEpochDay() else remove(K.nudgeDismissed)
         this[K.welcomeBack] = u.welcomeBackPending
         this[K.outroSeen] = u.outroSeen
+        this[K.focusMinutes] = u.focusMinutes
+        this[K.breakMinutes] = u.breakMinutes
+        this[K.longBreakMinutes] = u.longBreakMinutes
     }
 }

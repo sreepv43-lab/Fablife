@@ -1,106 +1,18 @@
 package io.github.sreepv43.fablife.ui
 
-import android.app.Application
-import androidx.compose.ui.test.ExperimentalTestApi
-import androidx.compose.ui.test.hasScrollAction
-import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performScrollTo
-import androidx.compose.ui.test.performScrollToNode
-import androidx.test.core.app.ActivityScenario
-import androidx.test.core.app.ApplicationProvider
-import io.github.sreepv43.fablife.MainActivity
 import io.github.sreepv43.fablife.audio.SoundId
 import io.github.sreepv43.fablife.audio.android.PlaybackMode
-import io.github.sreepv43.fablife.audio.android.TestAudioApp
-import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.data.CheckInStatus
-import io.github.sreepv43.fablife.data.HabitEntity
 import io.github.sreepv43.fablife.data.SessionKind
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
-import org.junit.After
-import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
-import org.robolectric.annotation.GraphicsMode
 
 /** Drives the audio-backed Mind screens on Robolectric with a fake [io.github.sreepv43.fablife.audio.android.AudioController]. */
-@OptIn(ExperimentalTestApi::class, ExperimentalCoroutinesApi::class)
-@RunWith(RobolectricTestRunner::class)
-@GraphicsMode(GraphicsMode.Mode.NATIVE)
-@Config(application = TestAudioApp::class)
-class MindAudioUiTest {
-    @get:Rule
-    val rule = createEmptyComposeRule()
-    private lateinit var scenario: ActivityScenario<MainActivity>
-
-    private val app get() = ApplicationProvider.getApplicationContext<Application>() as TestAudioApp
-    private val fake get() = app.fake
-    private val container get() = app.container
-
-    /** Reads while the app is running: off the main thread, with the test pumping it, so nothing can deadlock. */
-    private fun <T> background(block: suspend () -> T): T {
-        val result = CoroutineScope(Dispatchers.Default).async { block() }
-        rule.waitUntil(10_000) { result.isCompleted }
-        return result.getCompleted()
-    }
-
-    /** Seeds an onboarded app (with one habit, so the intro letter doesn't take over the screen), then starts the activity. */
-    @Before
-    fun start() {
-        runBlocking {
-            container.repository.completeOnboarding { it.copy(goal = container.content.journeys.first().goalKey) }
-            container.database.habits().insert(
-                HabitEntity(
-                    id = "breathe_test", title = "Breathe slowly", description = null, icon = "breath", ritual = Ritual.MORNING, order = 0,
-                    durationSeconds = null, smallerVersion = null, sourceStepId = null, createdAtMillis = 0, toolType = "BREATHING", toolRef = "box",
-                ),
-            )
-        }
-        scenario = ActivityScenario.launch(MainActivity::class.java)
-    }
-
-    @After
-    fun stop() {
-        scenario.close()
-    }
-
-    private fun waitFor(text: String, substring: Boolean = false) =
-        rule.waitUntilAtLeastOneExists(hasText(text, substring = substring), timeoutMillis = 10_000)
-
-    /** Waits for [text], first scrolling the screen's list to it: a lazy list only composes the rows on screen. */
-    private fun reveal(text: String) {
-        if (rule.onAllNodesWithText(text).fetchSemanticsNodes().isEmpty() && rule.onAllNodes(hasScrollAction()).fetchSemanticsNodes().isNotEmpty()) {
-            rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText(text))
-        }
-        waitFor(text)
-    }
-
-    private fun click(text: String) {
-        reveal(text)
-        // The small test screen clips content in a plain scrolling column; a click on a clipped node would silently miss.
-        runCatching { rule.onAllNodesWithText(text).onFirst().performScrollTo() }
-        rule.onAllNodesWithText(text).onFirst().performClick()
-    }
-
-    private fun openMind() {
-        click("Explore")
-        click("Mind")
-        waitFor("Box breathing")
-    }
-
+class MindAudioUiTest : MindUiTestBase() {
     @Test
     fun mindTabListsBreathingGuidedSessionsSoundsAndTools() {
         openMind()
@@ -200,14 +112,12 @@ class MindAudioUiTest {
         waitFor("Nicely done.")
         waitFor("Mark “Breathe slowly” as done")
 
-        val logs = background { container.database.sessionLogs().all() }
+        val logs = eventually(read = { container.database.sessionLogs().all() }) { it.isNotEmpty() }
         assertEquals(listOf(SessionKind.BREATHING to "box"), logs.map { it.kind to it.ref })
         assertEquals(1, logs.single().minutes)
 
         click("Mark “Breathe slowly” as done")
-        rule.waitUntil(5_000) {
-            background { container.database.checkIns().all() }.any { it.habitId == "breathe_test" && it.status == CheckInStatus.DONE }
-        }
+        eventually(read = { container.database.checkIns().all() }) { rows -> rows.any { it.habitId == "breathe_test" && it.status == CheckInStatus.DONE } }
     }
 
     @Test
