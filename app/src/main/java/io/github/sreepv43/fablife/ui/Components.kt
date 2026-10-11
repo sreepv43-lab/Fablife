@@ -84,6 +84,11 @@ fun vibrate(context: android.content.Context) {
     context.getSystemService(Vibrator::class.java)?.vibrate(VibrationEffect.createOneShot(400, VibrationEffect.DEFAULT_AMPLITUDE))
 }
 
+/** A very short, soft tick for paced exercises. */
+fun vibrateTick(context: android.content.Context) {
+    context.getSystemService(Vibrator::class.java)?.vibrate(VibrationEffect.createOneShot(35, 60))
+}
+
 /**
  * A countdown measured against wall-clock time, so it stays accurate if the app is paused.
  * Calls [onFinished] once when it reaches zero.

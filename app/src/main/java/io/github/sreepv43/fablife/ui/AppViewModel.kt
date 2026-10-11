@@ -115,6 +115,7 @@ sealed interface UiEvent {
 class AppViewModel(private val container: AppContainer) : ViewModel() {
     private val repo: FabRepository = container.repository
     val content = container.content
+    val audio = container.audio
     private val dayTick = MutableStateFlow(0)
 
     private val _events = MutableSharedFlow<UiEvent>(extraBufferCapacity = 4)

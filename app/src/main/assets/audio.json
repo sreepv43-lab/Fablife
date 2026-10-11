@@ -1,5 +1,1349 @@
 {
- "sessions": [],
+ "sessions": [
+  {
+   "id": "body_scan",
+   "title": "Body scan",
+   "minutes": 10,
+   "category": "SLEEP",
+   "description": "Slowly relax each part of your body, from your toes to your head.",
+   "bestFor": "Falling asleep or releasing tension",
+   "ambient": "brown",
+   "steps": [
+    {
+     "pause": 5.0,
+     "say": "Welcome. This is a time to rest, and there is nothing you need to do well."
+    },
+    {
+     "pause": 4.0,
+     "say": "Find a position that feels comfortable. You can lie down, or sit in a chair."
+    },
+    {
+     "pause": 4.0,
+     "say": "Keep your eyes closed, or let them rest softly on one spot. Whatever feels right for you."
+    },
+    {
+     "pause": 3.0,
+     "say": "You can shift or move whenever you need to."
+    },
+    {
+     "pause": 3.0,
+     "say": "A quick note before we begin. This practice is for relaxation."
+    },
+    {
+     "pause": 5.0,
+     "say": "If you are feeling unwell or distressed, please reach out to a doctor or another professional."
+    },
+    {
+     "pause": 3.0,
+     "say": "Now, let's begin with a few easy breaths."
+    },
+    {
+     "pause": 4.0,
+     "say": "Breathe in slowly, through your nose if that is comfortable."
+    },
+    {
+     "pause": 6.0,
+     "say": "And breathe out, a little longer."
+    },
+    {
+     "pause": 4.0,
+     "say": "Again, in."
+    },
+    {
+     "pause": 6.0,
+     "say": "And out, letting your shoulders drop."
+    },
+    {
+     "pause": 4.0,
+     "say": "One more. In."
+    },
+    {
+     "pause": 6.0,
+     "say": "And a slow, soft breath out."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now let your breathing find its own rhythm. You don't need to control it."
+    },
+    {
+     "pause": 3.0,
+     "say": "We will travel slowly through your body, from your toes up to your head."
+    },
+    {
+     "pause": 3.0,
+     "say": "You are only noticing, and softening where you can."
+    },
+    {
+     "pause": 6.0,
+     "say": "If a part of your body feels sore, or is hard to feel, that is fine. You can skip it, or just imagine a little space of calm around it."
+    },
+    {
+     "pause": 3.0,
+     "say": "Bring your attention to your toes."
+    },
+    {
+     "pause": 6.0,
+     "say": "Notice whatever is there. Warmth, coolness, the touch of a sock or a blanket, or nothing at all."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let your toes soften."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now your feet. The soles, the tops, and the heels."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them be heavy, and let them be still."
+    },
+    {
+     "pause": 3.0,
+     "say": "Move your attention up to your ankles."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them loosen."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now your calves, and your shins."
+    },
+    {
+     "pause": 6.0,
+     "say": "Breathe into them, and soften as you breathe out."
+    },
+    {
+     "pause": 3.0,
+     "say": "Your knees."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them be easy."
+    },
+    {
+     "pause": 4.0,
+     "say": "Your thighs, the big strong muscles at the front and the back."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let go of any holding."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now your hips, and the place where your body meets the bed or the chair."
+    },
+    {
+     "pause": 6.0,
+     "say": "Feel the support underneath you. You don't need to hold yourself up."
+    },
+    {
+     "pause": 3.0,
+     "say": "Bring your attention to your belly."
+    },
+    {
+     "pause": 4.0,
+     "say": "Notice it rising a little as you breathe in, and settling as you breathe out."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let it be soft."
+    },
+    {
+     "pause": 3.0,
+     "say": "Your lower back."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let it rest."
+    },
+    {
+     "pause": 3.0,
+     "say": "Now your chest, and your ribs."
+    },
+    {
+     "pause": 6.0,
+     "say": "Feel the gentle movement of your breath. Nothing to change."
+    },
+    {
+     "pause": 3.0,
+     "say": "Your shoulders."
+    },
+    {
+     "pause": 5.0,
+     "say": "Let them drop away from your ears."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them be heavy."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now your arms, from the shoulders down to the elbows, and on to the wrists."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them be heavy and loose."
+    },
+    {
+     "pause": 4.0,
+     "say": "Your hands, and each finger."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let your hands open, or rest however they like."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now your neck, and the back of your head."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let your head be held."
+    },
+    {
+     "pause": 3.0,
+     "say": "Your jaw."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let your teeth part a little, and let your tongue rest."
+    },
+    {
+     "pause": 3.0,
+     "say": "Your cheeks, and your lips."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them be soft."
+    },
+    {
+     "pause": 3.0,
+     "say": "Your eyes."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let them rest, heavy and calm."
+    },
+    {
+     "pause": 4.0,
+     "say": "Your forehead, and the space between your eyebrows."
+    },
+    {
+     "pause": 6.0,
+     "say": "Smooth it, as if with a gentle hand."
+    },
+    {
+     "pause": 5.0,
+     "say": "Now let your attention rest on your whole body at once."
+    },
+    {
+     "pause": 6.0,
+     "say": "From your toes, all the way up to the top of your head."
+    },
+    {
+     "pause": 8.0,
+     "say": "Resting, breathing, and held."
+    },
+    {
+     "pause": 8.0,
+     "say": "If your mind wanders, that is completely normal. Simply come back to the feeling of your breath, with no judgement."
+    },
+    {
+     "pause": 6.0,
+     "say": "There is nothing to achieve here."
+    },
+    {
+     "pause": 8.0,
+     "say": "Let each breath be slow and easy."
+    },
+    {
+     "pause": 12.0,
+     "say": "You can drift off whenever you like."
+    },
+    {
+     "pause": 12.0,
+     "say": "If you are still awake, resting here is fine."
+    },
+    {
+     "pause": 12.0,
+     "say": "Rest is welcome, in whatever form it comes."
+    },
+    {
+     "pause": 12.0
+    }
+   ]
+  },
+  {
+   "id": "sleep_winddown",
+   "title": "Sleep wind-down",
+   "minutes": 10,
+   "category": "SLEEP",
+   "description": "Let the day go, slow your breath and drift into rest with gentle imagery.",
+   "bestFor": "Bedtime, or any time you want to settle",
+   "ambient": "ocean",
+   "steps": [
+    {
+     "pause": 5.0,
+     "say": "The day is finished now. There is nothing more to do."
+    },
+    {
+     "pause": 4.0,
+     "say": "Settle into your bed, or a quiet seat, in whatever way feels easiest."
+    },
+    {
+     "pause": 5.0,
+     "say": "Close your eyes, or let them rest half open."
+    },
+    {
+     "pause": 4.0,
+     "say": "Take a slow breath in."
+    },
+    {
+     "pause": 6.0,
+     "say": "And let it go with a soft sigh."
+    },
+    {
+     "pause": 4.0,
+     "say": "Once more. Breathe in."
+    },
+    {
+     "pause": 8.0,
+     "say": "And let it all go."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now let the day go, a little at a time."
+    },
+    {
+     "pause": 6.0,
+     "say": "Whatever happened, whatever was said, it can wait until tomorrow."
+    },
+    {
+     "pause": 8.0,
+     "say": "You did what you could today, and that is enough."
+    },
+    {
+     "pause": 4.0,
+     "say": "Let your breath become slower."
+    },
+    {
+     "pause": 6.0,
+     "say": "You can breathe in for about four, and out for about six. Or simply follow what feels natural."
+    },
+    {
+     "pause": 4.0,
+     "say": "In, slowly."
+    },
+    {
+     "pause": 8.0,
+     "say": "And out, even more slowly."
+    },
+    {
+     "pause": 4.0,
+     "say": "In."
+    },
+    {
+     "pause": 8.0,
+     "say": "And out."
+    },
+    {
+     "pause": 5.0,
+     "say": "Let your body begin to feel heavy."
+    },
+    {
+     "pause": 6.0,
+     "say": "If it doesn't feel heavy yet, that is fine. Just let it be as it is."
+    },
+    {
+     "pause": 6.0,
+     "say": "Feel your head resting on the pillow, or the back of the chair."
+    },
+    {
+     "pause": 6.0,
+     "say": "Feel your shoulders, softening."
+    },
+    {
+     "pause": 6.0,
+     "say": "Your arms, warm and heavy."
+    },
+    {
+     "pause": 8.0,
+     "say": "Your legs, sinking into the bed."
+    },
+    {
+     "pause": 8.0,
+     "say": "Every part of you is supported."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now, if you like, imagine a place that feels calm and safe."
+    },
+    {
+     "pause": 4.0,
+     "say": "It might be a quiet beach, a garden at dusk, a rooftop under a soft sky, or a cosy room with the rain outside."
+    },
+    {
+     "pause": 8.0,
+     "say": "Choose whatever feels right for you."
+    },
+    {
+     "pause": 8.0,
+     "say": "Picture it gently. Notice the light there. It is soft, and fading slowly."
+    },
+    {
+     "pause": 8.0,
+     "say": "Notice the air. It is mild, and just the right temperature."
+    },
+    {
+     "pause": 8.0,
+     "say": "Feel the ground beneath you there, soft and still warm from the day."
+    },
+    {
+     "pause": 8.0,
+     "say": "Listen to the sound of that place. Perhaps waves, rolling in and drifting out."
+    },
+    {
+     "pause": 10.0,
+     "say": "Imagine each breath out as a gentle wave, rolling away from you."
+    },
+    {
+     "pause": 10.0,
+     "say": "And each breath in as the water, drawing quietly back."
+    },
+    {
+     "pause": 10.0,
+     "say": "In, and out. Like the tide."
+    },
+    {
+     "pause": 10.0,
+     "say": "There is no hurry here."
+    },
+    {
+     "pause": 10.0,
+     "say": "Nobody needs anything from you."
+    },
+    {
+     "pause": 10.0,
+     "say": "Let your thoughts drift past, like clouds in a quiet sky. You don't need to follow them."
+    },
+    {
+     "pause": 12.0,
+     "say": "Feel the stillness settle around you."
+    },
+    {
+     "pause": 10.0,
+     "say": "Your breath is slow."
+    },
+    {
+     "pause": 12.0,
+     "say": "Your body is heavy and comfortable."
+    },
+    {
+     "pause": 12.0,
+     "say": "Your mind is quiet."
+    },
+    {
+     "pause": 12.0,
+     "say": "You can drift off whenever you like."
+    },
+    {
+     "pause": 12.0,
+     "say": "If you are still awake, resting here is fine."
+    },
+    {
+     "pause": 12.0,
+     "say": "Just lie here, and let the night hold you."
+    },
+    {
+     "pause": 12.0,
+     "say": "Nothing more to do. Nowhere to be."
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    }
+   ]
+  },
+  {
+   "id": "worry_unload",
+   "title": "Unload your worries",
+   "minutes": 6,
+   "category": "SLEEP",
+   "description": "Notice what is on your mind, set it down until tomorrow and choose one small next step.",
+   "bestFor": "A busy mind at bedtime",
+   "ambient": "pink",
+   "steps": [
+    {
+     "pause": 4.0,
+     "say": "Hello. Let's take a few minutes to put things down for tonight."
+    },
+    {
+     "pause": 5.0,
+     "say": "Get comfortable, lying down or sitting. Close your eyes if you like."
+    },
+    {
+     "pause": 6.0,
+     "say": "Take a slow breath in, and a long breath out."
+    },
+    {
+     "pause": 3.0,
+     "say": "And again. In."
+    },
+    {
+     "pause": 6.0,
+     "say": "And out."
+    },
+    {
+     "pause": 5.0,
+     "say": "Now, gently notice what is on your mind."
+    },
+    {
+     "pause": 6.0,
+     "say": "You don't need to fix anything. Just notice, the way you might watch traffic from a window."
+    },
+    {
+     "pause": 6.0,
+     "say": "Maybe there are plans, or tasks, or things you are unsure about."
+    },
+    {
+     "pause": 6.0,
+     "say": "If a thought comes, give it a simple name. Work. Money. Family. Tomorrow."
+    },
+    {
+     "pause": 10.0,
+     "say": "Let each one be there for a moment. Then let it pass."
+    },
+    {
+     "pause": 6.0,
+     "say": "There is no need to solve any of it right now."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now imagine a shelf, or a table, or a basket beside you. Any safe place will do."
+    },
+    {
+     "pause": 8.0,
+     "say": "Take each thing on your mind, one at a time, and set it down there."
+    },
+    {
+     "pause": 6.0,
+     "say": "Set it down gently. It is not going anywhere."
+    },
+    {
+     "pause": 8.0,
+     "say": "You can pick it up again tomorrow, if you want to, with fresh eyes."
+    },
+    {
+     "pause": 8.0,
+     "say": "Tonight, it can rest."
+    },
+    {
+     "pause": 4.0,
+     "say": "Notice how your hands, your shoulders and your forehead feel now."
+    },
+    {
+     "pause": 8.0,
+     "say": "Let them soften a little more."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now gently ask yourself, is there one small step I could take tomorrow? Only if one is needed."
+    },
+    {
+     "pause": 8.0,
+     "say": "If something comes, keep it very small. A single message, a single call, or one line on a list."
+    },
+    {
+     "pause": 6.0,
+     "say": "Say it to yourself once, in a few simple words."
+    },
+    {
+     "pause": 6.0,
+     "say": "If nothing comes, that is perfectly fine."
+    },
+    {
+     "pause": 6.0,
+     "say": "If you like, you can jot it down on paper later. Or simply trust that you will remember."
+    },
+    {
+     "pause": 6.0,
+     "say": "If something feels too big or too heavy, it is okay to talk to someone you trust, or to a professional."
+    },
+    {
+     "pause": 8.0,
+     "say": "For now, the thinking is done."
+    },
+    {
+     "pause": 4.0,
+     "say": "Breathe in, and feel your body supported."
+    },
+    {
+     "pause": 10.0,
+     "say": "Breathe out, and let go a little more."
+    },
+    {
+     "pause": 12.0,
+     "say": "You can drift off whenever you like."
+    },
+    {
+     "pause": 12.0,
+     "say": "If you are still awake, resting here is fine."
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 12.0
+    }
+   ]
+  },
+  {
+   "id": "morning_intention",
+   "title": "Morning intention",
+   "minutes": 3,
+   "category": "MORNING",
+   "description": "Breathe, notice how you feel, and choose one simple intention for the day.",
+   "bestFor": "Starting the day with a clear, calm focus",
+   "ambient": "focus_pad",
+   "steps": [
+    {
+     "pause": 3.0,
+     "say": "Good morning."
+    },
+    {
+     "pause": 3.0,
+     "say": "Find a position that feels comfortable. Sit, stand, or lie down. Eyes open or closed."
+    },
+    {
+     "pause": 4.0,
+     "say": "This practice is for relaxation. If you feel unwell or distressed, please reach out to a doctor or another professional."
+    },
+    {
+     "pause": 5.0,
+     "say": "Take a slow breath in, and let it go."
+    },
+    {
+     "pause": 5.0,
+     "say": "Once more. In, and out."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now notice how you feel this morning."
+    },
+    {
+     "pause": 7.0,
+     "say": "Rested, heavy, or somewhere in between. Whatever is here is welcome."
+    },
+    {
+     "pause": 4.0,
+     "say": "Let your shoulders drop."
+    },
+    {
+     "pause": 5.0,
+     "say": "Now think about the day ahead. Not the whole list, just its shape."
+    },
+    {
+     "pause": 6.0,
+     "say": "Ask yourself, how would I like to meet this day?"
+    },
+    {
+     "pause": 4.0,
+     "say": "Perhaps with patience. Perhaps with energy, kindness, or focus."
+    },
+    {
+     "pause": 10.0,
+     "say": "Let one word or phrase come to you. Something simple and true."
+    },
+    {
+     "pause": 6.0,
+     "say": "This is your intention for today. Say it quietly to yourself."
+    },
+    {
+     "pause": 8.0,
+     "say": "Picture one moment today when it might help. A conversation, a task, or a walk."
+    },
+    {
+     "pause": 5.0,
+     "say": "You can return to it whenever you like. It is a guide, not a test."
+    },
+    {
+     "pause": 3.0,
+     "say": "Take one more slow breath in."
+    },
+    {
+     "pause": 4.0,
+     "say": "And out."
+    },
+    {
+     "pause": 4.0,
+     "say": "Feel the surface beneath you, and the sounds around you."
+    },
+    {
+     "pause": 3.0,
+     "say": "When you are ready, open your eyes."
+    },
+    {
+     "pause": 4.0,
+     "say": "Take a breath, and step into your day."
+    }
+   ]
+  },
+  {
+   "id": "stress_reset",
+   "title": "Two-minute stress reset",
+   "minutes": 3,
+   "category": "CALM",
+   "description": "Soften your body, take a few long exhales, name the feeling, and choose one small next step.",
+   "bestFor": "A tense moment at work, at home, or on the move",
+   "ambient": "pink",
+   "steps": [
+    {
+     "pause": 4.0,
+     "say": "Pause here for a moment. Wherever you are, you can reset."
+    },
+    {
+     "pause": 4.0,
+     "say": "Stay seated, stand, or lean on a wall. Eyes open or closed."
+    },
+    {
+     "pause": 5.0,
+     "say": "First, let your shoulders drop, away from your ears."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let your hands soften. Let your jaw loosen, and your tongue rest."
+    },
+    {
+     "pause": 3.0,
+     "say": "Now a long breath in, through your nose if that suits you."
+    },
+    {
+     "pause": 7.0,
+     "say": "And a slow, long breath out, as if you are cooling a hot cup of tea."
+    },
+    {
+     "pause": 3.0,
+     "say": "Again. In."
+    },
+    {
+     "pause": 6.0,
+     "say": "And out, a little longer."
+    },
+    {
+     "pause": 8.0,
+     "say": "One more. In, and a long, slow breath out."
+    },
+    {
+     "pause": 5.0,
+     "say": "Let your breathing return to its own pace."
+    },
+    {
+     "pause": 5.0,
+     "say": "Notice what you are feeling. A tight chest, a busy mind, or a restless body."
+    },
+    {
+     "pause": 7.0,
+     "say": "Give it a name. You might say quietly, this is stress, and it will pass."
+    },
+    {
+     "pause": 6.0,
+     "say": "You are not doing anything wrong. Stress is part of being human."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now ask yourself, what is one small next step?"
+    },
+    {
+     "pause": 4.0,
+     "say": "Not the whole problem. Just the next small thing."
+    },
+    {
+     "pause": 6.0,
+     "say": "Maybe sending one message, drinking some water, or standing up to stretch."
+    },
+    {
+     "pause": 7.0,
+     "say": "Choose one, and let it be small enough to feel easy."
+    },
+    {
+     "pause": 4.0,
+     "say": "Take one more breath, and feel your feet or your seat beneath you."
+    },
+    {
+     "pause": 4.0,
+     "say": "When you are ready, open your eyes, and take your small next step."
+    }
+   ]
+  },
+  {
+   "id": "grounding_54321",
+   "title": "5-4-3-2-1 grounding",
+   "minutes": 3,
+   "category": "CALM",
+   "description": "Use your senses to come back to the present: five things you see, four you feel, three you hear, two you smell, one you taste.",
+   "bestFor": "When your mind feels busy, scattered or overwhelmed",
+   "ambient": null,
+   "steps": [
+    {
+     "pause": 3.0,
+     "say": "Let's begin by noticing that you are here."
+    },
+    {
+     "pause": 3.0,
+     "say": "Sit, stand, or lie down. Keep your eyes open or closed, whichever feels better."
+    },
+    {
+     "pause": 3.0,
+     "say": "We will use your senses, counting down from five to one."
+    },
+    {
+     "pause": 4.0,
+     "say": "Take a slow breath in, and out."
+    },
+    {
+     "pause": 12.0,
+     "say": "Five things you can see. Look around slowly, and quietly name them."
+    },
+    {
+     "pause": 6.0,
+     "say": "If you cannot see, or your eyes are closed, notice five sounds, or five places your body touches something."
+    },
+    {
+     "pause": 10.0,
+     "say": "Four things you can feel. The weight of your body, your clothes on your skin, the air on your face, and your hands, warm or cool."
+    },
+    {
+     "pause": 10.0,
+     "say": "Three things you can hear. Near, then far. A fan, traffic, birds, or the quiet itself."
+    },
+    {
+     "pause": 8.0,
+     "say": "Two things you can smell. Perhaps tea, soap, cooking, or fresh air."
+    },
+    {
+     "pause": 6.0,
+     "say": "If you cannot smell, or nothing is there, imagine two smells you love. Or take two slow breaths."
+    },
+    {
+     "pause": 8.0,
+     "say": "One thing you can taste. Notice your mouth, or take a sip of water. Or take one slow, full breath."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now notice how you feel, compared with a few minutes ago."
+    },
+    {
+     "pause": 4.0,
+     "say": "Nothing needs to have changed. Noticing is enough."
+    },
+    {
+     "pause": 4.0,
+     "say": "Whenever things feel fast, you can come back to your senses like this."
+    },
+    {
+     "pause": 4.0,
+     "say": "When you are ready, take a breath, and open your eyes if they were closed."
+    }
+   ]
+  },
+  {
+   "id": "gratitude",
+   "title": "Gratitude pause",
+   "minutes": 4,
+   "category": "CALM",
+   "description": "Three breaths, three simple good things from your day, and one to savour and carry forward.",
+   "bestFor": "Ending a busy day, or lifting a flat mood",
+   "ambient": "rain",
+   "steps": [
+    {
+     "pause": 4.0,
+     "say": "Welcome. Let's take a few minutes to notice what is good."
+    },
+    {
+     "pause": 4.0,
+     "say": "Settle into a position that feels easy. Eyes open, resting on something calm, or closed."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let's begin with three breaths. Breathe in slowly, and out. That is one."
+    },
+    {
+     "pause": 5.0,
+     "say": "In again, and out. That is two."
+    },
+    {
+     "pause": 6.0,
+     "say": "Once more, in, and out. That is three."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now think back over today, or yesterday if today has only just begun."
+    },
+    {
+     "pause": 4.0,
+     "say": "You are looking for small, simple good things. They do not need to be big."
+    },
+    {
+     "pause": 5.0,
+     "say": "A warm cup of chai or coffee. A kind word. A seat on the bus. Sunshine through a window."
+    },
+    {
+     "pause": 8.0,
+     "say": "Let the first good thing come to mind."
+    },
+    {
+     "pause": 8.0,
+     "say": "Now a second. It can be tiny."
+    },
+    {
+     "pause": 8.0,
+     "say": "And a third."
+    },
+    {
+     "pause": 4.0,
+     "say": "If three is hard to find, one is enough. Or simply the fact that you are here, breathing."
+    },
+    {
+     "pause": 5.0,
+     "say": "Now choose the one that feels warmest, and stay with it for a few breaths."
+    },
+    {
+     "pause": 8.0,
+     "say": "Picture it clearly. Where were you? Who was there? What could you see, or hear, or feel?"
+    },
+    {
+     "pause": 5.0,
+     "say": "Breathe in, and let the memory be clear."
+    },
+    {
+     "pause": 7.0,
+     "say": "Breathe out, and let yourself enjoy it."
+    },
+    {
+     "pause": 8.0,
+     "say": "Notice what happens in your body. Maybe a little warmth, or a softer face."
+    },
+    {
+     "pause": 8.0,
+     "say": "If a worry shows up, that is okay. Come back to the good thing when you can."
+    },
+    {
+     "pause": 6.0,
+     "say": "You can say a quiet thank you, in whatever way feels natural."
+    },
+    {
+     "pause": 5.0,
+     "say": "Now let's carry it forward. Take this feeling with you into the rest of your day."
+    },
+    {
+     "pause": 5.0,
+     "say": "Take a slow breath in. And out."
+    },
+    {
+     "pause": 4.0,
+     "say": "When you are ready, open your eyes, and carry on with your day."
+    }
+   ]
+  },
+  {
+   "id": "loving_kindness",
+   "title": "Kindness practice",
+   "minutes": 5,
+   "category": "CALM",
+   "description": "A gentle, secular practice of kind wishes: for yourself, someone close, someone neutral, and everyone.",
+   "bestFor": "Softening self-criticism and feeling more connected",
+   "ambient": "ocean",
+   "steps": [
+    {
+     "pause": 4.0,
+     "say": "Hello, and welcome. This is a quiet time for kindness."
+    },
+    {
+     "pause": 4.0,
+     "say": "Sit or lie in whatever way feels comfortable. Close your eyes, or lower your gaze."
+    },
+    {
+     "pause": 5.0,
+     "say": "Take a slow breath in, and let it go."
+    },
+    {
+     "pause": 3.0,
+     "say": "In this practice, we offer kind wishes, silently, in simple phrases. You can use mine, or your own."
+    },
+    {
+     "pause": 5.0,
+     "say": "You can skip any step if it feels hard. If wishing others well feels like too much today, stay with yourself the whole time. That is a good practice too."
+    },
+    {
+     "pause": 5.0,
+     "say": "Let's begin with you. Picture yourself as you are right now."
+    },
+    {
+     "pause": 6.0,
+     "say": "May I be safe."
+    },
+    {
+     "pause": 6.0,
+     "say": "May I be well."
+    },
+    {
+     "pause": 6.0,
+     "say": "May I be kind to myself."
+    },
+    {
+     "pause": 6.0,
+     "say": "May I be at ease."
+    },
+    {
+     "pause": 8.0,
+     "say": "Notice whatever comes up. Warmth, nothing at all, even resistance. Let it be as it is."
+    },
+    {
+     "pause": 7.0,
+     "say": "Now bring to mind someone close to you. A friend, a family member, a teacher, or a pet."
+    },
+    {
+     "pause": 5.0,
+     "say": "See their face, or sense their presence. Offer them the same wishes."
+    },
+    {
+     "pause": 5.0,
+     "say": "May you be safe."
+    },
+    {
+     "pause": 5.0,
+     "say": "May you be well."
+    },
+    {
+     "pause": 6.0,
+     "say": "May you be at ease."
+    },
+    {
+     "pause": 5.0,
+     "say": "If you would rather skip this step, rest here with your breath."
+    },
+    {
+     "pause": 7.0,
+     "say": "Now someone neutral. Someone you see sometimes but do not know well. A neighbour, a shopkeeper, someone on your bus or train."
+    },
+    {
+     "pause": 4.0,
+     "say": "They, too, want to feel safe and happy."
+    },
+    {
+     "pause": 5.0,
+     "say": "May you be safe."
+    },
+    {
+     "pause": 5.0,
+     "say": "May you be well."
+    },
+    {
+     "pause": 6.0,
+     "say": "May you be at ease."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now widen your attention, to everyone. Your street, your town, people far away, in every village and city."
+    },
+    {
+     "pause": 6.0,
+     "say": "May we all be safe."
+    },
+    {
+     "pause": 6.0,
+     "say": "May we all be well."
+    },
+    {
+     "pause": 8.0,
+     "say": "May we all be at ease."
+    },
+    {
+     "pause": 10.0,
+     "say": "Rest in the stillness for a moment."
+    },
+    {
+     "pause": 8.0,
+     "say": "Place a hand on your chest or belly, if you like. May I be gentle with myself today."
+    },
+    {
+     "pause": 5.0,
+     "say": "Take a slow breath in, and out."
+    },
+    {
+     "pause": 4.0,
+     "say": "When you are ready, open your eyes, and take a breath."
+    }
+   ]
+  },
+  {
+   "id": "focus_reset",
+   "title": "Focus reset",
+   "minutes": 3,
+   "category": "FOCUS",
+   "description": "A short pause to clear mental clutter and choose your one next task.",
+   "bestFor": "Between tasks, or when your attention feels scattered",
+   "ambient": "focus_pad",
+   "steps": [
+    {
+     "pause": 3.0,
+     "say": "Let's reset. Just three minutes."
+    },
+    {
+     "pause": 3.0,
+     "say": "Sit comfortably, or stand if that suits you. Seated is perfectly fine."
+    },
+    {
+     "pause": 3.0,
+     "say": "Let your back be tall but easy, with your feet flat on the floor."
+    },
+    {
+     "pause": 3.0,
+     "say": "Rest your hands, and let your shoulders drop."
+    },
+    {
+     "pause": 3.0,
+     "say": "Close your eyes, or lower your gaze to a spot in front of you."
+    },
+    {
+     "pause": 3.0,
+     "say": "We will take three steady breaths."
+    },
+    {
+     "pause": 3.0,
+     "say": "Breathe in slowly, through your nose if you can."
+    },
+    {
+     "pause": 4.0,
+     "say": "And breathe out, fully."
+    },
+    {
+     "pause": 3.0,
+     "say": "Breathe in, filling your lungs comfortably."
+    },
+    {
+     "pause": 4.0,
+     "say": "And out, letting your body settle."
+    },
+    {
+     "pause": 3.0,
+     "say": "One more. In."
+    },
+    {
+     "pause": 4.0,
+     "say": "And out."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now, notice how many tabs are open in your mind."
+    },
+    {
+     "pause": 4.0,
+     "say": "Emails, messages, errands, half finished jobs."
+    },
+    {
+     "pause": 4.0,
+     "say": "One by one, picture each tab closing."
+    },
+    {
+     "pause": 4.0,
+     "say": "They are not lost. You can open them again later."
+    },
+    {
+     "pause": 4.0,
+     "say": "For now, let them go quiet."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now ask yourself, what is the one thing that matters most to do next?"
+    },
+    {
+     "pause": 4.0,
+     "say": "Choose just one. Keep it small and clear."
+    },
+    {
+     "pause": 4.0,
+     "say": "Say it silently, in a few simple words."
+    },
+    {
+     "pause": 4.0,
+     "say": "Picture yourself starting it. The very first move."
+    },
+    {
+     "pause": 3.0,
+     "say": "Now bring your attention back to the room."
+    },
+    {
+     "pause": 3.0,
+     "say": "Wiggle your fingers and toes."
+    },
+    {
+     "pause": 3.0,
+     "say": "Take one deeper breath in, and feel your energy rise."
+    },
+    {
+     "pause": 3.0,
+     "say": "Breathe out, and open your eyes when you're ready."
+    },
+    {
+     "pause": 3.0,
+     "say": "You're clear. You're ready. Begin."
+    }
+   ]
+  },
+  {
+   "id": "mindful_eating",
+   "title": "Mindful eating",
+   "minutes": 5,
+   "category": "EAT",
+   "description": "Slow down and enjoy a meal or snack, with curiosity and no judgement.",
+   "bestFor": "The start of a meal or snack",
+   "ambient": null,
+   "steps": [
+    {
+     "pause": 4.0,
+     "say": "Before you start eating, pause for a moment."
+    },
+    {
+     "pause": 3.0,
+     "say": "This works with a full meal, or just a small snack. Any food at all."
+    },
+    {
+     "pause": 3.0,
+     "say": "Sit down if you can, or stay as you are, and set your phone aside."
+    },
+    {
+     "pause": 3.0,
+     "say": "However you eat, and whatever you eat, is welcome here. Soft or simple foods are just as welcome."
+    },
+    {
+     "pause": 5.0,
+     "say": "Take a slow breath in, and a slow breath out."
+    },
+    {
+     "pause": 5.0,
+     "say": "If you have a complicated relationship with food, go gently, and skip anything that does not feel right."
+    },
+    {
+     "pause": 5.0,
+     "say": "There are no good or bad foods in this practice. There is only you, and what is in front of you."
+    },
+    {
+     "pause": 3.0,
+     "say": "Begin by looking."
+    },
+    {
+     "pause": 6.0,
+     "say": "Notice the colours, the shapes, and the steam if there is any."
+    },
+    {
+     "pause": 3.0,
+     "say": "Now notice the smell."
+    },
+    {
+     "pause": 6.0,
+     "say": "Bring it a little closer, and breathe in."
+    },
+    {
+     "pause": 6.0,
+     "say": "Check in with your body. Are you hungry, or not so much? Either answer is fine."
+    },
+    {
+     "pause": 4.0,
+     "say": "Now take your first bite. Make it a small one."
+    },
+    {
+     "pause": 4.0,
+     "say": "Before you chew, notice the food resting in your mouth."
+    },
+    {
+     "pause": 6.0,
+     "say": "Chew slowly. What flavours do you notice? Sweet, salty, sour, spicy, or something else?"
+    },
+    {
+     "pause": 8.0,
+     "say": "What about the texture? Soft, crunchy, creamy, or smooth?"
+    },
+    {
+     "pause": 4.0,
+     "say": "Swallow when you are ready."
+    },
+    {
+     "pause": 6.0,
+     "say": "Now put down your spoon, or your hands, for a moment."
+    },
+    {
+     "pause": 4.0,
+     "say": "Continue eating at your own pace."
+    },
+    {
+     "pause": 6.0,
+     "say": "Let each bite be a little slower than usual."
+    },
+    {
+     "pause": 12.0,
+     "say": "Take your time. I will be quiet while you eat."
+    },
+    {
+     "pause": 12.0
+    },
+    {
+     "pause": 4.0,
+     "say": "Now pause, around the halfway point."
+    },
+    {
+     "pause": 4.0,
+     "say": "Put down your fork, spoon or hands. Take a breath."
+    },
+    {
+     "pause": 6.0,
+     "say": "How does your body feel now? Are you still hungry, or comfortably satisfied?"
+    },
+    {
+     "pause": 5.0,
+     "say": "Whatever you notice is simply information. There is nothing to judge."
+    },
+    {
+     "pause": 5.0,
+     "say": "Carry on, if you wish, or stop if you are done. Both are fine."
+    },
+    {
+     "pause": 5.0,
+     "say": "Take a moment to thank the food, and the people who grew it, cooked it or shared it with you."
+    },
+    {
+     "pause": 4.0,
+     "say": "And be kind to your body. It is doing its best for you."
+    },
+    {
+     "pause": 4.0,
+     "say": "Take a breath, and bring your attention back to the room."
+    },
+    {
+     "pause": 3.0,
+     "say": "When you're ready, carry on with your meal, or with your day."
+    }
+   ]
+  }
+ ],
  "breathing": [
   {
    "id": "box",

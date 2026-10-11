@@ -1,6 +1,7 @@
 package io.github.sreepv43.fablife.ui
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -107,6 +108,7 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
     val backStack by nav.currentBackStackEntryAsState()
     val route = backStack?.destination?.route
     var celebration by remember { mutableStateOf<UiEvent?>(null) }
+    val playback by vm.audio.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) { vm.events.collect { celebration = it } }
     // First launch after onboarding: show the intro letter, then step 1.
@@ -121,7 +123,8 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
 
     Scaffold(
         bottomBar = {
-            if (Tab.entries.any { it.route == route }) {
+            if (Tab.entries.any { it.route == route }) Column {
+                MiniPlayer(playback, vm.audio) { nav.navigate(it) }
                 NavigationBar {
                     Tab.entries.forEach { tab ->
                         NavigationBarItem(
