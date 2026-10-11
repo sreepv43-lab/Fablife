@@ -65,6 +65,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("androidx.health.connect:connect-client:1.1.0-beta01")
 
     val room = "2.6.1"
     implementation("androidx.room:room-runtime:$room")

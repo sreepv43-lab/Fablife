@@ -195,6 +195,15 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
             }
         }
         item {
+            Section("Steps and sleep (optional)") {
+                Row(Modifier.fillMaxWidth().clickable(role = Role.Button) { nav.navigate(Routes.HEALTH) }.padding(vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("Health Connect", modifier = Modifier.weight(1f))
+                    Text("Open", color = MaterialTheme.colorScheme.primary)
+                }
+                Text("Show steps and sleep from Health Connect. Read-only, and kept on this device.", style = MaterialTheme.typography.bodySmall)
+            }
+        }
+        item {
             Section("Appearance") {
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     ThemeMode.entries.forEach { t ->

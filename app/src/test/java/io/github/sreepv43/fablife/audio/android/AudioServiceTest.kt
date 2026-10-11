@@ -20,16 +20,19 @@ import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowLooper
 
-/** An app whose audio is a recording fake and whose timer clock the test moves by hand. */
+/** An app whose audio and Health Connect are fakes and whose timer clock the test moves by hand. */
 class TestAudioApp : FabLifeApp() {
     val fake = FakeAudioController()
 
     @Volatile
     var clockMs = 1_000L
 
+    val health = io.github.sreepv43.fablife.health.FakeHealthRepository()
+
     override fun createContainer(): AppContainer = object : AppContainer(this) {
         override val audio: AudioController = fake
         override val clock: () -> Long = { clockMs }
+        override val health: io.github.sreepv43.fablife.health.HealthRepository = this@TestAudioApp.health
     }
 }
 

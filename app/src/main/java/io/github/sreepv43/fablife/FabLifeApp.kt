@@ -23,6 +23,8 @@ import io.github.sreepv43.fablife.data.FabDatabase
 import io.github.sreepv43.fablife.data.FabRepository
 import io.github.sreepv43.fablife.data.PrefsRepository
 import io.github.sreepv43.fablife.data.SessionKind
+import io.github.sreepv43.fablife.health.HealthConnectRepository
+import io.github.sreepv43.fablife.health.HealthRepository
 import io.github.sreepv43.fablife.notifications.ReminderScheduler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -59,6 +61,9 @@ open class AppContainer(private val context: Context) {
             soundTitle = { id -> content.audio.sounds.firstOrNull { it.id == id.key }?.name ?: id.key },
         )
     }
+
+    /** Steps and sleep from Health Connect, read on demand. Open so tests can supply a fake. */
+    open val health: HealthRepository by lazy { HealthConnectRepository(context.applicationContext) }
 
     /** Called once at start-up: records every finished or stopped playback as time spent. */
     fun startBackgroundWork() {

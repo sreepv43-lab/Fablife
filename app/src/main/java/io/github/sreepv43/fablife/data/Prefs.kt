@@ -48,6 +48,7 @@ data class UserPrefs(
     val focusMinutes: Int = 25,
     val breakMinutes: Int = 5,
     val longBreakMinutes: Int = 15,
+    val stepGoal: Int = 7000,
 ) {
     val displayName: String get() = name.ifBlank { "friend" }
 }
@@ -81,6 +82,7 @@ class PrefsRepository(private val context: Context) {
         val focusMinutes = intPreferencesKey("focus_minutes")
         val breakMinutes = intPreferencesKey("break_minutes")
         val longBreakMinutes = intPreferencesKey("long_break_minutes")
+        val stepGoal = intPreferencesKey("step_goal")
     }
 
     val prefs: Flow<UserPrefs> = context.dataStore.data.map { it.toUserPrefs() }
@@ -126,6 +128,7 @@ class PrefsRepository(private val context: Context) {
             focusMinutes = this[K.focusMinutes] ?: d.focusMinutes,
             breakMinutes = this[K.breakMinutes] ?: d.breakMinutes,
             longBreakMinutes = this[K.longBreakMinutes] ?: d.longBreakMinutes,
+            stepGoal = this[K.stepGoal] ?: d.stepGoal,
         )
     }
 
@@ -155,5 +158,6 @@ class PrefsRepository(private val context: Context) {
         this[K.focusMinutes] = u.focusMinutes
         this[K.breakMinutes] = u.breakMinutes
         this[K.longBreakMinutes] = u.longBreakMinutes
+        this[K.stepGoal] = u.stepGoal
     }
 }

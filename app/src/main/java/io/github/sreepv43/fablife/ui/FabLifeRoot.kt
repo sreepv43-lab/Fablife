@@ -151,7 +151,7 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
             composable(Tab.TODAY.route) { TodayScreen(vm, state, nav) }
             composable(Tab.JOURNEY.route) { JourneyScreen(vm, state, nav) }
             composable(Tab.EXPLORE.route) { ExploreScreen(vm, state, nav) }
-            composable(Tab.PROGRESS.route) { ProgressScreen(vm, state) }
+            composable(Tab.PROGRESS.route) { ProgressScreen(vm, state, nav) }
             composable(Tab.SETTINGS.route) { SettingsScreen(vm, state, nav) }
             composable("letter/{id}") { entry ->
                 LetterScreen(vm, state, entry.arguments?.getString("id").orEmpty(), nav)
