@@ -3,6 +3,7 @@ package io.github.sreepv43.fablife.ui
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.hasScrollAction
 import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.longClick
@@ -26,8 +27,18 @@ class AppFlowTest {
     @get:Rule
     val rule = createAndroidComposeRule<MainActivity>()
 
-    private fun waitFor(text: String, substring: Boolean = false) =
-        rule.waitUntilAtLeastOneExists(hasText(text, substring = substring), timeoutMillis = 10_000)
+    /** Waits for [text], scrolling the screen's list towards it while it isn't composed (a lazy list only builds the rows showing). */
+    private fun waitFor(text: String, substring: Boolean = false) {
+        val end = System.nanoTime() + 10_000_000_000L
+        while (rule.onAllNodesWithText(text, substring = substring).fetchSemanticsNodes().isEmpty()) {
+            if (System.nanoTime() > end) throw AssertionError("'$text' never appeared")
+            if (rule.onAllNodes(hasScrollAction()).fetchSemanticsNodes().isNotEmpty()) {
+                runCatching { rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText(text, substring = substring)) }
+            }
+            rule.waitForIdle()
+            Thread.sleep(25)
+        }
+    }
 
     private fun click(text: String) {
         waitFor(text)

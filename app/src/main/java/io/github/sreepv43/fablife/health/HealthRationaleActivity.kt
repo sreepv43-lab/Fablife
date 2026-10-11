@@ -31,7 +31,7 @@ class HealthRationaleActivity : ComponentActivity() {
                         Text("What it does with it", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 16.dp))
                         Text(
                             "Shows today's steps and last night's sleep on your phone. The numbers are not saved by Fab Life, not uploaded anywhere, " +
-                                "and not shared with anyone, including the optional AI coach notes.",
+                                "and not shared with anyone.",
                         )
                         Text("You are in control", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 16.dp))
                         Text("You can remove access at any time in Health Connect settings. Fab Life works fully without it. This is information, not medical advice.")

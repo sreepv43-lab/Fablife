@@ -305,3 +305,16 @@ Two layers, both optional to the user's attention and neither blocking anything:
 - Content assets are parsed and validated by the real parser in a unit test, so docs and app cannot drift.
 - Everything stays green: `./gradlew testDebugUnitTest assembleDebug assembleRelease lintDebug`.
 - Things that can only be proven on a real device (audio output, TTS voices, foreground service behaviour, Health Connect data, Keystore) are called out honestly in the PR and README.
+
+---
+
+## 13. Implementation status
+
+Built as specified: sections 1 to 10 and the adaptive layer of section 11 (on-device coach notes on the Today tab).
+
+Differences from this contract:
+- Health Connect uses `connect-client:1.1.0-beta01`, the newest release that builds with `compileSdk 35`. The stable `1.1.0` needs `compileSdk 36` and a newer Android Gradle Plugin.
+- Coach notes under each step letter were not added; they appear on Today.
+- **Section 11, layer 2 (Claude-written notes with the user's own API key) is not built.** The app therefore does not request the INTERNET permission. Everything in the section stays the plan for that feature (consent screen, payload preview, Keystore-encrypted key, daily cap, refusal handling).
+- The focus timer counts against a background-safe clock but alerts only while the app is open.
+

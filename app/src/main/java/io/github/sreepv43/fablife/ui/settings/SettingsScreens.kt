@@ -223,7 +223,7 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
         }
         item {
             Text(
-                "Fab Life provides general wellness information, not medical advice. Version 0.1.0",
+                "Fab Life provides general wellness information, not medical advice. Version 0.2.0",
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp).padding(vertical = 8.dp),
             )

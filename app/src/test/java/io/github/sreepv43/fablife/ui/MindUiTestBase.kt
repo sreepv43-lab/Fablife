@@ -42,7 +42,7 @@ import org.robolectric.annotation.GraphicsMode
 abstract class MindUiTestBase {
     @get:Rule
     val rule = createEmptyComposeRule()
-    private lateinit var scenario: ActivityScenario<MainActivity>
+    protected lateinit var scenario: ActivityScenario<MainActivity>
 
     protected val app get() = ApplicationProvider.getApplicationContext<Application>() as TestAudioApp
     protected val fake get() = app.fake
@@ -99,9 +99,6 @@ abstract class MindUiTestBase {
         runBlocking { container.repository.resetAll() }
     }
 
-    protected fun waitFor(text: String, substring: Boolean = false) =
-        rule.waitUntilAtLeastOneExists(hasText(text, substring = substring), timeoutMillis = 10_000)
-
     /**
      * Waits for [text] to be on screen, scrolling the first list to it while it isn't: a lazy list only composes the rows
      * that are showing. (Scrolling a plain column to a node is not supported and is simply skipped.)
@@ -111,12 +108,14 @@ abstract class MindUiTestBase {
         while (rule.onAllNodesWithText(text, substring = substring).fetchSemanticsNodes().isEmpty()) {
             if (System.nanoTime() > end) throw AssertionError("'$text' never appeared")
             if (rule.onAllNodes(hasScrollAction()).fetchSemanticsNodes().isNotEmpty()) {
-                runCatching { rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText(text)) }
+                runCatching { rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasText(text, substring = substring)) }
             }
             rule.waitForIdle()
             Thread.sleep(25)
         }
     }
+
+    protected fun waitFor(text: String, substring: Boolean = false) = reveal(text, substring)
 
     protected fun click(text: String) {
         reveal(text)

@@ -105,7 +105,7 @@ fun JournalScreen(vm: AppViewModel, state: AppState, kind: JournalKind, habitId:
                     }
                     if (saved) Text("Saved ✓", color = MaterialTheme.colorScheme.secondary, modifier = Modifier.padding(top = 8.dp))
                     Text(
-                        "Entries stay on this device. They are never shared, not even with the optional AI coach.",
+                        "Entries stay on this device and are never shared.",
                         style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 8.dp),
                     )
                 }

@@ -30,7 +30,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.produceState
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -53,13 +55,16 @@ import java.text.NumberFormat
 private const val HEALTH_CONNECT_PACKAGE = "com.google.android.apps.healthdata"
 private val GOAL_RANGE = 2_000..20_000
 
-const val HEALTH_PRIVACY_NOTE = "Fab Life only reads your steps and sleep. They are shown on this screen and never saved by the app, uploaded, or shared, not even with the optional AI coach."
+const val HEALTH_PRIVACY_NOTE = "Fab Life only reads your steps and sleep. They are shown on this screen and never saved by the app, uploaded, or shared."
 const val HEALTH_DISCLAIMER = "For your information only. This isn't medical advice."
 
 /** Loads the Health Connect state; [refresh] is bumped to load again (after a permission answer, or on request). */
 @Composable
-fun rememberHealthUi(vm: AppViewModel, state: AppState, refresh: Int = 0): HealthUi =
-    produceState<HealthUi>(HealthUi.Loading, refresh, state.today) { value = loadHealth(vm.health, state.today) }.value
+fun rememberHealthUi(vm: AppViewModel, state: AppState, refresh: Int = 0): HealthUi {
+    var ui by remember { mutableStateOf<HealthUi>(HealthUi.Loading) }
+    LaunchedEffect(refresh, state.today) { ui = loadHealth(vm.health, state.today) }
+    return ui
+}
 
 /** Steps and sleep from Health Connect, with a clear state for everything that can be true on a device. */
 @Composable

@@ -6,7 +6,7 @@ import java.time.ZoneId
 
 /**
  * Read-only access to steps and sleep. Everything is read on demand and kept on the device: nothing here is stored by
- * the app, uploaded, or given to the optional AI coach.
+ * the app, uploaded, or shared with anyone.
  */
 interface HealthRepository {
     fun availability(): HealthAvailability
