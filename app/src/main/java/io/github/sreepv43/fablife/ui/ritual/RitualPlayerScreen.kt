@@ -38,12 +38,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import io.github.sreepv43.fablife.content.Ritual
-import io.github.sreepv43.fablife.engine.Recommendations
+import io.github.sreepv43.fablife.content.ToolType
 import io.github.sreepv43.fablife.ui.AppState
 import io.github.sreepv43.fablife.ui.AppViewModel
 import io.github.sreepv43.fablife.ui.CountdownTimer
 import io.github.sreepv43.fablife.ui.KeepScreenOn
-import io.github.sreepv43.fablife.ui.Routes
+import io.github.sreepv43.fablife.ui.tool
+import io.github.sreepv43.fablife.ui.toolRoute
 import io.github.sreepv43.fablife.ui.habitIcon
 import io.github.sreepv43.fablife.ui.label
 
@@ -107,12 +108,8 @@ fun RitualPlayerScreen(vm: AppViewModel, state: AppState, ritual: Ritual, nav: N
                 )
             }
             Spacer(Modifier.height(24.dp))
-            if (habit.id == "morning_movement") {
-                OutlinedButton(onClick = {
-                    val c = vm.content
-                    Recommendations.wakeUpRoutine(c.exercise.routines, state.prefs.fitnessLevel, state.prefs.movementNeeds, c.jumpingRoutineIds)
-                        ?.let { nav.navigate(Routes.routine(it.id)) }
-                }) { Text("Follow a guided routine") }
+            habit.tool()?.let { tool ->
+                OutlinedButton(onClick = { toolRoute(habit, vm, state)?.let(nav::navigate) }) { Text(toolLabel(tool.type)) }
                 Spacer(Modifier.height(16.dp))
             }
             habit.durationSeconds?.let { seconds ->
@@ -140,4 +137,14 @@ private fun Finished(ritual: Ritual, onClose: () -> Unit) {
         Text("Every step you took today counts.", modifier = Modifier.padding(16.dp), textAlign = TextAlign.Center)
         Button(onClick = onClose) { Text("Back to today") }
     }
+}
+
+private fun toolLabel(type: ToolType): String = when (type) {
+    ToolType.ROUTINE -> "Follow a guided routine"
+    ToolType.BREATHING -> "Breathe along"
+    ToolType.GUIDED -> "Listen to a guided session"
+    ToolType.SOUND -> "Play a sound"
+    ToolType.FOCUS_TIMER -> "Start the focus timer"
+    ToolType.JOURNAL -> "Write in your journal"
+    ToolType.TOP3 -> "Plan your top 3"
 }

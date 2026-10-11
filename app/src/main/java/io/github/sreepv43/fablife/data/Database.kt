@@ -1,6 +1,7 @@
 package io.github.sreepv43.fablife.data
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Entity
@@ -22,6 +23,10 @@ enum class StepState { LOCKED, UNLOCKED, ACTIVE, COMPLETED }
 
 enum class CheckInStatus { DONE, SKIPPED }
 
+enum class JournalKind { GRATITUDE, REFLECTION, MOOD }
+
+enum class SessionKind { FOCUS, GUIDED, BREATHING, SOUND }
+
 @Entity(tableName = "habits")
 data class HabitEntity(
     @PrimaryKey val id: String,
@@ -35,6 +40,8 @@ data class HabitEntity(
     val useSmaller: Boolean = false,
     val sourceStepId: String?,
     val createdAtMillis: Long,
+    val toolType: String? = null,
+    val toolRef: String? = null,
 )
 
 @Entity(tableName = "check_ins", primaryKeys = ["habitId", "day"])
@@ -68,6 +75,41 @@ data class RoutineLogEntity(
     val routineId: String,
     val day: LocalDate,
     val minutes: Int,
+)
+
+@Entity(tableName = "journal_entries")
+data class JournalEntryEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val day: LocalDate,
+    val kind: JournalKind,
+    val mood: Int? = null,
+    val text: String,
+    val createdAtMillis: Long,
+)
+
+@Entity(tableName = "top_tasks", primaryKeys = ["day", "slot"])
+data class TopTaskEntity(
+    val day: LocalDate,
+    val slot: Int,
+    val text: String,
+    val done: Boolean = false,
+)
+
+@Entity(tableName = "session_logs")
+data class SessionLogEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val kind: SessionKind,
+    val ref: String,
+    val day: LocalDate,
+    val minutes: Int,
+)
+
+@Entity(tableName = "coach_notes")
+data class CoachNoteEntity(
+    @PrimaryKey val key: String,
+    val text: String,
+    val source: String,
+    val createdAtMillis: Long,
 )
 
 class Converters {
@@ -161,9 +203,83 @@ interface RoutineLogDao {
     suspend fun clear()
 }
 
+@Dao
+interface JournalDao {
+    @Query("SELECT * FROM journal_entries ORDER BY day DESC, createdAtMillis DESC")
+    fun observeAll(): Flow<List<JournalEntryEntity>>
+
+    @Query("SELECT * FROM journal_entries ORDER BY day DESC, createdAtMillis DESC")
+    suspend fun all(): List<JournalEntryEntity>
+
+    @Insert
+    suspend fun insert(entry: JournalEntryEntity): Long
+
+    @Query("DELETE FROM journal_entries WHERE id = :id")
+    suspend fun delete(id: Long)
+
+    @Query("DELETE FROM journal_entries")
+    suspend fun clear()
+}
+
+@Dao
+interface TopTaskDao {
+    @Query("SELECT * FROM top_tasks ORDER BY day, slot")
+    fun observeAll(): Flow<List<TopTaskEntity>>
+
+    @Query("SELECT * FROM top_tasks ORDER BY day, slot")
+    suspend fun all(): List<TopTaskEntity>
+
+    @Upsert
+    suspend fun upsert(task: TopTaskEntity)
+
+    @Query("DELETE FROM top_tasks WHERE day = :day AND slot = :slot")
+    suspend fun delete(day: LocalDate, slot: Int)
+
+    @Query("DELETE FROM top_tasks")
+    suspend fun clear()
+}
+
+@Dao
+interface SessionLogDao {
+    @Query("SELECT * FROM session_logs")
+    fun observeAll(): Flow<List<SessionLogEntity>>
+
+    @Query("SELECT * FROM session_logs")
+    suspend fun all(): List<SessionLogEntity>
+
+    @Insert
+    suspend fun insert(log: SessionLogEntity)
+
+    @Query("DELETE FROM session_logs")
+    suspend fun clear()
+}
+
+@Dao
+interface CoachNoteDao {
+    @Query("SELECT * FROM coach_notes WHERE `key` = :key")
+    suspend fun get(key: String): CoachNoteEntity?
+
+    @Query("SELECT * FROM coach_notes WHERE `key` = :key")
+    fun observe(key: String): Flow<CoachNoteEntity?>
+
+    @Query("SELECT COUNT(*) FROM coach_notes WHERE source = :source AND createdAtMillis >= :sinceMillis")
+    suspend fun countSince(source: String, sinceMillis: Long): Int
+
+    @Upsert
+    suspend fun upsert(note: CoachNoteEntity)
+
+    @Query("DELETE FROM coach_notes")
+    suspend fun clear()
+}
+
 @Database(
-    entities = [HabitEntity::class, CheckInEntity::class, StepProgressEntity::class, RitualSettingsEntity::class, RoutineLogEntity::class],
-    version = 1,
+    entities = [
+        HabitEntity::class, CheckInEntity::class, StepProgressEntity::class, RitualSettingsEntity::class,
+        RoutineLogEntity::class, JournalEntryEntity::class, TopTaskEntity::class, SessionLogEntity::class,
+        CoachNoteEntity::class,
+    ],
+    version = 2,
+    autoMigrations = [AutoMigration(from = 1, to = 2)],
 )
 @TypeConverters(Converters::class)
 abstract class FabDatabase : RoomDatabase() {
@@ -172,6 +288,10 @@ abstract class FabDatabase : RoomDatabase() {
     abstract fun steps(): StepDao
     abstract fun ritualSettings(): RitualSettingsDao
     abstract fun routineLogs(): RoutineLogDao
+    abstract fun journal(): JournalDao
+    abstract fun topTasks(): TopTaskDao
+    abstract fun sessionLogs(): SessionLogDao
+    abstract fun coachNotes(): CoachNoteDao
 
     companion object {
         fun create(context: Context): FabDatabase =

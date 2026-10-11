@@ -54,6 +54,7 @@ import io.github.sreepv43.fablife.ui.AppState
 import io.github.sreepv43.fablife.ui.AppViewModel
 import io.github.sreepv43.fablife.ui.Routes
 import io.github.sreepv43.fablife.ui.SectionTitle
+import io.github.sreepv43.fablife.ui.mind.MindTab
 import io.github.sreepv43.fablife.ui.onboarding.SAFETY_NOTE
 import io.github.sreepv43.fablife.ui.onboarding.dietLabel
 import io.github.sreepv43.fablife.ui.pretty
@@ -66,8 +67,13 @@ fun ExploreScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
         SecondaryTabRow(selectedTabIndex = tab) {
             Tab(selected = tab == 0, onClick = { tab = 0 }, text = { Text("Move") })
             Tab(selected = tab == 1, onClick = { tab = 1 }, text = { Text("Eat") })
+            Tab(selected = tab == 2, onClick = { tab = 2 }, text = { Text("Mind") })
         }
-        if (tab == 0) MoveTab(vm, state, nav) else EatTab(vm, state, nav)
+        when (tab) {
+            0 -> MoveTab(vm, state, nav)
+            1 -> EatTab(vm, state, nav)
+            else -> MindTab(vm, state, nav)
+        }
     }
 }
 

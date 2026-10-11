@@ -38,12 +38,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.data.CheckInStatus
 import io.github.sreepv43.fablife.data.HabitEntity
 import io.github.sreepv43.fablife.ui.AppState
 import io.github.sreepv43.fablife.ui.AppViewModel
 import io.github.sreepv43.fablife.ui.SectionTitle
+import io.github.sreepv43.fablife.ui.health.HealthCard
 import io.github.sreepv43.fablife.ui.label
 import java.time.Instant
 import java.time.LocalDate
@@ -64,7 +66,7 @@ private fun AppState.completion(day: LocalDate): Float? {
 }
 
 @Composable
-fun ProgressScreen(vm: AppViewModel, state: AppState) {
+fun ProgressScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
     var month by rememberSaveable { mutableStateOf(YearMonth.from(state.today).toString()) }
     var selectedDay by rememberSaveable { mutableStateOf<String?>(null) }
     val ym = YearMonth.parse(month)
@@ -72,6 +74,7 @@ fun ProgressScreen(vm: AppViewModel, state: AppState) {
 
     LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         item { Text("Your progress", style = MaterialTheme.typography.headlineMedium, modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp)) }
+        item { HealthCard(vm, state, nav) }
         item {
             Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer), modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp)) {
                 Column(Modifier.padding(12.dp)) {
@@ -92,15 +95,17 @@ fun ProgressScreen(vm: AppViewModel, state: AppState) {
         }
         item {
             Column(Modifier.fillMaxWidth().widthIn(max = 640.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                // Streaks for the ritual with the most habits; falls back to the morning ritual.
+                val focus = Ritual.entries.maxByOrNull { state.habitsFor(it).size }?.takeIf { state.habitsFor(it).isNotEmpty() } ?: Ritual.MORNING
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Stat("🔥 ${state.streak(Ritual.MORNING)}", "Morning streak", Modifier.weight(1f))
-                    Stat("🏆 ${state.longestStreak(Ritual.MORNING)}", "Longest streak", Modifier.weight(1f))
+                    Stat("🔥 ${state.streak(focus)}", "${focus.label} streak", Modifier.weight(1f))
+                    Stat("🏆 ${state.longestStreak(focus)}", "Longest ${focus.label.lowercase()} streak", Modifier.weight(1f))
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Stat("${doneCheckIns.size}", "Total check-ins", Modifier.weight(1f))
                     Stat("${doneCheckIns.map { it.day }.toSet().size}", "Days active", Modifier.weight(1f))
                 }
-                Stat("${state.completedSteps} / ${state.steps.size}", "Journey steps completed", Modifier.fillMaxWidth())
+                Stat("${state.completedSteps} / ${state.activeJourney.steps.size}", "${state.activeJourney.title}: steps completed", Modifier.fillMaxWidth())
             }
         }
         if (state.habits.isNotEmpty()) item {

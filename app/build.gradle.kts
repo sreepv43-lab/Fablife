@@ -14,8 +14,8 @@ android {
         applicationId = "io.github.sreepv43.fablife"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
     }
 
     buildTypes {
@@ -41,6 +41,8 @@ android {
         unitTests.isReturnDefaultValues = true
         unitTests.isIncludeAndroidResources = true
     }
+    // Room migration tests (Robolectric) read the exported schemas from the debug variant's assets. Release builds don't ship them.
+    sourceSets.getByName("debug").assets.srcDir("$projectDir/schemas")
 }
 
 ksp {
@@ -63,6 +65,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("androidx.health.connect:connect-client:1.1.0-beta01")
 
     val room = "2.6.1"
     implementation("androidx.room:room-runtime:$room")
@@ -73,6 +76,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    testImplementation("androidx.room:room-testing:$room")
     testImplementation("org.robolectric:robolectric:4.14.1")
     testImplementation("androidx.test:core:1.6.1")
     testImplementation(composeBom)

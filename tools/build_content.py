@@ -10,6 +10,8 @@ import json
 import re
 from pathlib import Path
 
+import catalog as C
+from journey_md import parse_journey, parse_sessions
 from recipes import RECIPES
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -38,9 +40,12 @@ def letter_after(md: str, heading: str) -> dict:
 def build_journey() -> dict:
     md = (DOCS / "journeys" / "01-feel-more-energetic.md").read_text()
 
-    def habit(id, title, description, icon, order, smaller, duration=None):
-        return {"id": id, "title": title, "description": description, "icon": icon, "ritual": "MORNING",
-                "order": order, "durationSeconds": duration, "smallerVersion": smaller}
+    def habit(id, title, description, icon, order, smaller, duration=None, tool=None):
+        h = {"id": id, "title": title, "description": description, "icon": icon, "ritual": "MORNING",
+             "order": order, "durationSeconds": duration, "smallerVersion": smaller}
+        if tool:
+            h["tool"] = tool
+        return h
 
     steps = [
         {
@@ -82,7 +87,8 @@ def build_journey() -> dict:
             "id": "energy.move", "title": "Move Your Body", "heading": "### Letter: Five Minutes That Wake You Up",
             "goal": {"type": "habit", "habit": habit("morning_movement", "Move for 5 minutes",
                                                      "Stretch, walk, dance: anything that gets you moving",
-                                                     "movement", 3, "Move for 1 minute", 300),
+                                                     "movement", 3, "Move for 1 minute", 300,
+                                                     tool={"type": "ROUTINE", "ref": "WAKE_UP"}),
                      "targetDays": 4, "windowDays": 6},
             "buttonLabel": "Add \"5-minute movement\" to my morning",
             "tips": ["Put on your movement clothes right after breakfast so you're ready.",
@@ -120,7 +126,9 @@ def build_journey() -> dict:
         {
             "id": "energy.design", "title": "Design Your Morning", "heading": "### Letter: Make It Yours",
             "goal": {"type": "action", "title": "Arrange your morning ritual and set a consistent wake-up time",
-                     "description": "Reorder your habits, then confirm your wake-up time in Settings"},
+                     "description": "Reorder your habits, then confirm your wake-up time in Settings",
+                     "shortcuts": [{"label": "Arrange my ritual", "target": "habits"},
+                                   {"label": "Check wake-up time", "target": "settings"}]},
             "buttonLabel": "Let's design it",
             "completionTitle": "Your ritual, your way. ✍️",
             "completionMessage": "One final challenge stands between you and a morning ritual that runs on autopilot.",
@@ -141,6 +149,10 @@ def build_journey() -> dict:
 
     return {
         "id": "energy",
+        "goalKey": "energy",
+        "order": 1,
+        "emoji": "☀️",
+        "ritualFocus": "MORNING",
         "title": "Feel More Energetic",
         "subtitle": "Build a morning ritual that powers your whole day",
         "introLetter": letter_after(md, "## Intro Letter"),
@@ -345,13 +357,39 @@ def build_food() -> dict:
     return {"principles": principles, "gentleGuidance": gentle, "meals": meals}
 
 
+# ---------------------------------------------------------------- Journeys 2-5 and audio (from Markdown)
+
+def build_markdown_journeys() -> dict:
+    """Parses docs/journeys/0[2-5]-*.md. Run tools/validate_content.py first; this only parses."""
+    out = {}
+    for path in sorted((DOCS / "journeys").glob("0[2-5]-*.md")):
+        journey = parse_journey(path)
+        out[f"journeys/{journey['id']}.json"] = journey
+    return out
+
+
+def build_audio() -> dict:
+    sessions = []
+    for path in sorted((DOCS / "audio").glob("sessions_*.md")):
+        sessions += parse_sessions(path)
+    sessions.sort(key=lambda s: list(C.SESSIONS).index(s["id"]))
+    breathing = [{"id": k, **v} for k, v in C.BREATHING.items()]
+    sounds = [{"id": k, **v} for k, v in C.SOUNDS.items()]
+    return {"sessions": sessions, "breathing": breathing, "sounds": sounds}
+
+
 def main():
-    ASSETS.mkdir(parents=True, exist_ok=True)
+    (ASSETS / "journeys").mkdir(parents=True, exist_ok=True)
     outputs = {
-        "journey_energy.json": build_journey(),
+        "journeys/energy.json": build_journey(),
+        **build_markdown_journeys(),
+        "audio.json": build_audio(),
         "exercise.json": {"moves": MOVES, "routines": [{"restSeconds": 10, **r} for r in ROUTINES]},
         "food.json": build_food(),
     }
+    legacy = ASSETS / "journey_energy.json"
+    if legacy.exists():
+        legacy.unlink()
     move_ids = {m["id"] for m in MOVES}
     for r in ROUTINES:
         for it in r["items"]:

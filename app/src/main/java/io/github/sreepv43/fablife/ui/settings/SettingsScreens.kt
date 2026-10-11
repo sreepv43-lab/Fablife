@@ -96,6 +96,20 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
             }
         }
         item {
+            Section("Journey") {
+                Row(
+                    Modifier.fillMaxWidth().clickable(role = Role.Button) { nav.navigate(Routes.JOURNEYS) }.padding(vertical = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text("${state.activeJourney.emoji} ${state.activeJourney.title}")
+                        Text("Switch or start another journey", style = MaterialTheme.typography.bodySmall)
+                    }
+                    Icon(Icons.AutoMirrored.Outlined.KeyboardArrowRight, contentDescription = null)
+                }
+            }
+        }
+        item {
             Section("Rituals & reminders") {
                 Text("At most one gentle reminder per ritual per day, only if the ritual isn't done yet.", style = MaterialTheme.typography.bodySmall)
                 Ritual.entries.forEach { ritual ->
@@ -181,6 +195,15 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
             }
         }
         item {
+            Section("Steps and sleep (optional)") {
+                Row(Modifier.fillMaxWidth().clickable(role = Role.Button) { nav.navigate(Routes.HEALTH) }.padding(vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("Health Connect", modifier = Modifier.weight(1f))
+                    Text("Open", color = MaterialTheme.colorScheme.primary)
+                }
+                Text("Show steps and sleep from Health Connect. Read-only, and kept on this device.", style = MaterialTheme.typography.bodySmall)
+            }
+        }
+        item {
             Section("Appearance") {
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     ThemeMode.entries.forEach { t ->
@@ -200,7 +223,7 @@ fun SettingsScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
         }
         item {
             Text(
-                "Fab Life provides general wellness information, not medical advice. Version 0.1.0",
+                "Fab Life provides general wellness information, not medical advice. Version 0.2.0",
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp).padding(vertical = 8.dp),
             )

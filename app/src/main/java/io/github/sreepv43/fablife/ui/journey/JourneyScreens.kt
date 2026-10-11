@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -53,29 +54,31 @@ import io.github.sreepv43.fablife.ui.AppState
 import io.github.sreepv43.fablife.ui.AppViewModel
 import io.github.sreepv43.fablife.ui.MarkdownText
 import io.github.sreepv43.fablife.ui.Routes
+import io.github.sreepv43.fablife.ui.JourneyStatus
 import io.github.sreepv43.fablife.ui.StepView
 import io.github.sreepv43.fablife.ui.fillPlaceholders
 import io.github.sreepv43.fablife.ui.goToToday
 
 @Composable
 fun JourneyScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
-    val journey = vm.content.journey
+    val journey = state.activeJourney
     var confirmSkip by remember { mutableStateOf<StepView?>(null) }
     LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         item {
             Column(Modifier.fillMaxWidth().widthIn(max = 640.dp).padding(bottom = 8.dp)) {
-                Text("☀️", style = MaterialTheme.typography.displaySmall)
+                Text(journey.emoji, style = MaterialTheme.typography.displaySmall)
                 Text(journey.title, style = MaterialTheme.typography.headlineMedium)
                 Text(journey.subtitle, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.height(12.dp))
-                Text("Step ${minOf(state.completedSteps + 1, state.steps.size)} of ${state.steps.size}", style = MaterialTheme.typography.labelLarge)
+                Text("Step ${minOf(state.completedSteps + 1, journey.steps.size)} of ${journey.steps.size}", style = MaterialTheme.typography.labelLarge)
                 LinearProgressIndicator(
-                    progress = { state.completedSteps / state.steps.size.coerceAtLeast(1).toFloat() },
+                    progress = { state.completedSteps / journey.steps.size.coerceAtLeast(1).toFloat() },
                     modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
                 )
+                OutlinedButton(onClick = { nav.navigate(Routes.JOURNEYS) }, modifier = Modifier.padding(top = 8.dp)) { Text("Switch journey") }
             }
         }
-        item { LetterRow("Your Energy Is a Skill", "Introduction") { nav.navigate(Routes.letter("intro")) } }
+        item { LetterRow(journey.introLetter.title, "Introduction") { nav.navigate(Routes.letter("intro")) } }
         itemsIndexed(state.steps) { i, sv -> StepRow(i + 1, sv, nav, onSkip = { confirmSkip = sv }) }
         if (state.journeyComplete) item { LetterRow(journey.outroLetter.title, "Final letter") { nav.navigate(Routes.letter("outro")) } }
     }
@@ -185,11 +188,11 @@ fun LetterScreen(vm: AppViewModel, state: AppState, id: String, nav: NavHostCont
         }
         Row(Modifier.fillMaxWidth().padding(16.dp), horizontalArrangement = Arrangement.End) {
             when {
-                id == "intro" -> {
+                id == "intro" || id.startsWith("intro:") -> {
                     val first = state.steps.firstOrNull()
                     Button(onClick = {
-                        if (first != null && first.progress.state == StepState.UNLOCKED) {
-                            nav.navigate(Routes.letter(first.step.id)) { popUpTo("letter/intro") { inclusive = true } }
+                        if (first != null && first.progress.state == StepState.UNLOCKED && (id == "intro" || id == "intro:${state.activeJourney.id}")) {
+                            nav.navigate(Routes.letter(first.step.id)) { popUpTo(Routes.letter(id)) { inclusive = true } }
                         } else nav.popBackStack()
                     }) { Text("Let's begin") }
                 }
@@ -197,9 +200,9 @@ fun LetterScreen(vm: AppViewModel, state: AppState, id: String, nav: NavHostCont
                     vm.acceptStep(id)
                     nav.goToToday()
                 }) { Text(stepView.step.buttonLabel) }
-                id == "outro" -> {
+                id == "outro" || id.startsWith("outro:") -> {
                     OutlinedButton(onClick = { nav.popBackStack() }, modifier = Modifier.padding(end = 8.dp)) { Text("Celebrate 🎉") }
-                    Button(onClick = { nav.goToToday() }) { Text("Keep my ritual going") }
+                    Button(onClick = { nav.navigate(Routes.JOURNEYS) }) { Text("Choose my next journey") }
                 }
                 id == "welcome" -> Button(onClick = { nav.goToToday() }) { Text("Let's start again") }
                 id == "missed" -> Button(onClick = { nav.popBackStack() }) { Text("Keep going") }
@@ -207,5 +210,68 @@ fun LetterScreen(vm: AppViewModel, state: AppState, id: String, nav: NavHostCont
                 else -> OutlinedButton(onClick = { nav.popBackStack() }) { Text("Back") }
             }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun JourneysScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
+    var confirm by remember { mutableStateOf<JourneyStatus?>(null) }
+    Column(Modifier.fillMaxSize()) {
+        TopAppBar(
+            title = { Text("Journeys") },
+            navigationIcon = { IconButton(onClick = { nav.popBackStack() }) { Icon(Icons.AutoMirrored.Outlined.ArrowBack, contentDescription = "Back") } },
+        )
+        LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            item {
+                Text(
+                    "Pick the one thing you want to work on now. Your progress in every journey is saved, and the habits you've built stay in your rituals.",
+                    style = MaterialTheme.typography.bodyMedium, modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp),
+                )
+            }
+            items(state.journeys, key = { it.journey.id }) { status ->
+                val active = status.journey.id == state.activeJourney.id
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = if (active) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainer,
+                    ),
+                    modifier = Modifier.fillMaxWidth().widthIn(max = 640.dp).clickable(role = Role.Button, onClickLabel = "Open journey") {
+                        if (active) nav.goToToday() else confirm = status
+                    },
+                ) {
+                    Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+                        Text(status.journey.emoji, style = MaterialTheme.typography.headlineMedium)
+                        Column(Modifier.weight(1f).padding(horizontal = 16.dp)) {
+                            Text(status.journey.title, style = MaterialTheme.typography.titleMedium)
+                            Text(status.journey.subtitle, style = MaterialTheme.typography.bodySmall)
+                            val detail = when {
+                                active -> "Current journey · ${status.completedSteps} of ${status.journey.steps.size} steps"
+                                status.complete -> "Completed 🏆"
+                                status.started -> "${status.completedSteps} of ${status.journey.steps.size} steps · Continue"
+                                else -> "${status.journey.steps.size} steps · Start"
+                            }
+                            Text(detail, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 4.dp))
+                        }
+                    }
+                }
+            }
+        }
+    }
+    confirm?.let { status ->
+        AlertDialog(
+            onDismissRequest = { confirm = null },
+            title = { Text(if (status.started) "Continue ${status.journey.title}?" else "Start ${status.journey.title}?") },
+            text = { Text("${state.activeJourney.title} stays saved. You can switch back any time.") },
+            confirmButton = {
+                TextButton(onClick = {
+                    val firstTime = !status.started
+                    vm.startJourney(status.journey.id)
+                    confirm = null
+                    nav.goToToday()
+                    if (firstTime) nav.navigate(Routes.letter("intro:${status.journey.id}"))
+                }) { Text(if (status.started) "Continue" else "Start") }
+            },
+            dismissButton = { TextButton(onClick = { confirm = null }) { Text("Not now") } },
+        )
     }
 }

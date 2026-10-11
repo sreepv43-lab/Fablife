@@ -1,6 +1,7 @@
 package io.github.sreepv43.fablife.ui
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -29,13 +30,24 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import io.github.sreepv43.fablife.content.Ritual
 import io.github.sreepv43.fablife.data.StepState
+import io.github.sreepv43.fablife.data.JournalKind
 import io.github.sreepv43.fablife.ui.explore.ExploreScreen
+import io.github.sreepv43.fablife.ui.health.HealthScreen
+import io.github.sreepv43.fablife.ui.journey.JourneysScreen
+import io.github.sreepv43.fablife.ui.mind.BreathingScreen
+import io.github.sreepv43.fablife.ui.mind.FocusTimerScreen
+import io.github.sreepv43.fablife.ui.mind.GuidedSessionScreen
+import io.github.sreepv43.fablife.ui.mind.JournalScreen
+import io.github.sreepv43.fablife.ui.mind.SoundScreen
+import io.github.sreepv43.fablife.ui.mind.Top3Screen
 import io.github.sreepv43.fablife.ui.explore.MealDetailScreen
 import io.github.sreepv43.fablife.ui.explore.RoutinePlayerScreen
 import io.github.sreepv43.fablife.ui.journey.JourneyScreen
@@ -58,10 +70,25 @@ private enum class Tab(val route: String, val label: String, val icon: ImageVect
 object Routes {
     fun letter(id: String) = "letter/$id"
     fun ritual(ritual: Ritual) = "ritual/${ritual.name}"
-    fun routine(id: String) = "routine/$id"
     fun meal(id: String) = "meal/$id"
     const val HABITS = "habits"
+    const val HEALTH = "health"
+    const val JOURNEYS = "journeys"
+    const val SOUNDS = "sounds"
+
+    // Tool routes. Each takes an optional habit id so the tool can offer to check that habit in when finished.
+    private fun habitQuery(habit: String?) = if (habit == null) "" else "?habit=$habit"
+    fun routine(id: String, habit: String? = null) = "routine/$id" + habitQuery(habit)
+    fun breathing(id: String, habit: String? = null) = "breathing/$id" + habitQuery(habit)
+    fun guided(id: String, habit: String? = null) = "guided/$id" + habitQuery(habit)
+    fun sound(id: String, habit: String? = null) = "sound/$id" + habitQuery(habit)
+    fun focus(habit: String? = null) = "focus" + habitQuery(habit)
+    fun top3(habit: String? = null) = "top3" + habitQuery(habit)
+    fun journal(kind: String = "GRATITUDE", habit: String? = null) = "journal?kind=$kind" + (if (habit == null) "" else "&habit=$habit")
 }
+
+private val habitArg = navArgument("habit") { type = NavType.StringType; nullable = true; defaultValue = null }
+private val kindArg = navArgument("kind") { type = NavType.StringType; defaultValue = "GRATITUDE" }
 
 @Composable
 fun FabLifeRoot(vm: AppViewModel, openRitual: Ritual?, onRitualOpened: () -> Unit) {
@@ -81,6 +108,7 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
     val backStack by nav.currentBackStackEntryAsState()
     val route = backStack?.destination?.route
     var celebration by remember { mutableStateOf<UiEvent?>(null) }
+    val playback by vm.audio.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) { vm.events.collect { celebration = it } }
     // First launch after onboarding: show the intro letter, then step 1.
@@ -95,7 +123,8 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
 
     Scaffold(
         bottomBar = {
-            if (Tab.entries.any { it.route == route }) {
+            if (Tab.entries.any { it.route == route }) Column {
+                MiniPlayer(playback, vm.audio) { nav.navigate(it) }
                 NavigationBar {
                     Tab.entries.forEach { tab ->
                         NavigationBarItem(
@@ -122,7 +151,7 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
             composable(Tab.TODAY.route) { TodayScreen(vm, state, nav) }
             composable(Tab.JOURNEY.route) { JourneyScreen(vm, state, nav) }
             composable(Tab.EXPLORE.route) { ExploreScreen(vm, state, nav) }
-            composable(Tab.PROGRESS.route) { ProgressScreen(vm, state) }
+            composable(Tab.PROGRESS.route) { ProgressScreen(vm, state, nav) }
             composable(Tab.SETTINGS.route) { SettingsScreen(vm, state, nav) }
             composable("letter/{id}") { entry ->
                 LetterScreen(vm, state, entry.arguments?.getString("id").orEmpty(), nav)
@@ -130,9 +159,31 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
             composable("ritual/{ritual}") { entry ->
                 RitualPlayerScreen(vm, state, Ritual.valueOf(entry.arguments?.getString("ritual")!!), nav)
             }
-            composable("routine/{id}") { entry ->
-                RoutinePlayerScreen(vm, state, entry.arguments?.getString("id").orEmpty(), nav)
+            composable("routine/{id}?habit={habit}", arguments = listOf(habitArg)) { entry ->
+                RoutinePlayerScreen(vm, state, entry.arguments?.getString("id").orEmpty(), entry.arguments?.getString("habit"), nav)
             }
+            composable("breathing/{id}?habit={habit}", arguments = listOf(habitArg)) { entry ->
+                BreathingScreen(vm, state, entry.arguments?.getString("id").orEmpty(), entry.arguments?.getString("habit"), nav)
+            }
+            composable("guided/{id}?habit={habit}", arguments = listOf(habitArg)) { entry ->
+                GuidedSessionScreen(vm, state, entry.arguments?.getString("id").orEmpty(), entry.arguments?.getString("habit"), nav)
+            }
+            composable("sound/{id}?habit={habit}", arguments = listOf(habitArg)) { entry ->
+                SoundScreen(vm, state, entry.arguments?.getString("id"), entry.arguments?.getString("habit"), nav)
+            }
+            composable(Routes.SOUNDS) { SoundScreen(vm, state, null, null, nav) }
+            composable("focus?habit={habit}", arguments = listOf(habitArg)) { entry ->
+                FocusTimerScreen(vm, state, entry.arguments?.getString("habit"), nav)
+            }
+            composable("top3?habit={habit}", arguments = listOf(habitArg)) { entry ->
+                Top3Screen(vm, state, entry.arguments?.getString("habit"), nav)
+            }
+            composable("journal?kind={kind}&habit={habit}", arguments = listOf(kindArg, habitArg)) { entry ->
+                val kind = JournalKind.entries.firstOrNull { it.name == entry.arguments?.getString("kind") } ?: JournalKind.GRATITUDE
+                JournalScreen(vm, state, kind, entry.arguments?.getString("habit"), nav)
+            }
+            composable(Routes.HEALTH) { HealthScreen(vm, state, nav) }
+            composable(Routes.JOURNEYS) { JourneysScreen(vm, state, nav) }
             composable("meal/{id}") { entry ->
                 MealDetailScreen(vm, state, entry.arguments?.getString("id").orEmpty(), nav)
             }
@@ -148,7 +199,7 @@ private fun MainApp(vm: AppViewModel, state: AppState, openRitual: Ritual?, onRi
             celebration = null
             nav.navigate(Routes.letter(stepId))
         }, nextStepId = (event as? UiEvent.StepCompleted)?.let { e ->
-            vm.content.journey.steps.getOrNull(vm.content.journey.steps.indexOfFirst { it.id == e.step.id } + 1)?.id
+            vm.content.journeyOfStep(e.step.id)?.steps?.let { all -> all.getOrNull(all.indexOfFirst { it.id == e.step.id } + 1)?.id }
         })
     }
 }

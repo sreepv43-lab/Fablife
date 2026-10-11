@@ -26,6 +26,7 @@ data class UserPrefs(
     val onboardingCompleted: Boolean = false,
     val name: String = "",
     val goal: String = "energy",
+    val activeJourneyId: String = "energy",
     val obstacles: Set<String> = emptySet(),
     val wakeTime: LocalTime = LocalTime.of(7, 0),
     val bedTime: LocalTime = LocalTime.of(23, 0),
@@ -44,6 +45,10 @@ data class UserPrefs(
     val nudgeDismissedDay: LocalDate? = null,
     val welcomeBackPending: Boolean = false,
     val outroSeen: Boolean = false,
+    val focusMinutes: Int = 25,
+    val breakMinutes: Int = 5,
+    val longBreakMinutes: Int = 15,
+    val stepGoal: Int = 7000,
 ) {
     val displayName: String get() = name.ifBlank { "friend" }
 }
@@ -55,6 +60,7 @@ class PrefsRepository(private val context: Context) {
         val onboarding = booleanPreferencesKey("onboarding_completed")
         val name = stringPreferencesKey("name")
         val goal = stringPreferencesKey("goal")
+        val activeJourney = stringPreferencesKey("active_journey")
         val obstacles = stringSetPreferencesKey("obstacles")
         val wake = intPreferencesKey("wake_time")
         val bed = intPreferencesKey("bed_time")
@@ -73,6 +79,10 @@ class PrefsRepository(private val context: Context) {
         val nudgeDismissed = longPreferencesKey("nudge_dismissed")
         val welcomeBack = booleanPreferencesKey("welcome_back_pending")
         val outroSeen = booleanPreferencesKey("outro_seen")
+        val focusMinutes = intPreferencesKey("focus_minutes")
+        val breakMinutes = intPreferencesKey("break_minutes")
+        val longBreakMinutes = intPreferencesKey("long_break_minutes")
+        val stepGoal = intPreferencesKey("step_goal")
     }
 
     val prefs: Flow<UserPrefs> = context.dataStore.data.map { it.toUserPrefs() }
@@ -96,6 +106,7 @@ class PrefsRepository(private val context: Context) {
             onboardingCompleted = this[K.onboarding] ?: false,
             name = this[K.name] ?: "",
             goal = this[K.goal] ?: d.goal,
+            activeJourneyId = this[K.activeJourney] ?: d.activeJourneyId,
             obstacles = this[K.obstacles] ?: emptySet(),
             wakeTime = this[K.wake]?.let { LocalTime.ofSecondOfDay(it.toLong()) } ?: d.wakeTime,
             bedTime = this[K.bed]?.let { LocalTime.ofSecondOfDay(it.toLong()) } ?: d.bedTime,
@@ -114,6 +125,10 @@ class PrefsRepository(private val context: Context) {
             nudgeDismissedDay = this[K.nudgeDismissed]?.let(LocalDate::ofEpochDay),
             welcomeBackPending = this[K.welcomeBack] ?: false,
             outroSeen = this[K.outroSeen] ?: false,
+            focusMinutes = this[K.focusMinutes] ?: d.focusMinutes,
+            breakMinutes = this[K.breakMinutes] ?: d.breakMinutes,
+            longBreakMinutes = this[K.longBreakMinutes] ?: d.longBreakMinutes,
+            stepGoal = this[K.stepGoal] ?: d.stepGoal,
         )
     }
 
@@ -121,6 +136,7 @@ class PrefsRepository(private val context: Context) {
         this[K.onboarding] = u.onboardingCompleted
         this[K.name] = u.name
         this[K.goal] = u.goal
+        this[K.activeJourney] = u.activeJourneyId
         this[K.obstacles] = u.obstacles
         this[K.wake] = u.wakeTime.toSecondOfDay()
         this[K.bed] = u.bedTime.toSecondOfDay()
@@ -139,5 +155,9 @@ class PrefsRepository(private val context: Context) {
         if (u.nudgeDismissedDay != null) this[K.nudgeDismissed] = u.nudgeDismissedDay.toEpochDay() else remove(K.nudgeDismissed)
         this[K.welcomeBack] = u.welcomeBackPending
         this[K.outroSeen] = u.outroSeen
+        this[K.focusMinutes] = u.focusMinutes
+        this[K.breakMinutes] = u.breakMinutes
+        this[K.longBreakMinutes] = u.longBreakMinutes
+        this[K.stepGoal] = u.stepGoal
     }
 }

@@ -84,6 +84,20 @@ fun vibrate(context: android.content.Context) {
     context.getSystemService(Vibrator::class.java)?.vibrate(VibrationEffect.createOneShot(400, VibrationEffect.DEFAULT_AMPLITUDE))
 }
 
+/** A short chime for the end of a timer. Silent if the device has no tone generator or the volume is off. */
+fun chime(context: android.content.Context) {
+    runCatching {
+        val tone = android.media.ToneGenerator(android.media.AudioManager.STREAM_NOTIFICATION, 70)
+        tone.startTone(android.media.ToneGenerator.TONE_PROP_ACK, 400)
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({ tone.release() }, 800)
+    }
+}
+
+/** A very short, soft tick for paced exercises. */
+fun vibrateTick(context: android.content.Context) {
+    context.getSystemService(Vibrator::class.java)?.vibrate(VibrationEffect.createOneShot(35, 60))
+}
+
 /**
  * A countdown measured against wall-clock time, so it stays accurate if the app is paused.
  * Calls [onFinished] once when it reaches zero.

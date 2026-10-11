@@ -43,7 +43,7 @@ import io.github.sreepv43.fablife.ui.KeepScreenOn
 
 /** Plays a routine one move at a time, with rests between moves. */
 @Composable
-fun RoutinePlayerScreen(vm: AppViewModel, state: AppState, routineId: String, nav: NavHostController) {
+fun RoutinePlayerScreen(vm: AppViewModel, state: AppState, routineId: String, habitId: String?, nav: NavHostController) {
     KeepScreenOn()
     val routine = vm.content.exercise.routines.firstOrNull { it.id == routineId } ?: return
     val moves = vm.content.exercise.moves.associateBy { it.id }
@@ -74,7 +74,7 @@ fun RoutinePlayerScreen(vm: AppViewModel, state: AppState, routineId: String, na
         LinearProgressIndicator(progress = { (index + if (finished) 1 else 0) / routine.items.size.toFloat() }, modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp))
 
         if (finished) {
-            Finished(vm, state, nav)
+            Finished(vm, state, habitId, nav)
             return
         }
         val item = routine.items[index]
@@ -130,8 +130,8 @@ private fun nameOf(item: RoutineItem, moves: Map<String, Move>): String =
     item.label ?: item.move?.let { moves[it]?.name } ?: "Move"
 
 @Composable
-private fun Finished(vm: AppViewModel, state: AppState, nav: NavHostController) {
-    val habit = state.habits.firstOrNull { it.id == "morning_movement" }
+private fun Finished(vm: AppViewModel, state: AppState, habitId: String?, nav: NavHostController) {
+    val habit = habitId?.let { id -> state.habits.firstOrNull { it.id == id } }
     val offerCheckIn = habit != null && habit.id !in state.doneToday
     Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
         Text("💪", fontSize = 64.sp)
@@ -140,9 +140,9 @@ private fun Finished(vm: AppViewModel, state: AppState, nav: NavHostController) 
         Spacer(Modifier.height(16.dp))
         if (offerCheckIn) {
             Button(onClick = {
-                vm.setCheckIn("morning_movement", state.today, done = true)
+                vm.setCheckIn(habit!!.id, state.today, done = true)
                 nav.popBackStack()
-            }) { Text("Mark “Move for 5 minutes” as done") }
+            }) { Text("Mark “${habit!!.title}” as done") }
             TextButton(onClick = { nav.popBackStack() }) { Text("Close") }
         } else {
             Button(onClick = { nav.popBackStack() }) { Text("Close") }

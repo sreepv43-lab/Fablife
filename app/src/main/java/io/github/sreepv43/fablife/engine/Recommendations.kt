@@ -38,13 +38,16 @@ object Recommendations {
         needs in it.needs && (needs == MovementNeeds.STANDARD || it.id !in jumpingRoutineIds)
     }
 
-    /** The routine the movement habit's Start button opens: a wake-up routine matching level and needs. */
-    fun wakeUpRoutine(all: List<Routine>, level: FitnessLevel, needs: MovementNeeds, jumpingRoutineIds: Set<String>): Routine? {
-        val candidates = routines(all, needs, jumpingRoutineIds).filter { it.goal == RoutineGoal.WAKE_UP }
+    /** The routine a movement habit's Start button opens: one with the habit's goal matching level and needs. */
+    fun routineForGoal(all: List<Routine>, goal: RoutineGoal, level: FitnessLevel, needs: MovementNeeds, jumpingRoutineIds: Set<String>): Routine? {
+        val candidates = routines(all, needs, jumpingRoutineIds).filter { it.goal == goal }
         return candidates.firstOrNull { level in it.levels && needs in it.needs }
             ?: candidates.firstOrNull { needs in it.needs }
             ?: candidates.firstOrNull()
     }
+
+    fun wakeUpRoutine(all: List<Routine>, level: FitnessLevel, needs: MovementNeeds, jumpingRoutineIds: Set<String>): Routine? =
+        routineForGoal(all, RoutineGoal.WAKE_UP, level, needs, jumpingRoutineIds)
 
     /** Ids of routines that include any move flagged as jumping. */
     fun jumpingRoutineIds(routines: List<Routine>, jumpingMoveIds: Set<String>): Set<String> =

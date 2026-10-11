@@ -1,5 +1,9 @@
 {
  "id": "energy",
+ "goalKey": "energy",
+ "order": 1,
+ "emoji": "☀️",
+ "ritualFocus": "MORNING",
  "title": "Feel More Energetic",
  "subtitle": "Build a morning ritual that powers your whole day",
  "introLetter": {
@@ -111,7 +115,11 @@
      "ritual": "MORNING",
      "order": 3,
      "durationSeconds": 300,
-     "smallerVersion": "Move for 1 minute"
+     "smallerVersion": "Move for 1 minute",
+     "tool": {
+      "type": "ROUTINE",
+      "ref": "WAKE_UP"
+     }
     },
     "targetDays": 4,
     "windowDays": 6
@@ -197,7 +205,17 @@
    "goal": {
     "type": "action",
     "title": "Arrange your morning ritual and set a consistent wake-up time",
-    "description": "Reorder your habits, then confirm your wake-up time in Settings"
+    "description": "Reorder your habits, then confirm your wake-up time in Settings",
+    "shortcuts": [
+     {
+      "label": "Arrange my ritual",
+      "target": "habits"
+     },
+     {
+      "label": "Check wake-up time",
+      "target": "settings"
+     }
+    ]
    },
    "buttonLabel": "Let's design it",
    "completionTitle": "Your ritual, your way. ✍️",
