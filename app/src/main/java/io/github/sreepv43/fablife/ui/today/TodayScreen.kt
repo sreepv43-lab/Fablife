@@ -48,6 +48,7 @@ import io.github.sreepv43.fablife.data.HabitEntity
 import io.github.sreepv43.fablife.data.StepState
 import io.github.sreepv43.fablife.ui.AppState
 import io.github.sreepv43.fablife.ui.AppViewModel
+import io.github.sreepv43.fablife.ui.CoachNoteCard
 import io.github.sreepv43.fablife.ui.Routes
 import io.github.sreepv43.fablife.ui.emoji
 import io.github.sreepv43.fablife.ui.buttonLabel
@@ -85,6 +86,7 @@ fun TodayScreen(vm: AppViewModel, state: AppState, nav: NavHostController) {
                 nav.navigate(Routes.letter("welcome"))
             }
         }
+        item { CoachNoteCard(state) }
         item { JourneyCard(vm, state, nav) }
         if (state.showNudge) item { NudgeCard(vm, state, nav) }
         val since = state.prefs.gentleSince
